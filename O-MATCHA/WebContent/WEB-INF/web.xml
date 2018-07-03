@@ -9,4 +9,20 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+  
+  
+  <servlet>
+  	<servlet-name>shoppingcart</servlet-name>
+  	<servlet-class>com.omatcha.servlet.ShoppingCartServlet</servlet-class>
+  </servlet>
+ <servlet-mapping>
+	<servlet-name>shoppingcart</servlet-name> 
+	<url-pattern>/ShoppingCart/ShoppingCart/message.do</url-pattern>
+ </servlet-mapping>
+  
+  
+  
+  
+  
 </web-app>

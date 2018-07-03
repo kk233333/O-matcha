@@ -1,0 +1,26 @@
+<head>
+<title>ResetPassword</title>
+<link href="css2/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css2/downpage-reset.css" rel="stylesheet" type="text/css" media="all" />
+<script src="js2/downpage-reset.js"></script>
+</head>
+<body>
+<div class="container">
+	<div class="row clearfix" id="ground">
+		<div class="col-md-12 column">
+			<input type="text" placeholder="请输入您的手机号" size="40" id="tel" onblur="checktel()" onfocus="blurnum()"></input><br/><br/>
+			<p class="text-warning" hidden="hidden" id="checknum">号码格式不正确</p>
+			<input type="text" placeholder="请输入验证码" id="code1" onblur="checkcodes()" onfocus="blurcode()"></input> 
+			<div id="code"></div>
+			<p class="text-warning" hidden="hidden" id="checkcode">验证码不能为空</p>
+			<br/><br/>
+			<input type="text" placeholder="请输入短信验证码"></input> 
+			<button type="button" class="btn btn-default" id="sms">获取短信验证</button><br/><br/>
+			<button type="button" class="btn btn-default" id="submit">下一步</button>
+		</div>
+			
+	</div>
+</div>
+
+
+</body>

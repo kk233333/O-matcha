@@ -16,6 +16,7 @@ var hb1=[hg,wh,xy];
 var js1=[nj,xz,wx];
 var prov1= [sc1,hb1,js1]; 
 var number;
+
 function tranData(){
 	var proObj = document.getElementById("provice");
 	var index = proObj.selectedIndex;
@@ -109,7 +110,9 @@ function panduan(obj){
 	
 	var abc=$(obj);
 	if(boolea){
-		abc.attr("href","https://www.baidu.com");
+		abc.attr("onclick","shoppingAjax()");
+		abc.removeAttr("href"); 
+		
 	}
 	
 }
@@ -135,7 +138,6 @@ function orange(){
 		orange1.html(zong.toFixed(2));
 		
 }
-
 function fapiao(obj){
 	var abc =$(obj);
 	var zhi =abc.next().text();
@@ -148,7 +150,6 @@ function fapiao(obj){
 		orange();
 	}
 }
-
 
 
 

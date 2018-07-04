@@ -9,11 +9,11 @@
   
   <servlet>
   	<servlet-name>shoppingcart</servlet-name>
-  	<servlet-class>com.omatcha.servlet.ShoppingCartServlet</servlet-class>
+  	<servlet-class>com.omatcha.servlet.ShoppingServlet</servlet-class>
   </servlet>
  <servlet-mapping>
 	<servlet-name>shoppingcart</servlet-name> 
-	<url-pattern>/ShoppingCart/ShoppingCart/message.do</url-pattern>
+	<url-pattern>/shoppingAjax</url-pattern>
  </servlet-mapping>
   <!-- product -->
   <servlet>

@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
+﻿<%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
      <%
 	String path = request.getContextPath();
@@ -7,18 +7,18 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+		<script type="text/javascript" src="ShoppingCart/js/jquery-1.7.2.js"></script>
 		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 		<!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
-	  <link rel="stylesheet"  href="bootstrap-3.3.5-dist/css/bootstrap.css"/>
-	   <link rel="stylesheet"  href="css/shopping cartcss.css"/>
-		<script src="bootstrap-3.3.5-dist/js/bootstrap.js"></script>
-		<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
-		<script src="bootstrap-3.3.5-dist/js/bootstrap.js"></script>
-		<script type="text/javascript" src="js/shopping cart.js"></script>
+	  <link rel="stylesheet"  href="ShoppingCart/bootstrap-3.3.5-dist/css/bootstrap.css"/>
+	   <link rel="stylesheet"  href="ShoppingCart/css/shopping cartcss.css"/>
+		<script src="ShoppingCart/bootstrap-3.3.5-dist/js/bootstrap.js"></script>
+		<script type="text/javascript" src="ShoppingCart/js/jquery-1.12.4.min.js"></script>
+		<script src="ShoppingCart/bootstrap-3.3.5-dist/js/bootstrap.js"></script>
+		<script type="text/javascript" src="ShoppingCart/js/shopping cart.js"></script>
 	<title>购物车  新鲜现做 就是O-MATCHA生日蛋糕/下午茶预订首选!</title>
 	</head>
 	
@@ -26,9 +26,6 @@
 	
 	
 	<body onload="Single()">
-	<form action="message.do" method="post">
-	<input type="submit">dfdffd</input>
-	
 		<div class="container">
 	<div class="row clearfix">
 		<div class="col-md-12 column" >
@@ -88,7 +85,7 @@
 						
 						<td >
 							<div style="width:250px;"> 
-								<img  style="width:80px;height:80px; float:left"alt="80x80" src="images/o_1c2g5gj3b1262u4u19rq1hrlrgff.jpg" />
+								<img  style="width:80px;height:80px; float:left"alt="80x80" src="ShoppingCart/images/o_1c2g5gj3b1262u4u19rq1hrlrgff.jpg" />
 								<a class="name" >熊熊乐园（戚风款）</a><br/><br/><span id="jiesao">规格：1磅</span><br/><br/><br/>
 								
 									<div class="btn-group" id="sha">
@@ -134,7 +131,7 @@
 							￥<span>198.50</span>
 						</td>
 						<td  id="tdtow">
-							<a href="#" title="添加到我的幸福收藏夹"><img src="images/1222.bmp" /></a>&nbsp;&nbsp;<a href="#" onclick="shanchu(this)" title="删除此商品"><img src="images/12122.jpg" /></a>
+							<a href="#" title="添加到我的幸福收藏夹"><img src="ShoppingCart/images/1222.bmp" /></a>&nbsp;&nbsp;<a href="#" onclick="shanchu(this)" title="删除此商品"><img src="ShoppingCart/images/12122.jpg" /></a>
 						</td>
 						
 						<td>
@@ -174,8 +171,8 @@
 						
 						<td >
 							<div style="width:250px;"> 
-								<img  style="width:80px;height:80px; float:left"alt="80x80" src="images/o_1c2g5gj3b1262u4u19rq1hrlrgff.jpg" />
-								<a class="name" href="#"> <input type="hidden" name="name" value="熊熊乐园（戚风款）" >熊熊乐园（戚风款）</input></a>
+								<img  style="width:80px;height:80px; float:left"alt="80x80" src="ShoppingCart/images/o_1c2g5gj3b1262u4u19rq1hrlrgff.jpg" />
+								<a class="name" href="#">熊熊乐园（戚风款</a>
 								<br/><br/><span id="jiesao">规格：1磅</span><br/><br/><br/>
 								
 									<div class="btn-group" id="sha">
@@ -221,7 +218,7 @@
 							￥<span >198.50</span>
 						</td>
 						<td  id="tdtow">
-							<a href="#" title="添加到我的幸福收藏夹"><img src="images/1222.bmp" /></a>&nbsp;&nbsp;<a href="#" onclick="shanchu(this)" title="删除此商品"><img src="images/12122.jpg" /></a>
+							<a href="#" title="添加到我的幸福收藏夹"><img src="ShoppingCart/images/1222.bmp" /></a>&nbsp;&nbsp;<a href="#" onclick="shanchu(this)" title="删除此商品"><img src="ShoppingCart/images/12122.jpg" /></a>
 						</td>
 						
 						<td>
@@ -298,28 +295,28 @@
 				<div class="tuijian">
 					<ul>
 						<li><div style="width:197px;height:257px;border:1px solid gray ;">
-								<img  style ="height:195px;width:195px;"src="images/o_1cai7215e1v3017jc7sn1j101ckpe.jpg"/>
+								<img  style ="height:195px;width:195px;"src="ShoppingCart/images/o_1cai7215e1v3017jc7sn1j101ckpe.jpg"/>
 								<a class ="dangao">四重奏蛋糕 </a><br/><br/>
 								<p class="money002">￥49.50</p>
 							</div>
 						<li>
 						<li>
 							<div style="width:197px;height:257px;border:1px solid gray ;">
-								<img  style ="height:195px;width:195px;"src="images/o_1b001ccd62babvb1msg2rs4tg90.jpg"/>
+								<img  style ="height:195px;width:195px;"src="ShoppingCart/images/o_1b001ccd62babvb1msg2rs4tg90.jpg"/>
 								<a class ="dangao">草莓甜心 </a><br/><br/>
 								<p class="money002">￥67.50</p>
 							</div>
 						<li>
 						<li>
 							<div style="width:197px;height:257px;border:1px solid gray ;">
-								<img  style ="height:195px;width:195px;"src="images/o_1c9lneqsniid1grupb317tjbrl18.jpg"/>
+								<img  style ="height:195px;width:195px;"src="ShoppingCart/images/o_1c9lneqsniid1grupb317tjbrl18.jpg"/>
 								<a class ="dangao">蛋糕风云 </a><br/><br/>
 								<p class="money002">￥102.50</p>
 							</div>
 						<li>
 						<li>	
 							<div style="width:197px;height:257px;border:1px solid gray ;">
-								<img  style ="height:195px;width:195px;"src="images/o_1c3us8se7b2jfkk12a6tm08cp13.jpg"/>
+								<img  style ="height:195px;width:195px;"src="ShoppingCart/images/o_1c3us8se7b2jfkk12a6tm08cp13.jpg"/>
 								<a class ="dangao">沙漠风暴 </a><br/><br/>
 								<p class="money002">￥42.00</p>
 							</div>
@@ -336,6 +333,6 @@
 	
 	
 	
-	</form>
+	
 	</body>
 </html>

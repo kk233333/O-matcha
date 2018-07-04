@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 提供操作数据库的增删改方�?
+ * 提供操作数据库的增删改方法
  * @author  qingxiping
  */
 public class DButil {
@@ -53,15 +53,15 @@ public class DButil {
 			while(rs.next()){
 				object = clazz.newInstance();
 				for (int i = 0; i < metaData.getColumnCount(); i++) {
-					//获取字段�?
+					//获取字段�?
 					String fieldname = metaData.getColumnName(i+1);
 					//获取字段
 					Field field = clazz.getDeclaredField(fieldname);
-					//获取字段�?
+					//获取字段�?
 					Object value = rs.getObject(fieldname);
-					//取消访问权限�?��
+					//取消访问权限�?��
 					field.setAccessible(true);
-					//为属性赋�?
+					//为属性赋�?
 					field.set(object,value);
 				}
 				list.add(object);

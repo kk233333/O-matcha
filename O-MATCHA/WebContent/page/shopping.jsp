@@ -1,5 +1,9 @@
-﻿<%@ page language="java" contentType="text/html; charset=utf-8"
+﻿<%@page import="com.omatcha.pojo.Tabeclass"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+ 	 <%@page import="com.omatcha.pojo.Tabeclass"%>
+ 	 <%@page import="java.util.List"%>
+ 	 <%@page import="java.util.ArrayList"%>
     <%
 	String path = request.getContextPath();
 	%>
@@ -47,12 +51,38 @@
 			var time =$("#gezi").val();
 			var beizhu=$("#beizhu").val();
 			var money=$("#money").text();
+			<%List list =new ArrayList();
+			Tabeclass tabe=null;
+			%>
+			var shangping= $("tbody tr");
+			var number=shangping.size();
+			alert(number);
+			for(var i=0;i<number;i++){
+				var bc=$(shangping[i] );
+				var td=bc.children();
+				var abc=$(td[1]).children().children();
+				
+				var onemoney=$(td[4]).text();
+				var spname=$(abc[1]).text();
+				var guige=$(abc[4]).text();
+				var stc =$(abc[0])[0].src;
+				var spnumber =$(td[3]).text();
+				
+				alert(onemoney);
+				
+					<% tabe =new Tabeclass();%>
+			}
+			<%request.getSession().setAttribute("list",list); %>
+			
+			
+			
+			
 			$.ajax({//常用的就是ajax 也可以是get 和 post
 				url:"${pageContext.request.contextPath}/shoppingAjax",
 				type:"post",
 				data:{"shouname":shouhuren,"shounumber":shouhurenshouji,"dizhi":dizhi,
 					"yuyuename":yuyuer,"yuyuenumber":yuyuerenshouji,"time":time,"beizhu":beizhu,
-					"money":money,"fangshi":fangshi,
+					"money":money,"fangshi":fangshi,"onemoney":onemoney,
 						},
 				dataType:"json",
 				success:function(data){
@@ -220,18 +250,8 @@
 										</td>
 						
 										</tr>
-											
-												
-												
-												
-												
-												
-												
-												
-												
-												
-												
 								</tbody>
+								
 							</table>
 										
 						

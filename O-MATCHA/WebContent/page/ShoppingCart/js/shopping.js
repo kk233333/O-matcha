@@ -16,6 +16,7 @@ var hb1=[hg,wh,xy];
 var js1=[nj,xz,wx];
 var prov1= [sc1,hb1,js1]; 
 var number;
+
 function tranData(){
 	var proObj = document.getElementById("provice");
 	var index = proObj.selectedIndex;

@@ -1,6 +1,8 @@
 package com.omatcha.servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -46,9 +48,13 @@ public class ShoppingServlet extends HttpServlet {
 			ObjectMapper om = new ObjectMapper();
 			om.writeValue(resp.getWriter(), abc);
 			
+			
+			List list =new ArrayList();
+			//list=(List)ss.getAttribute("list");
+			
+			System.out.println(req.getParameter("onemoney"));
 			System.out.println(Paymentmethod);
-		
-	
+			
 	}
 
 }

@@ -1,26 +1,29 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
+﻿<%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+     <%
+	String path = request.getContextPath();
+	%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+		<script type="text/javascript" src="ShoppingCart/js/jquery-1.7.2.js"></script>
 		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 		<!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
-	   <link rel="stylesheet"  href="bootstrap-3.3.5-dist/css/bootstrap.css"/>
-		<link rel="stylesheet"  href="css/dianzifapiao.css"/>
+	   <link rel="stylesheet"  href="ShoppingCart/bootstrap-3.3.5-dist/css/bootstrap.css"/>
+		<link rel="stylesheet"  href="ShoppingCart/css/dianzifapiao.css"/>
 	   <script src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
-		<script src="bootstrap-3.3.5-dist/js/bootstrap.js"></script>
-		<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
-		<script src="bootstrap-3.3.5-dist/js/bootstrap.js"></script>
-		<script type="text/javascript" src="js/dainzifapiao.js"></script>
-		<link type="text/css" rel="stylesheet" href="css/mobile_date.css">
-		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
-		<script type="text/javascript" src="js/mobile_date.js"></script>
+		<script src="ShoppingCart/bootstrap-3.3.5-dist/js/bootstrap.js"></script>
+		<script type="text/javascript" src="ShoppingCart/js/jquery-1.12.4.min.js"></script>
+		<script src="ShoppingCart/bootstrap-3.3.5-dist/js/bootstrap.js"></script>
+		<script type="text/javascript" src="ShoppingCart/js/dainzifapiao.js"></script>
+		<link type="text/css" rel="stylesheet" href="ShoppingCart/css/mobile_date.css">
+		<script type="text/javascript" src="ShoppingCart/js/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript" src="ShoppingCart/js/mobile_date.js"></script>
 	   
 	<title>购物车  新鲜现做 就是O-MATCHA生日蛋糕/下午茶预订首选!</title>
 	</head>
@@ -35,15 +38,15 @@
 				<h2>订单信息</h2><hr style="height:0px;border:1px solid gray;"/>
 				<div class="bane">
 				<span>下单时间：</span><span id="time" >2018年7月3日15:30</span><br/><br/>
-				<span>付款金额：</span><span>￥</span>198.50</span></span><br/><br/>
-				<span>收货人：</span><span >你是哪个嘛</span><br/>
+				<span>付款金额：</span><span>￥</span><span>${money}</span><br/><br/>
+				<span>收货人：</span><span >${Consignee}</span><br/>
 				
 				</div>
 				<div class="bane">
 				
 				<span id="biangao">订单编号：</span><span id="bianhao">909096068686668</span><br/><br/>
-				<span id="fangshi">付款方式：</span><span id="zhifufangshi">微信支付</span><br/><br/>
-				<span id="dizi">收货地址：</span><span>宝山区....<span><br/>
+				<span id="fangshi">付款方式：</span><span id="zhifufangshi">${Paymentmethod}</span><br/><br/>
+				<span id="dizi">收货地址：</span><span>${address}</span><br/>
 				</div>
 				
 				
@@ -79,7 +82,7 @@
 										
 										<td >
 											<div style="width:250px;"> 
-												<img  style="width:80px;height:80px; float:left"alt="80x80" src="images/o_1c2g5gj3b1262u4u19rq1hrlrgff.jpg" />
+												<img  style="width:80px;height:80px; float:left"alt="80x80" src="ShoppingCart/images/o_1c2g5gj3b1262u4u19rq1hrlrgff.jpg" />
 												<a class="name" href="#">熊熊乐园（戚风款）</a><br/><br/><span id="jiesao">规格：1磅</span>
 											</div>
 											
@@ -104,7 +107,7 @@
 			
 			<a  onclick="queren(this)" id="modal-422240" href="#modal-container-422240" role="button" class="btn" data-toggle="modal" style="margin-left:400px;">确认订单信息</a>
 		
-				<a class="btn" id="xiugai">返回修改</a>
+				<a class="btn" id="xiugai" href="<%=path%>/page/shopping.jsp">返回修改</a>
 			
 			
 			
@@ -122,7 +125,7 @@
 									</h4>
 								</div>
 								<div class="modal-body">
-									<img style="width:500px;height:450px;margin-left:40px;" src="images/eimazhifuhaibaosheji_7065409.bmp"/>
+									<img style="width:500px;height:450px;margin-left:40px;" src="ShoppingCart/images/eimazhifuhaibaosheji_7065409.bmp"/>
 								</div>
 								<div class="modal-footer">
 									 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button> <a  href="https://www.baidu.com" type="button" class="btn btn-primary">完成</a>

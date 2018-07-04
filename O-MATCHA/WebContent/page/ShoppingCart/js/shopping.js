@@ -109,7 +109,9 @@ function panduan(obj){
 	
 	var abc=$(obj);
 	if(boolea){
-		abc.attr("href","https://www.baidu.com");
+		abc.attr("onclick","shoppingAjax()");
+		abc.removeAttr("href"); 
+		
 	}
 	
 }
@@ -135,7 +137,6 @@ function orange(){
 		orange1.html(zong.toFixed(2));
 		
 }
-
 function fapiao(obj){
 	var abc =$(obj);
 	var zhi =abc.next().text();
@@ -148,7 +149,6 @@ function fapiao(obj){
 		orange();
 	}
 }
-
 
 
 

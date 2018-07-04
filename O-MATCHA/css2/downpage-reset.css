@@ -1,0 +1,18 @@
+#code{
+	width:40%;
+	height:40px;
+	border:1px red solid;
+	float:right;
+	margin-top:-5px;
+}
+#ground{
+	width:350px;
+	
+}
+#sms{
+	width:120px;
+	height:30px;
+	float:right;
+	margin-top:-2px;
+	text-align:center;
+}

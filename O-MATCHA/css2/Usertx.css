@@ -1,0 +1,28 @@
+
+#submit{
+	background-color:#503b2e;
+	color:#fff;
+}
+#tx-moder{
+	width:50%;
+	height:400px;
+	
+}
+#tx-moder1{
+	width:45%;
+	height:150px;
+}
+#tx-moder2{
+	width:30%;
+	height:120px;
+	margin-left:3%;
+}
+#tx-moder3{
+	width:25%;
+	height:100px;
+	margin-left:4%;
+}
+#from{
+	margin-left:40%;
+	margin-top:8%;
+}

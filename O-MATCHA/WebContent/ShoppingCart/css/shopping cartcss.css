@@ -1,0 +1,81 @@
+﻿#jiesuan button{
+	float:right;
+	margin-right:40px;
+	margin-top:-25px;
+}.name:hover{
+	color:blue;
+	text-decoration:none;
+}
+.dangao:hover{
+	color:#FFF3BD;
+}
+.dangao{
+	text-decoration:none;
+	font-weight:bold;
+	color:black;
+	margin-left:50px;
+}
+.money002{
+	font-weight:bold;
+	color:#874E3D;
+	margin-left:50px;
+}
+#shouye{
+	margin-left:700px;
+}
+.name{
+	text-decoration:none;
+	float:left;
+	margin-left:20px;
+	font-weight:bold;
+	}
+#jiesao{
+	color:gray;
+	float:top,left;
+	margin-left:20px;
+	margin-top:50px;
+}
+#ok{
+	float:right;
+	margin-top:-26px;
+}
+#sha{
+	float:top,left;
+}
+#shuliang button{
+	font-weight:bold;
+	height:25px;
+	width:25px;
+	background-color:none;
+	line-height:20px;
+}
+#heji,#jieshaun1,#money{
+	font-weight:bold;
+	color:#874E3D;
+}
+#tdone,#shuliang,#heji,#tdtow{
+	line-height:120px;
+}
+#orange li{
+	list-style:none;
+	float:left;
+	margin-left:20px;
+	
+}
+#orange1 li{
+	list-style:none;
+	float:left;
+	margin-left:20px;
+	line-height:50px;
+	
+}
+#cat{
+	position: absolute;
+	margin-left:-600px;
+	margin-top:105px;
+}
+.tuijian li{
+	list-style:none;
+	float:left;
+	margin-left:40px;
+}

@@ -1,0 +1,130 @@
+#denglu{
+	width:80px;
+	background-color:white;
+	border:1px solid gray;
+	height:25px;
+}
+#denglu:hover{
+		background-color:black;
+		color:white;
+		
+}
+.biaotou input{
+	margin-left:30px;
+}
+.name:hover{
+	color:blue;
+	text-decoration:none;
+}
+.name{
+	text-decoration:none;
+	float:left;
+	margin-left:20px;
+	font-weight:bold;
+	}
+	#tdone,#shuliang,#heji,#tdtow{
+	line-height:80px;
+}
+#jiesao{
+	margin-left:20px;
+}
+.fangda input{
+	width:300px;
+	height:45px; 
+	position:absolute;
+	margin-left:100px;
+	margin-top:-10px;
+}
+.fangda {
+	margin-top:50px;
+}
+
+#provice,#city,#qu{
+	width:300px;
+	height:45px;
+	margin-left:10px;
+}
+.fangda1 input{
+	width:900px;
+	height:45px;
+}
+.box{
+	position:absolute;
+	background-color:white;
+	margin-top:20px;
+	margin-left:120px;
+	display:none;
+}
+.box:hover{
+	display:block;
+}
+#riqi li{
+	cursor:pointer;
+}
+#left1,#left2,#left3{
+	margin-left:50px;
+}
+#zhifu{
+	margin-top:80px;
+}
+#zhifu button{
+	width:130px;
+	height:45px;
+	background-color:white;
+	border:1px solid gray;
+	margin-left:30px;
+}
+#zhifu button:hover{
+	background-color:#3D2D23;
+	color:white;
+	
+}
+#tongji{
+	margin-top:20px;
+	margin-left:20px;
+}
+#tongji li{
+	list-style:none;
+	margin-top:10px;
+}
+#tongji a{
+	float:right;
+	text-decoration:none;
+	cursor:pointer
+	
+}
+#zongji1 {
+	background-color:#CCCCCC;
+	margin-top:40px;
+	height:50px;
+	line-height:50px;
+}
+
+#zongji1 p{
+	
+	margin-left:600px;
+}
+#modal-85897{
+	height:50px;
+	width:250px;
+	margin-top:-50px;
+	font-size:20px;
+	background-color:#503B2E;
+	color:white;
+	float:right;
+}
+#modal-1995{
+	height:50px;
+	width:250px;
+	margin-top:-50px;
+	font-size:20px;
+	background-color:#503B2E;
+	color:white;
+	float:right;
+}
+#dingdanxinxi{
+	font-weight:bold;
+}
+#dingdanbiao{
+	margin-top:40px;
+}

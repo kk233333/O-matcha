@@ -7,6 +7,7 @@
     <%
 	String path = request.getContextPath();
 	%>
+	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
@@ -30,6 +31,10 @@
 		<script type="text/javascript" src="ShoppingCart/js/mobile_date.js"></script>
 		
 		<script >
+			/*<%List list =new ArrayList();Tabeclass tabe=null;%>
+			<%tabe =new Tabeclass();%>
+			<%request.getSession().setAttribute("list",list); %>
+			%>*/
 			
 			var fangshi = "支付宝支付";
 			function zhifufangs(obj){
@@ -51,38 +56,41 @@
 			var time =$("#gezi").val();
 			var beizhu=$("#beizhu").val();
 			var money=$("#money").text();
-			<%List list =new ArrayList();
-			Tabeclass tabe=null;
-			%>
+			
+			var list=[];
 			var shangping= $("tbody tr");
 			var number=shangping.size();
 			alert(number);
+			
 			for(var i=0;i<number;i++){
 				var bc=$(shangping[i] );
 				var td=bc.children();
 				var abc=$(td[1]).children().children();
 				
-				var onemoney=$(td[4]).text();
+				var onemoney=$(td[4]).children().text();
 				var spname=$(abc[1]).text();
 				var guige=$(abc[4]).text();
-				var stc =$(abc[0])[0].src;
-				var spnumber =$(td[3]).text();
+				var src =$(abc[0])[0].src;
+				var spnumber =$(td[3]).children().text();
 				
-				alert(onemoney);
-				
-					<% tabe =new Tabeclass();%>
+				var tableclass=new Object();
+				tableclass.onemoney=onemoney;
+				tableclass.spname=spname;
+				tableclass.guige=guige;
+				tableclass.src=src;
+				tableclass.spnumber=spnumber;
+				list[i]=(tableclass);	
+				alert(onemoney);	
 			}
-			<%request.getSession().setAttribute("list",list); %>
-			
-			
 			
 			
 			$.ajax({//常用的就是ajax 也可以是get 和 post
 				url:"${pageContext.request.contextPath}/shoppingAjax",
 				type:"post",
+				traditional :false, 
 				data:{"shouname":shouhuren,"shounumber":shouhurenshouji,"dizhi":dizhi,
 					"yuyuename":yuyuer,"yuyuenumber":yuyuerenshouji,"time":time,"beizhu":beizhu,
-					"money":money,"fangshi":fangshi,"onemoney":onemoney,
+					"money":money,"fangshi":fangshi,"splist":JSON.stringify(list),
 						},
 				dataType:"json",
 				success:function(data){
@@ -220,7 +228,7 @@
 											
 										</td>
 										<td id ="shuliang">
-											1
+											<span>1</span>
 										</td>
 										<td class ="heji1" id="heji">
 											￥<span >198.50</span>
@@ -243,7 +251,7 @@
 											
 										</td>
 										<td id ="shuliang">
-											1
+											<span>1</span>
 										</td>
 										<td class ="heji1" id="heji">
 											￥<span >180.50</span>
@@ -302,7 +310,7 @@
 					</div>
 				</div>
 					
-					<div class="modal fade" id="modal-container-85897"  role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="margin-top:200px;">
+					<div class="modal fade" id="modal-container-85897"  role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="margin-top:100px;">
 						<div class="modal-dialog">
 							<div class="modal-content">
 								<div class="modal-header">

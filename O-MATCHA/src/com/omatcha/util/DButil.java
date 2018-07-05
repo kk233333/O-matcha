@@ -16,6 +16,50 @@ import java.util.List;
  * @author  qingxiping
  */
 public class DButil {
+	//查询单个对象化数据
+		public static Object selectSingleObject(String sql,Class clazz,Object...objects){
+			Connection c = DBSource.getConnection();
+			Object object = null;
+			PreparedStatement ps = null;
+			ResultSet rs = null;
+			try {
+				ps = c.prepareStatement(sql);
+				if(objects!=null){
+					for (int i = 1; i <= objects.length; i++) {
+						ps.setObject(i, objects[i-1]);
+					}
+				}
+				rs = ps.executeQuery();
+				ResultSetMetaData metaData = rs.getMetaData();
+				if(rs.next()){
+					object = clazz.newInstance();//通过反射方式创建对象
+					for (int i = 0; i < metaData.getColumnCount(); i++) {
+						//获取字段名
+						String cname = metaData.getColumnName(i+1);
+						//获取字段值
+						Object val = rs.getObject(cname);
+						//通过名字获取属性对象
+						Field field = clazz.getDeclaredField(cname);
+						//取消访问权限检查
+						field.setAccessible(true);
+						//为属性赋值
+						field.set(object, val);
+					}
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} catch (InstantiationException e) {
+				e.printStackTrace();
+			} catch (IllegalAccessException e) {
+				e.printStackTrace();
+			} catch (NoSuchFieldException e) {
+				e.printStackTrace();
+			} catch (SecurityException e) {
+				e.printStackTrace();
+			}
+			DBSource.close(c, ps, rs);
+			return object;
+		}
 	//修改
 	public static int update(String sql,Object...objects){
 		Connection c = DBSource.getConnection();
@@ -23,8 +67,14 @@ public class DButil {
 		try {
 			ps = c.prepareStatement(sql);
 			if(objects!=null){
+<<<<<<< HEAD
 			for (int i = 1; i <= objects.length; i++) {
 				ps.setObject(i, objects[i-1]);
+=======
+				for (int i = 1; i <= objects.length; i++) {
+					ps.setObject(i, objects[i-1]);
+				}
+>>>>>>> a4aea06618e7e53f38c7395941f2edc8e53dc295
 			}
 			}
 			int i = ps.executeUpdate();
@@ -48,8 +98,14 @@ public class DButil {
 		try {
 			ps = c.prepareStatement(sql);
 			if(objects!=null){
+<<<<<<< HEAD
 			for (int i = 1; i <= objects.length; i++) {
 				ps.setObject(i, objects[i-1]);
+=======
+				for (int i = 1; i <= objects.length; i++) {
+					ps.setObject(i, objects[i-1]);
+				}
+>>>>>>> a4aea06618e7e53f38c7395941f2edc8e53dc295
 			}
 			}
 			rs = ps.executeQuery();

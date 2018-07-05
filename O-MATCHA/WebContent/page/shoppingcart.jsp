@@ -3,6 +3,7 @@
      <%
 	String path = request.getContextPath();
 	%>
+	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
@@ -19,13 +20,89 @@
 		<script type="text/javascript" src="ShoppingCart/js/jquery-1.12.4.min.js"></script>
 		<script src="ShoppingCart/bootstrap-3.3.5-dist/js/bootstrap.js"></script>
 		<script type="text/javascript" src="ShoppingCart/js/shopping cart.js"></script>
+		
+		
+		<script >
+		
+			function shoppingcartAjax(){
+			
+			var list=[];
+			var shangping= $("tbody tr");
+			var number=shangping.size();
+			alert(number);
+			
+			
+			for(var i=1;i<number;i++){
+				
+				var bc=$(shangping[i]);
+				var td=$((bc.children())[1]);
+				var spname=$($(td.children()).children()[1]).text();
+				var guige=$($(td.children()).children()[4]).text();
+				var onemoney=$($((bc.children())[2]).children()).text();
+				var countmoney=$($((bc.children())[4]).children()).text();
+				var spnumber= $($((bc.children())[3]).children()[1]).text();
+				var type =$($($(td.children()).children()[8]).children()[0]).text();
+				var zhufu =$($($($($((bc.children())[6]).children()).children()).children()[3]).children()).val();
+				var src=$(td.children()).children()[0].src;
+				
+				
+				
+				var tableclass=new Object();
+						
+				tableclass.onemoney=onemoney;
+				tableclass.spname=spname;
+				tableclass.guige=guige;
+				tableclass.src=src;
+				tableclass.spnumber=spnumber;
+				tableclass.countmoney=countmoney;
+				tableclass.type=type;
+				tableclass.zhufu=zhufu;
+				list[i]=(tableclass);	
+			
+				alert(src);
+			
+			}
+			
+			
+			$.ajax({//常用的就是ajax 也可以是get 和 post
+				url:"${pageContext.request.contextPath}/shoppingcartAjax",
+				type:"post",
+				traditional :false, 
+				data:{"splist":JSON.stringify(list),},
+				dataType:"json",
+				success:function(data){
+					if(data!=null){
+						//  window.location.href ='/O-MATCHA/page/invoice.jsp';
+					}
+				}
+			});
+			
+			
+		}
+			
+		
+			
+			
+
+		</script>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	<title>购物车  新鲜现做 就是O-MATCHA生日蛋糕/下午茶预订首选!</title>
 	</head>
 	
 	
 	
 	
-	<body onload="Single()">
+	<body onload="shuanl()">
 		<div class="container">
 	<div class="row clearfix">
 		<div class="col-md-12 column" >
@@ -35,7 +112,7 @@
 		<div class="row clearfix" id="jiesuan">
 			<div class="col-md-12 column">
 			<!--  根据查询情况修改  class名称 -->
-				 <button  name="Single"type="button" class="btn btn-primary disabled btn-default">下单结算</button>
+				 <button  id="xiadanjiesuan1" name="Single"type="button" class="btn btn-primary disabled btn-default">下单结算</button>
 				<!-- <button type="button" class="btn btn-default btn-primary">下单结算</button>  --> 
 			</div>
 		</div>
@@ -69,25 +146,13 @@
 					<br/><br/>
 				</thead>
 				<td><br/><br/></td>
-				<tbody >
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					<tr  style="border:1px solid gray;margin:50px;">
-						
+				<tbody>
+				<tr  style="border:1px solid gray;margin:50px;">
 						<td><input  onclick="xuanzhong(this)" type="checkbox" name="sProblem"></input></td>
-						
 						<td >
 							<div style="width:250px;"> 
 								<img  style="width:80px;height:80px; float:left"alt="80x80" src="ShoppingCart/images/o_1c2g5gj3b1262u4u19rq1hrlrgff.jpg" />
 								<a class="name" >熊熊乐园（戚风款）</a><br/><br/><span id="jiesao">规格：1磅</span><br/><br/><br/>
-								
 									<div class="btn-group" id="sha">
 										 <button class="btn btn-default">请选择你订购蛋糕的生日牌</button> <button style="height:34px;" data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span class="caret"></span></button>
 											<ul class="dropdown-menu">
@@ -116,10 +181,7 @@
 												</li>
 											</ul>
 									</div>
-							
-								
 							</div>
-							
 						</td>
 						<td id="tdone" value="198.50">
 							￥<span>198.50</span>
@@ -133,7 +195,6 @@
 						<td  id="tdtow">
 							<a href="#" title="添加到我的幸福收藏夹"><img src="ShoppingCart/images/1222.bmp" /></a>&nbsp;&nbsp;<a href="#" onclick="shanchu(this)" title="删除此商品"><img src="ShoppingCart/images/12122.jpg" /></a>
 						</td>
-						
 						<td>
 							<div id ="cat">
 								<ul id ="orange">
@@ -150,31 +211,17 @@
 									<li>
 										<input  style="height:30px;width:300px; display:none;" placeholder="限定30字哦！"></input>
 									</li>
-									
 								</ul>
-				
 							</div>
 						</td>
-						
-						
 						</tr>
-						
-						
-						
-						
-						
-						
-						
-							<tr  style="border:1px solid gray;margin:50px;">
-						
+						<tr  style="border:1px solid gray;margin:50px;">
 						<td><input name="sProblem" onclick="xuanzhong(this)" type="checkbox"></input></td>
-						
 						<td >
 							<div style="width:250px;"> 
 								<img  style="width:80px;height:80px; float:left"alt="80x80" src="ShoppingCart/images/o_1c2g5gj3b1262u4u19rq1hrlrgff.jpg" />
-								<a class="name" href="#">熊熊乐园（戚风款</a>
+								<a class="name" href="#">熊熊乐园（戚风款）</a>
 								<br/><br/><span id="jiesao">规格：1磅</span><br/><br/><br/>
-								
 									<div class="btn-group" id="sha">
 										 <button class="btn btn-default">请选择你订购蛋糕的生日牌</button> <button style="height:34px;" data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span class="caret"></span></button>
 											<ul class="dropdown-menu">
@@ -203,10 +250,7 @@
 												</li>
 											</ul>
 									</div>
-							
-								
 							</div>
-							
 						</td>
 						<td id="tdone">
 							￥<span>198.50</span>
@@ -220,7 +264,6 @@
 						<td  id="tdtow">
 							<a href="#" title="添加到我的幸福收藏夹"><img src="ShoppingCart/images/1222.bmp" /></a>&nbsp;&nbsp;<a href="#" onclick="shanchu(this)" title="删除此商品"><img src="ShoppingCart/images/12122.jpg" /></a>
 						</td>
-						
 						<td>
 							<div id ="cat">
 								<ul id ="orange">
@@ -237,34 +280,11 @@
 									<li>
 										<input style="height:30px;width:300px;display:none;" placeholder="限定30字哦！"></input>
 									</li>
-									
 								</ul>
-				
 							</div>
 						</td>
-						
-						
-						</tr>
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						<tr></tr>           
-				</tbody>
+						</tr>     
+						</tbody>
 			</table>
 				<br/>
 				<div style="height:50px;background-color:#EEEEEE;">
@@ -279,7 +299,7 @@
 									<div class="row clearfix" id="">
 										<div class="col-md-12 column">
 										<!--  根据查询情况修改  class名称 -->
-											<button name="Single" type="button" class="btn btn-default btn-primary">下单结算</button>
+											<button id="xiadanjiesuan2" name="Single" type="button" class="btn btn-default btn-primary">下单结算</button>
 											
 											<!-- <button type="button" class="btn btn-primary disabled btn-default">下单结算</button> -->
 										</div>

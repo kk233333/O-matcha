@@ -3,6 +3,7 @@
      <%
 	String path = request.getContextPath();
 	%>
+	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
@@ -76,14 +77,14 @@
 									
 								</thead>
 								<tbody >
-									
+									<c:forEach items="${Orderlist}" var="commodity">
 										<tr  style="border:1px solid gray;margin:50px;">
 										<td id="tdone">礼盒1</td>
 										
 										<td >
 											<div style="width:250px;"> 
-												<img  style="width:80px;height:80px; float:left"alt="80x80" src="ShoppingCart/images/o_1c2g5gj3b1262u4u19rq1hrlrgff.jpg" />
-												<a class="name" href="#">熊熊乐园（戚风款）</a><br/><br/><span id="jiesao">规格：1磅</span>
+												<img  style="width:80px;height:80px; float:left"alt="80x80" src="${commodity.src}" />
+												<a class="name" href="#">${commodity.spname}</a><br/><br/><span id="jiesao">${commodity.guige}</span>
 											</div>
 											
 										</td>
@@ -91,16 +92,16 @@
 											
 										</td>
 										<td id ="shuliang">
-											1
+											${commodity.spnumber}
 										</td>
 										<td class ="heji1" id="heji">
-											￥<span >198.50</span>
+											￥<span >${commodity.onemoney}</span>
 										</td>
 						
 										</tr>
 										
 										<tr></tr>   
-		
+										</c:forEach>
 								</tbody>
 							</table>
 				

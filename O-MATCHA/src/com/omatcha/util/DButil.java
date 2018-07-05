@@ -22,8 +22,10 @@ public class DButil {
 		PreparedStatement ps = null;
 		try {
 			ps = c.prepareStatement(sql);
-			for (int i = 1; i <= objects.length; i++) {
-				ps.setObject(i, objects[i-1]);
+			if(objects!=null){
+				for (int i = 1; i <= objects.length; i++) {
+					ps.setObject(i, objects[i-1]);
+				}
 			}
 			int i = ps.executeUpdate();
 			return i;
@@ -45,8 +47,10 @@ public class DButil {
 		List<Object> list = new ArrayList<Object>();
 		try {
 			ps = c.prepareStatement(sql);
-			for (int i = 1; i <= objects.length; i++) {
-				ps.setObject(i, objects[i-1]);
+			if(objects!=null){
+				for (int i = 1; i <= objects.length; i++) {
+					ps.setObject(i, objects[i-1]);
+				}
 			}
 			rs = ps.executeQuery();
 			ResultSetMetaData metaData = rs.getMetaData();

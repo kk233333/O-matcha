@@ -33,7 +33,7 @@
      	 	<div class="pull-left" >
 	        	<ul class="nav navbar-nav pull-left" style="margin:15px;font-size:16px;font-family:'微软雅黑'">
 	          		<li><a href="#home-section">首页</a></li>
-	          		<li><a href="page/product.jsp" >全部商品</a></li>
+	          		<li><a href="product.do" >全部商品</a></li>
 	          		<li><a href="#services">美食甜点</a></li>		  
 	          		<li><a href="#about">咖啡时光</a></li>
 	          		<li><a href="#portfolio">夏日饮品</a></li>

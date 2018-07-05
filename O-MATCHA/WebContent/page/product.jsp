@@ -33,8 +33,8 @@
 			</div>
      	 	<div class="pull-left" >
 	        	<ul class="nav navbar-nav pull-left" style="margin:15px;font-size:16px;font-family:'微软雅黑'">
-	          		<li><a href="#home-section">首页</a></li>
-	          		<li><a href="#services" >全部商品</a></li>
+	          		<li><a href="page/index.jsp">首页</a></li>
+	          		<li><a href="#" >全部商品</a></li>
 	          		<li><a href="#services">美食甜点</a></li>		  
 	          		<li><a href="#about">咖啡时光</a></li>
 	          		<li><a href="#portfolio">夏日饮品</a></li>
@@ -75,6 +75,7 @@
 	<div class="related-products" style="margin-top:100px">
 		<div class="container">
 			<div class="product-model-sec single-product-grids">
+			
 			<c:forEach items="${goodslist}" var="goods">
 				<div class="product-grid single-product">
 					<a href="single.do?gid=${goods.gid}">

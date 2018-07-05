@@ -122,12 +122,23 @@ function Single(){
 	var money1= parseFloat($("#jieshaun2").text());
 	if(money1<=0){
 		abc.attr("class","btn btn-primary disabled btn-default");
+		// $("#xiadanjiesuan2").unbind();
+		  //$("#xiadanjiesuan1").unbind();
 	}
 	if(money1>0){
 		abc.attr("class","btn btn-default btn-primary");
+		
 	}
 }
-
+function shuanl(){
+	$("#xiadanjiesuan2").on('click', function(){
+	shoppingcartAjax();
+	});
+	$("#xiadanjiesuan1").on('click', function(){
+	shoppingcartAjax();
+	});
+	Single();
+}
 function qiehuan(obj){
 	var abc =$(obj);
 	var zhi =abc.text();

@@ -1,3 +1,46 @@
+<<<<<<< HEAD
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>O-MATCHA</display-name>
+  <welcome-file-list>
+    <welcome-file>page/index.jsp</welcome-file>
+  </welcome-file-list>
+  
+  
+  <!-- shopping -->
+  <servlet>
+  	<servlet-name>shopping</servlet-name>
+  	<servlet-class>com.omatcha.servlet.ShoppingServlet</servlet-class>
+  </servlet>
+ <servlet-mapping>
+	<servlet-name>shopping</servlet-name> 
+	<url-pattern>/shoppingAjax</url-pattern>
+ </servlet-mapping>
+ 
+  <!-- shoppingcart -->
+  <servlet>
+  	<servlet-name>shoppingcart</servlet-name>
+  	<servlet-class>com.omatcha.servlet.ShoppingCartServlet</servlet-class>
+  </servlet>
+ <servlet-mapping>
+	<servlet-name>shoppingcart</servlet-name> 
+	<url-pattern>/shoppingcartAjax</url-pattern>
+ </servlet-mapping>
+ 
+ 
+  <!-- product -->
+  <servlet>
+  	<servlet-name>product</servlet-name>
+  	<servlet-class>com.omatcha.servlet.ProductServlet</servlet-class>
+  </servlet>
+ <servlet-mapping>
+	<servlet-name>product</servlet-name> 
+	<url-pattern>/product.do</url-pattern>
+ </servlet-mapping>
+  
+  
+  
+=======
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
   <display-name>O-MATCHA</display-name>
@@ -24,7 +67,26 @@
 	<servlet-name>product</servlet-name> 
 	<url-pattern>/product.do</url-pattern>
  </servlet-mapping>
-  
-  
-  
+  <!-- 配置过滤器 -->
+	<filter>
+		<filter-name>CharsetFilter</filter-name>
+		<filter-class>com.omatcha.filter.CharsetFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>CharsetFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<!-- single-->
+	<servlet>
+  	<servlet-name>single</servlet-name>
+  	<servlet-class>com.omatcha.servlet.SingleServlet</servlet-class>
+  </servlet>
+ <servlet-mapping>
+	<servlet-name>single</servlet-name> 
+	<url-pattern>/single.do</url-pattern>
+ </servlet-mapping>
+	
+ 
+ 
+>>>>>>> 8180081b83735c2abccb5652d83572434480e0df
 </web-app>

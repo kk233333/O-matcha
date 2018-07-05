@@ -2,7 +2,9 @@ package com.omatcha.servlet;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -10,7 +12,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import net.sf.json.JSONArray;
+import net.sf.json.JSONException;
+import net.sf.json.JSONObject;
+
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.omatcha.pojo.Tabeclass;
+import com.omatcha.test.Yyp;
 
 public class ShoppingServlet extends HttpServlet {
 
@@ -43,17 +52,24 @@ public class ShoppingServlet extends HttpServlet {
 			String Paymentmethod =req.getParameter("fangshi");
 			ss.setAttribute("Paymentmethod", Paymentmethod);
 			String abc ="ok";
-			//req.getRequestDispatcher("page/invoice.jsp").forward(req,resp);
-			//resp.sendRedirect("/O-MATCHA/page/invoice.jsp");
+			
 			ObjectMapper om = new ObjectMapper();
 			om.writeValue(resp.getWriter(), abc);
 			
 			
-			List list =new ArrayList();
-			//list=(List)ss.getAttribute("list");
+			List<List<String>> list = JSONArray.fromObject(req.getParameter("splist"));
+				List<Tabeclass>splist =new ArrayList();
+			for (int i = 0; i < list.size(); i++) {
+				JSONObject jsonobject = JSONObject.fromObject(list.get(i));
+				Tabeclass user= (Tabeclass)JSONObject.toBean(jsonobject,Tabeclass.class);
+				splist.add(user);
+			}
 			
-			System.out.println(req.getParameter("onemoney"));
-			System.out.println(Paymentmethod);
+				ss.setAttribute("Orderlist", splist);
+			System.out.println(splist.size());
+				
+			
+				 
 			
 	}
 

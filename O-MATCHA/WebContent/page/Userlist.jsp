@@ -34,14 +34,14 @@
                     <span class="add-on"><i class="icon-remove"></i></span>
 					<span class="add-on"><i class="icon-th"></i></span>
                 </div>
-				<input type="hidden" id="dtp_input2" value=""><br>
+				<input type="hidden" id="dtp_input2" value="">
 				</div>
 				<div class="form-group">
-					 <label for="Adress">地址</label><input type="text" class="form-control" id="Adress" />
-					 <select class="form-group" id="cmbProvince" name="cmbProvince"></select>  
-					 <select class="form-group" id="cmbCity" name="cmbCity"></select>  
-					 <select class="form-group" id="cmbArea" name="cmbArea"></select>  
-					 <input type="text" value="详细地址" onblur="if(this.value=''){this.value='详细地址'}" onfocus="if(this.value='详细地址'){this.value='';this.style.color='#ff0000'}">
+					 <label for="Adress">地址</label>
+					 <select class="form-control" id="cmbProvince" name="cmbProvince"></select>  
+					 <select class="form-control" id="cmbCity" name="cmbCity"></select>  
+					 <select class="form-control" id="cmbArea" name="cmbArea"></select>  
+					 <input class="form-control" type="text" value="详细地址" onblur="if(this.value=''){this.value='详细地址'}" onfocus="if(this.value='详细地址'){this.value='';this.style.color='#ff0000'}">
 				</div>
 				
 				

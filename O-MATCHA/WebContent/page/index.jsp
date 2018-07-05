@@ -6,11 +6,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>O-MATCHA首页</title>
-<script type="text/javascript" src="../qingxiping/js/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" href="../qingxiping/bootstrap-3.3.5-dist/css/bootstrap.min.css"/>
-<script type="text/javascript" src="../qingxiping/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="../qingxiping/css/index.css"/>
-<script type="text/javascript" src="../qingxiping/js/index.js"></script>
+<script type="text/javascript" src="<%=path%>/qingxiping/js/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="<%=path%>/qingxiping/bootstrap-3.3.5-dist/css/bootstrap.min.css"/>
+<script type="text/javascript" src="<%=path%>/qingxiping/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="<%=path%>/qingxiping/css/index.css"/>
+<script type="text/javascript" src="<%=path%>/qingxiping/js/index.js"></script>
 </head>
 <body>
 <!--导航栏-->
@@ -19,7 +19,7 @@
 			<div class="container">
 			<div class="navbar-header">
 				<div class="pull-left logo">
-					<a class="" href="#index"><img src="../qingxiping/images/index/logo.png" /></a>
+					<a class="" href="#index"><img src="<%=path%>/qingxiping/images/index/logo.png" /></a>
 				</div>
         
 			</div>
@@ -32,7 +32,7 @@
 			</div>
      	 	<div class="pull-left" >
 	        	<ul class="nav navbar-nav pull-left" style="margin:15px;font-size:16px;font-family:'微软雅黑'">
-	          		<li><a href="#home-section">首页</a></li>
+	          		<li><a href="#" class="active">首页</a></li>
 	          		<li><a href="product.do" >全部商品</a></li>
 	          		<li><a href="#services">美食甜点</a></li>		  
 	          		<li><a href="#about">咖啡时光</a></li>
@@ -76,19 +76,19 @@
 		  </ol>
 		  <div class="carousel-inner" role="listbox">
 		    <div class="item active">
-		            <img src="../qingxiping/images/index/coffee1.jpg" >
+		            <img src="<%=path%>/qingxiping/images/index/coffee1.jpg" >
 		    </div>
 		    <div class="item">
-		            <img src="../qingxiping/images/index/coffee2.jpg" >
+		            <img src="<%=path%>/qingxiping/images/index/coffee2.jpg" >
 		    </div>
 		    <div class="item">
-		            <img src="../qingxiping/images/index/exhibition2.jpg" >
+		            <img src="<%=path%>/qingxiping/images/index/exhibition2.jpg" >
 		    </div>	
 		    <div class="item">
-		            <img src="../qingxiping/images/index/exhibition3.jpg" >
+		            <img src="<%=path%>/qingxiping/images/index/exhibition3.jpg" >
 		    </div>	
 		    <div class="item">
-		            <img src="../qingxiping/images/index/exhibition4.jpg" >
+		            <img src="<%=path%>/qingxiping/images/index/exhibition4.jpg" >
 		    </div>		
 		  </div>
 			<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
@@ -102,7 +102,7 @@
 	<div id="todaySpecial">
 		<div class="col-lg-12 callout">
 		<div class="container" style="text-align:center;margin-top:50px;">
-			<img src="../qingxiping/images/index/mainicon.png"/>
+			<img src="<%=path%>/qingxiping/images/index/mainicon.png"/>
 		</div>
 			<h2 class="centered">今日推介</h2>
 			<hr>
@@ -113,7 +113,7 @@
         <!-- PORTFOLIO IMAGE 1 -->
         <div class="col-md-4 ">
           <div class="grid overlay">
-            <figure> <img class="img-responsive" src="../qingxiping/images/index/folio01.jpg" alt="">
+            <figure> <img class="img-responsive" src="<%=path%>/qingxiping/images/index/folio01.jpg" alt="">
               <figcaption>
                 <h5>Coco Cake</h5>
                 <a data-toggle="modal" href="#myModal" class="btn btn-default" style="position:relative;left:236px;top:-78px;">More Details</a> </figcaption>
@@ -132,7 +132,7 @@
                 <h4 class="modal-title">Coco Cake</h4>
               </div>
               <div class="modal-body">
-                <p><img class="img-responsive" src="../qingxiping/images/index/folio01.jpg" alt=""></p>
+                <p><img class="img-responsive" src="<%=path%>/qingxiping/images/index/folio01.jpg" alt=""></p>
                 <p class="large">咖啡色的光感下隐藏着浓浓的可可的味道. </p> 
               </div> 
             </div>
@@ -145,7 +145,7 @@
         <!-- PORTFOLIO IMAGE 2 -->
         <div class="col-md-4">
           <div class="grid overlay">
-            <figure> <img class="img-responsive" src="../qingxiping/images/index/folio02.jpg" alt="">
+            <figure> <img class="img-responsive" src="<%=path%>/qingxiping/images/index/folio02.jpg" alt="">
               <figcaption>
                 <h5>Rose Cake</h5>
                 <a data-toggle="modal" href="#myModa2" class="btn btn-default" style="position:relative;left:236px;top:-78px;">More Details</a> </figcaption>
@@ -163,7 +163,7 @@
                 <h4 class="modal-title">Rose Cake</h4>
               </div>
               <div class="modal-body">
-                <p><img class="img-responsive" src="../qingxiping/images/index/folio02.jpg" alt=""></p>
+                <p><img class="img-responsive" src="<%=path%>/qingxiping/images/index/folio02.jpg" alt=""></p>
                 <p class="large">清甜可口,花香四溢. </p> 
               </div> 
             </div>
@@ -174,7 +174,7 @@
         <!-- PORTFOLIO IMAGE 3 -->
         <div class="col-md-4">
           <div class="grid overlay">
-            <figure> <img class="img-responsive" src="../qingxiping/images/index/folio03.jpg" alt="">
+            <figure> <img class="img-responsive" src="<%=path%>/qingxiping/images/index/folio03.jpg" alt="">
               <figcaption>
                 <h5>Cappuccino</h5>
                 <a data-toggle="modal" href="#myModa3" class="btn btn-default" style="position:relative;left:236px;top:-78px;">More Details</a> </figcaption>
@@ -194,7 +194,7 @@
                 <h4 class="modal-title">Cappuccino</h4>
               </div>
               <div class="modal-body">
-                <p><img class="img-responsive" src="../qingxiping/images/index/folio03.jpg" alt=""></p>
+                <p><img class="img-responsive" src="<%=path%>/qingxiping/images/index/folio03.jpg" alt=""></p>
                 <p class="large">愿在夕阳下,看阳光碎了一地的灿烂,泡一杯卡布奇诺放两块方糖,在咖啡的香气中,思考着生命,听方糖溶化的声音. </p> 
               </div> 
             </div>
@@ -206,7 +206,7 @@
       <div class="row">
         <div class="col-md-4 ">
           <div class="grid overlay">
-            <figure> <img class="img-responsive" src="../qingxiping/images/index/folio04.jpg" alt="">
+            <figure> <img class="img-responsive" src="<%=path%>/qingxiping/images/index/folio04.jpg" alt="">
               <figcaption>
                 <h5>Green Tea</h5>
                 <a data-toggle="modal" href="#myModa4" class="btn btn-default" style="position:relative;left:236px;top:-78px;">More Details</a> </figcaption>
@@ -224,7 +224,7 @@
                 <h4 class="modal-title">Green Tea</h4>
               </div>
               <div class="modal-body">
-                <p><img class="img-responsive" src="../qingxiping/images/index/folio04.jpg" alt=""></p>
+                <p><img class="img-responsive" src="<%=path%>/qingxiping/images/index/folio04.jpg" alt=""></p>
                 <p class="large">纯正绿茶的清香,伴有纯牛奶的鲜滑,交织的口感柔和温润,妙在茶味与奶香融合的恰到好处,吞吐清新,舒心惬意,足以让抹茶控欢喜. </p> 
               </div> 
             </div>
@@ -235,7 +235,7 @@
         <!-- PORTFOLIO IMAGE 5 -->
         <div class="col-md-4">
           <div class="grid overlay">
-            <figure> <img class="img-responsive" src="../qingxiping/images/index/folio05.jpg" alt="">
+            <figure> <img class="img-responsive" src="<%=path%>/qingxiping/images/index/folio05.jpg" alt="">
               <figcaption>
                 <h5>Cookies</h5>
                 <a data-toggle="modal" href="#myModa5" class="btn btn-default" style="position:relative;left:236px;top:-78px;">More Details</a> </figcaption>
@@ -253,7 +253,7 @@
                 <h4 class="modal-title">Cookies</h4>
               </div>
               <div class="modal-body">
-                <p><img class="img-responsive" src="../qingxiping/images/index/folio05.jpg" alt=""></p>
+                <p><img class="img-responsive" src="<%=path%>/qingxiping/images/index/folio05.jpg" alt=""></p>
                 <p class="large">不是所有饼干都叫 Cookie. </p> 
               </div> 
             </div>
@@ -264,7 +264,7 @@
         <!-- PORTFOLIO IMAGE 6 -->
         <div class="col-md-4">
           <div class="grid overlay">
-            <figure> <img class="img-responsive" src="../qingxiping/images/index/folio06.jpg" alt="">
+            <figure> <img class="img-responsive" src="<%=path%>/qingxiping/images/index/folio06.jpg" alt="">
               <figcaption>
                 <h5>Coffee</h5>
                 <a data-toggle="modal" href="#myModa6" class="btn btn-default" style="position:relative;left:236px;top:-78px;">More Details</a> </figcaption>
@@ -283,7 +283,7 @@
                 <h4 class="modal-title">Coffee</h4>
               </div>
               <div class="modal-body">
-                <p><img class="img-responsive" src="../qingxiping/images/index/folio06.jpg" alt=""></p>
+                <p><img class="img-responsive" src="<%=path%>/qingxiping/images/index/folio06.jpg" alt=""></p>
                 <p class="large">独自斜坐在咖啡屋的一角,灯光昏黄发暗,没有咖啡和点心,只有一杯水. </p> 
               </div> 
             </div>
@@ -303,7 +303,7 @@
 	<div id="cake-header">
 		<div class="col-lg-12 callout">
 		<div class="container" style="text-align:center;margin-top:50px;">
-			<img src="../qingxiping/images/index/cakeicon.png"/>
+			<img src="<%=path%>/qingxiping/images/index/cakeicon.png"/>
 		</div>
 			<h2 class="centered">美食甜点</h2>
 			<hr>
@@ -315,25 +315,25 @@
 		 <div class="container">
 			<div class="row clearfix">
 		<div class="col-md-3 column" style="text-align:center">
-			<img alt="140x140" src="../qingxiping/images/index/cakeshow1.jpg" />
+			<img alt="140x140" src="<%=path%>/qingxiping/images/index/cakeshow1.jpg" />
 			<p>
 				 <a class="btn" href="#" style="color:#FF8000">更多详情 »</a>
 			</p>
 		</div>
 		<div class="col-md-3 column" style="text-align:center">
-			<img alt="140x140" src="../qingxiping/images/index/cakeshow2.jpg" />
+			<img alt="140x140" src="<%=path%>/qingxiping/images/index/cakeshow2.jpg" />
 			<p>
 				 <a class="btn" href="#" style="color:#FF8000">更多详情 »</a>
 			</p>
 		</div>
 		<div class="col-md-3 column" style="text-align:center">
-			<img alt="140x140" src="../qingxiping/images/index/cakeshow3.jpg" />
+			<img alt="140x140" src="<%=path%>/qingxiping/images/index/cakeshow3.jpg" />
 			<p>
 				 <a class="btn" href="#" style="color:#FF8000">更多详情 »</a>
 			</p>
 		</div>
 		<div class="col-md-3 column" style="text-align:center">
-			<img alt="140x140" src="../qingxiping/images/index/cakeshow4.jpg" />
+			<img alt="140x140" src="<%=path%>/qingxiping/images/index/cakeshow4.jpg" />
 			<p>
 				 <a class="btn" href="#" style="color:#FF8000">更多详情 »</a>
 			</p>
@@ -345,7 +345,7 @@
 	<div id="coffee-header">
 		<div class="col-lg-12 callout">
 		<div class="container" style="text-align:center;margin-top:50px;">
-			<img src="../qingxiping/images/index/coffeeicon.png"/>
+			<img src="<%=path%>/qingxiping/images/index/coffeeicon.png"/>
 		</div>
 			<h2 class="centered">咖啡时光</h2>
 			<hr>
@@ -357,7 +357,7 @@
 		 <div class="container">
 			<div class="row clearfix">
 		<div class="col-md-3 column" style="text-align:center">
-			<img alt="140x140" src="../qingxiping/images/index/coffeeshow1.png" />
+			<img alt="140x140" src="<%=path%>/qingxiping/images/index/coffeeshow1.png" />
 			<h4>
 				浓缩咖啡
 			</h4>
@@ -366,7 +366,7 @@
 			</p>
 		</div>
 		<div class="col-md-3 column" style="text-align:center">
-			<img alt="140x140" src="../qingxiping/images/index/coffeeshow2.png" />
+			<img alt="140x140" src="<%=path%>/qingxiping/images/index/coffeeshow2.png" />
 			<h4>
 				意式咖啡
 			</h4>
@@ -375,7 +375,7 @@
 			</p>
 		</div>
 		<div class="col-md-3 column" style="text-align:center">
-			<img alt="140x140" src="../qingxiping/images/index/coffeeshow3.png" />
+			<img alt="140x140" src="<%=path%>/qingxiping/images/index/coffeeshow3.png" />
 			<h4>
 				拿铁咖啡
 			</h4>
@@ -384,7 +384,7 @@
 			</p>
 		</div>
 		<div class="col-md-3 column" style="text-align:center">
-			<img alt="140x140" src="../qingxiping/images/index/coffeeshow4.png" />
+			<img alt="140x140" src="<%=path%>/qingxiping/images/index/coffeeshow4.png" />
 			<h4>
 				卡布奇诺
 			</h4>
@@ -399,7 +399,7 @@
 	<div id="tea-header">
 		<div class="col-lg-12 callout">
 		<div class="container" style="text-align:center;margin-top:50px;">
-			<img src="../qingxiping/images/index/teaicon.png"/>
+			<img src="<%=path%>/qingxiping/images/index/teaicon.png"/>
 		</div>
 			<h2 class="centered">夏日饮品</h2>
 			<hr>
@@ -411,7 +411,7 @@
 <div class="container">
 	<div class="row clearfix">
 		<div class="col-md-3 column" style="text-align:center">
-			<img alt="140x140" src="../qingxiping/images/index/teashow1.png" />
+			<img alt="140x140" src="<%=path%>/qingxiping/images/index/teashow1.png" />
 			<h4>
 				鲜榨果汁
 			</h4>
@@ -420,7 +420,7 @@
 			</p>
 		</div>
 		<div class="col-md-3 column" style="text-align:center">
-			<img alt="140x140" src="../qingxiping/images/index/teashow2.png" />
+			<img alt="140x140" src="<%=path%>/qingxiping/images/index/teashow2.png" />
 			<h4>
 				奶盖奶茶
 			</h4>
@@ -429,7 +429,7 @@
 			</p>
 		</div>
 		<div class="col-md-3 column" style="text-align:center">
-			<img alt="140x140" src="../qingxiping/images/index/teashow3.png" />
+			<img alt="140x140" src="<%=path%>/qingxiping/images/index/teashow3.png" />
 			<h4>
 				果肉奶昔
 			</h4>
@@ -438,7 +438,7 @@
 			</p>
 		</div>
 		<div class="col-md-3 column" style="text-align:center">
-			<img alt="140x140" src="../qingxiping/images/index/teashow4.png" />
+			<img alt="140x140" src="<%=path%>/qingxiping/images/index/teashow4.png" />
 			<h4>
 				现调鸡尾酒
 			</h4>
@@ -460,7 +460,7 @@
 		</div>
 	<div class="container">
 		<div class="row white">
-		<div class="col-md-6"> <img class="img-responsive" src="../qingxiping/images/index/aboutusshow.jpg" align=""> </div>
+		<div class="col-md-6"> <img class="img-responsive" src="<%=path%>/qingxiping/images/index/aboutusshow.jpg" align=""> </div>
 		<div class="col-md-6">
         <h3>经营理念</h3>
         <p style="font-family:'微软雅黑'">每一道甜点或每一杯饮品，都是我们对于食材和口味的挑剔，坚持的程度是远远超越您所能想像的。金钱，根本不能用来衡量我们对这点的坚持。为了客户热爱的奶茶及甜点，每天O-MATCHA的中央厨房都得从凌晨开始精心备料及製作甜点。虽然总数多达数十种，但我们总是不厌其烦地逐一检查，鲜度是否合格、每个甜点的样式是否有瑕疵…不符标准的，立刻全部验退！每一道甜点或每一杯饮品，都是我们对于食材和口味的挑剔，坚持的程度是远远超越您所能想像的。金钱，根本不能用来衡量我们对这点的坚持。</p>

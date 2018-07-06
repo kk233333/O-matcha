@@ -31,15 +31,6 @@
 	<servlet-name>product</servlet-name> 
 	<url-pattern>/product.do</url-pattern>
  </servlet-mapping> 
-  <!-- product -->
-  <servlet>
-  	<servlet-name>products</servlet-name>
-  	<servlet-class>com.omatcha.servlet.ProductServlet</servlet-class>
-  </servlet>
- <servlet-mapping>
-	<servlet-name>products</servlet-name> 
-	<url-pattern>/product.do</url-pattern>
- </servlet-mapping>   
 <servlet>
   	<servlet-name>sign-up</servlet-name>
   	<servlet-class>com.omatcha.servlet.signupservlet</servlet-class>
@@ -65,7 +56,6 @@
 		<filter-name>CharsetFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
-<<<<<<< HEAD
 <!-- single-->
 	<servlet>
   	<servlet-name>single</servlet-name>
@@ -75,23 +65,4 @@
 	<servlet-name>single</servlet-name> 
 	<url-pattern>/single.do</url-pattern>
  </servlet-mapping>	
-=======
-  <!-- 加载静态资源 -->
-  	<servlet-mapping>
-  		<servlet-name>defuault</servlet-name>
-  		<url-pattern>*.js</url-pattern>
-  	</servlet-mapping>
-  	<servlet-mapping>
-  		<servlet-name>defuault</servlet-name>
-  		<url-pattern>*.css</url-pattern>
-  	</servlet-mapping>
-  	<servlet-mapping>
-  		<servlet-name>defuault</servlet-name>
-  		<url-pattern>*.jpg</url-pattern>
-  	</servlet-mapping>
-  	<servlet-mapping>
-  		<servlet-name>defuault</servlet-name>
-  		<url-pattern>*.png</url-pattern>
-  	</servlet-mapping>
->>>>>>> parent of 8180081... 7.4afternoon
 </web-app>

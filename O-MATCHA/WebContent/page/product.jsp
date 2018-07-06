@@ -1,73 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%String path=request.getContextPath();%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>全部商品</title>
-<script type="text/javascript" src="../qingxiping/js/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" href="../qingxiping/bootstrap-3.3.5-dist/css/bootstrap.min.css"/>
-<script type="text/javascript" src="../qingxiping/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="../qingxiping/css/index.css"/>
-<script type="text/javascript" src="../qingxiping/js/index.js"></script>
-<link rel="stylesheet" type="text/css" href="../qingxiping/css/single.css"/>
+<script type="text/javascript" src="<%=path%>/qingxiping/js/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="<%=path%>/qingxiping/bootstrap-3.3.5-dist/css/bootstrap.min.css"/>
+<script type="text/javascript" src="<%=path%>/qingxiping/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="<%=path%>/qingxiping/css/index.css"/>
+<script type="text/javascript" src="<%=path%>/qingxiping/js/index.js"></script>
+<link rel="stylesheet" type="text/css" href="<%=path%>/qingxiping/css/single.css"/>
 </head>
 <body>
-<!--导航栏-->
-	<div id="main-header">
-		<div class="navbar navbar-default navbar-fixed-top">
-			<div class="container">
-			<div class="navbar-header">
-				<div class="pull-left logo">
-					<a class="" href="#index"><img src="../qingxiping/images/index/logo.png" /></a>
-				</div>
-        
-			</div>
-			<div class="pull-left" style="margin-left:10px;line-height:80px"> 
-				<span class="glyphicon glyphicon-map-marker"></span>
-				<span id="city">
-					广州市
-				</span>
-				<a id="changecity" href="#modal7" role="button" class="btn" data-toggle="modal">切换城市</a>
-			</div>
-     	 	<div class="pull-left" >
-	        	<ul class="nav navbar-nav pull-left" style="margin:15px;font-size:16px;font-family:'微软雅黑'">
-	          		<li><a href="page/index.jsp">首页</a></li>
-	          		<li><a href="#" >全部商品</a></li>
-	          		<li><a href="#services">美食甜点</a></li>		  
-	          		<li><a href="#about">咖啡时光</a></li>
-	          		<li><a href="#portfolio">夏日饮品</a></li>
-	         		<li><a href="#team">关于我们</a></li>
-	        	</ul>
-     	 	</div>
-     	 	<div class="pull-right" style="line-height:80px;text-align:center;width:200px">
-				<div class="search" style="float:left;line-height:80px;margin-top:28px">
-				<input style="width:100px;height:25px" type="text" class="form-control" placeholder="搜索商品">			
-				</div>
-				<div class="icon" style="float:left"> 
-					<a href="#">
-						<span style="margin-left:10px" class="glyphicon glyphicon-search"></span>
-					</a>
-					<a href="#">
-						<span style="margin-left:10px" class="glyphicon glyphicon-shopping-cart"><span style="position:relative;top:-12px;left:-2px;padding:2px 4px;" class="badge pull-right">0</span></span>
-						
-					</a>
-					<a href="#">
-						<span id="usericon" style="margin-left:5px" class="glyphicon glyphicon-user"></span>
-					</a>
-					<span id="username" style="width:40px;margin-left:5px;display:none">xxx</span>
-				</div>
-     	 		
-     	 	</div>
-			
-    	</div>
-		</div>		 
-	</div>
+	<!-- 导航栏-->
+ 	<jsp:include   page="indexHeader.jsp" flush="true"/>
 	<!--展示图-->
 	<div class="row clearfix" style="margin-top:2px">
 		<div class="col-md-12 column">
-				<img style="width:100%" alt="140x140" src="../qingxiping/images/index/cake1.jpg" />
+				<img style="width:100%" alt="140x140" src="<%=path%>/qingxiping/images/index/cake1.jpg" />
 			</div>
 			
 		</div>
@@ -81,7 +34,7 @@
 					<a href="single.do?gid=${goods.gid}">
 					<div class="more-product"><span> </span></div>						
 					<div class="product-img b-link-stripe b-animate-go  thickbox">
-						<img src="../qingxiping/images/goods/${goods.image1 }" class="img-responsive" alt="">
+						<img src="<%=path%>/qingxiping/images/goods/${goods.image1 }" class="img-responsive" alt="">
 						<div class="b-wrapper">
 						<h4 class="b-animate b-from-left  b-delay03">							
 						<button>查看</button>
@@ -209,29 +162,7 @@
     <li><a href="?start=${pre}">下一页&raquo;</a></li>
 </ul>
 	<!--底部信息栏-->
-	<div id="footer">
-		 <div class="container">
-    <div class="row">
-      <div class="col-md-8" style="margin-top:20px;line-height:24px">
-		<span><a href="#">品牌动态</a></span>
-		<span><a href="#">经营资质</a></span>
-		<span><a href="#">企业合作</a></span>
-		<span><a href="#">发票申请</a></span>
-		<span><a href="#">帮助服务</a></span>
-		<span><a href="#" style="border:none">联系我们</a></span>
-		<p style="display:block;margin-top:40px"> @2015-2018 O-matcha.cn — All Rights Reserved. 蜀ICP备15000533号</p>
-	  </div>
-      <div class="col-md-4">
-        <address>
-		<br/> 795 Folsom Ave, Suite 600
-		<br/> San Francisco, CA 94107<br/> 
-		<abbr title="Phone">P:</abbr>
-		(123)456-7890
-		</address>
-      </div>
-    </div>
-  </div>
-</div>
+	<jsp:include   page="indexFooter.jsp" flush="true"/>
 	<div class="modal fade" id="modal7" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 				<div class="modal-dialog">
 					<div class="modal-content">

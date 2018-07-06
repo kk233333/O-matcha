@@ -151,7 +151,7 @@
 									<option>金牛区</option>
 									<option>郫都区</option>
 								</select>
-								<p><input id="dizhi2" placeholder="请输入详细地址" style="margin-top:15px;width:600px;"></input></p>
+								<p><input id="dizhi2" placeholder="请输入详细地址" style="margin-top:15px;width:600px;"></input> <a id="dizhi3"href="<%=path%>/page/map.html"">查看店面详细地址</a></p>
 					</div>
 					
 					<div class="fangda"style="margin-top:80px;">

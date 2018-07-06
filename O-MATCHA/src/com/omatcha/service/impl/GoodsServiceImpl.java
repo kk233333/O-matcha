@@ -7,7 +7,7 @@ import com.omatcha.dao.impl.GoodsDaoImpl;
 import com.omatcha.pojo.Goods;
 import com.omatcha.service.GoodsService;
 /***
- * goods的service实现类
+ * 
  * @author qingxiping
  *
  */

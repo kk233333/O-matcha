@@ -49,8 +49,9 @@ public class ProductServlet extends HttpServlet{
 		
 		List goodsPagerList = gs.goodsPager(start, count);
 		session.setAttribute("goodslist", goodsPagerList);
+		session.setAttribute("count", count);
 		
-		req.getRequestDispatcher("page/product.jsp").forward(req, resp);;
+		resp.sendRedirect("page/product.jsp");
 		
 	}
 

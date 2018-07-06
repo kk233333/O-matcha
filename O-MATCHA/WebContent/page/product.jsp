@@ -1,18 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%String path=request.getContextPath();%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>全部商品</title>
-<script type="text/javascript" src="<%=path%>/qingxiping/js/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" href="<%=path%>/qingxiping/bootstrap-3.3.5-dist/css/bootstrap.min.css"/>
-<script type="text/javascript" src="<%=path%>/qingxiping/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="<%=path%>/qingxiping/css/index.css"/>
-<script type="text/javascript" src="<%=path%>/qingxiping/js/index.js"></script>
-<link rel="stylesheet" type="text/css" href="<%=path%>/qingxiping/css/single.css"/>
+<script type="text/javascript" src="../qingxiping/js/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../qingxiping/bootstrap-3.3.5-dist/css/bootstrap.min.css"/>
+<script type="text/javascript" src="../qingxiping/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../qingxiping/css/index.css"/>
+<script type="text/javascript" src="../qingxiping/js/index.js"></script>
+<link rel="stylesheet" type="text/css" href="../qingxiping/css/single.css"/>
 </head>
 <body>
 <!--导航栏-->
@@ -21,7 +20,7 @@
 			<div class="container">
 			<div class="navbar-header">
 				<div class="pull-left logo">
-					<a class="" href="#index"><img src="<%=path%>/qingxiping/images/index/logo.png" /></a>
+					<a class="" href="#index"><img src="../qingxiping/images/index/logo.png" /></a>
 				</div>
         
 			</div>
@@ -34,8 +33,8 @@
 			</div>
      	 	<div class="pull-left" >
 	        	<ul class="nav navbar-nav pull-left" style="margin:15px;font-size:16px;font-family:'微软雅黑'">
-	          		<li><a href="<%=path%>/page/index.jsp">首页</a></li>
-	          		<li><a href="#">全部商品</a></li>
+	          		<li><a href="page/index.jsp">首页</a></li>
+	          		<li><a href="#" >全部商品</a></li>
 	          		<li><a href="#services">美食甜点</a></li>		  
 	          		<li><a href="#about">咖啡时光</a></li>
 	          		<li><a href="#portfolio">夏日饮品</a></li>
@@ -68,7 +67,7 @@
 	<!--展示图-->
 	<div class="row clearfix" style="margin-top:2px">
 		<div class="col-md-12 column">
-				<img style="width:100%" alt="140x140" src="<%=path%>/qingxiping/images/index/cake1.jpg" />
+				<img style="width:100%" alt="140x140" src="../qingxiping/images/index/cake1.jpg" />
 			</div>
 			
 		</div>
@@ -82,7 +81,7 @@
 					<a href="single.do?gid=${goods.gid}">
 					<div class="more-product"><span> </span></div>						
 					<div class="product-img b-link-stripe b-animate-go  thickbox">
-						<img src="<%=path%>/qingxiping/images/goods/${goods.image1 }" class="img-responsive" alt="">
+						<img src="../qingxiping/images/goods/${goods.image1 }" class="img-responsive" alt="">
 						<div class="b-wrapper">
 						<h4 class="b-animate b-from-left  b-delay03">							
 						<button>查看</button>
@@ -100,7 +99,6 @@
 				</div>
 			
 			</c:forEach>
-			<!--  
 				<div class="product-grid single-product">
 					<a href="single.html">
 					<div class="more-product"><span> </span></div>						
@@ -205,11 +203,10 @@
 			</div>
 		</div>
 	</div>
-	-->
 <!--分页导航-->
 <ul class="pager">
-    <li><a href="?start=${pre}">&laquo;上一页</a></li>
-    <li><a href="?start=${next}">下一页&raquo;</a></li>
+    <li><a href="?start=${next}">&laquo;上一页</a></li>
+    <li><a href="?start=${pre}">下一页&raquo;</a></li>
 </ul>
 	<!--底部信息栏-->
 	<div id="footer">

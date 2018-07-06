@@ -33,10 +33,10 @@
 	        	<ul id="navbar" class="nav navbar-nav pull-left" style="margin:15px;font-size:16px;font-family:'微软雅黑'">
 	          		<li><a href="<%=path%>/page/index.jsp">首页</a></li>
 	          		<li><a href="product.do" >全部商品</a></li>
-	          		<li><a href="#services">美食甜点</a></li>		  
-	          		<li><a href="#about">咖啡时光</a></li>
-	          		<li><a href="#portfolio">夏日饮品</a></li>
-	         		<li><a href="#team">关于我们</a></li>
+	          		<li><a href="cake.do">美食甜点</a></li>		  
+	          		<li><a href="coffee.do">咖啡时光</a></li>
+	          		<li><a href="drink.do">夏日饮品</a></li>
+	         		<li><a href="<%=path%>/page/aboutus.jsp">关于我们</a></li>
 	        	</ul>
      	 	</div>
      	 	<div class="pull-right" style="line-height:80px;text-align:center;width:200px">
@@ -51,7 +51,7 @@
 						<span style="margin-left:10px" class="glyphicon glyphicon-shopping-cart"><span style="position:relative;top:-12px;left:-2px;padding:2px 4px;" class="badge pull-right">0</span></span>
 						
 					</a>
-					<a href="#">
+					<a href="<%=path%>/page/shoppingcart.jsp">
 						<span id="usericon" style="margin-left:5px" class="glyphicon glyphicon-user"></span>
 					</a>
 					<span id="username" style="width:40px;margin-left:5px;display:none">xxx</span>

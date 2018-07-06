@@ -73,7 +73,7 @@ public class DButil {
 			}
 			int i = ps.executeUpdate();
 			return i;
-		} catch (SQLException e) {
+		} catch(SQLException e) {
 			e.printStackTrace();
 		}finally{
 			DBSource.close(c, ps, null);;

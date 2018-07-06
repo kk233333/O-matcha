@@ -67,19 +67,13 @@ public class DButil {
 		try {
 			ps = c.prepareStatement(sql);
 			if(objects!=null){
-<<<<<<< HEAD
-			for (int i = 1; i <= objects.length; i++) {
-				ps.setObject(i, objects[i-1]);
-=======
 				for (int i = 1; i <= objects.length; i++) {
 					ps.setObject(i, objects[i-1]);
 				}
->>>>>>> a4aea06618e7e53f38c7395941f2edc8e53dc295
-			}
 			}
 			int i = ps.executeUpdate();
 			return i;
-		} catch (SQLException e) {
+		} catch(SQLException e) {
 			e.printStackTrace();
 		}finally{
 			DBSource.close(c, ps, null);;
@@ -98,15 +92,9 @@ public class DButil {
 		try {
 			ps = c.prepareStatement(sql);
 			if(objects!=null){
-<<<<<<< HEAD
-			for (int i = 1; i <= objects.length; i++) {
-				ps.setObject(i, objects[i-1]);
-=======
 				for (int i = 1; i <= objects.length; i++) {
 					ps.setObject(i, objects[i-1]);
 				}
->>>>>>> a4aea06618e7e53f38c7395941f2edc8e53dc295
-			}
 			}
 			rs = ps.executeQuery();
 			ResultSetMetaData metaData = rs.getMetaData();

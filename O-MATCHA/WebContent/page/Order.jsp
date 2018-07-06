@@ -2,10 +2,9 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<% String path = request.getContextPath(); %>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>我的订单</title>
+title>我的订单</title>
 <link href="../wangwei/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <link rel="stylesheet" href="../wangwei/css/Usermessage.css" />
 </head>
@@ -15,10 +14,10 @@
 		<div class="col-md-12 column">
 			<ul class="nav nav-tabs">
 				<li class="active">
-					 <a href="<%=path%>" target="downpage-Order">全部订单</a>
+					 <a href="#">全部订单</a>
 				</li>
 				<li>
-					 <a href="<%=path%>" target="downpage-Order">待付款</a>
+					 <a href="#">待付款</a>
 				</li>
 				<li class="disabled">
 					 <a href="#">待付款</a>
@@ -41,7 +40,6 @@
 			</ul>
 		</div>
 	</div>
-	<iframe src="" width="100%" height="550px" frameborder="0" name="downpage-Order"></iframe>
 </div>
 
 </body>

@@ -14,7 +14,7 @@ public class Goods {
 	private String image1;
 	private String image2;
 	private String image3;
-	private String discount;
+	private double discount;
 	public int getGid() {
 		return gid;
 	}
@@ -69,13 +69,12 @@ public class Goods {
 	public void setImage3(String image3) {
 		this.image3 = image3;
 	}
-	public String getDiscount() {
+	public double getDiscount() {
 		return discount;
 	}
-	public void setDiscount(String discount) {
+	public void setDiscount(double discount) {
 		this.discount = discount;
 	}
-	
 	
 	
 

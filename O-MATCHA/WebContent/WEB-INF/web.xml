@@ -3,9 +3,7 @@
   <display-name>O-MATCHA</display-name>
   <welcome-file-list>
     <welcome-file>page/index.jsp</welcome-file>
-  </welcome-file-list>
-  
-  
+  </welcome-file-list> 
   <!-- shopping -->
   <servlet>
   	<servlet-name>shopping</servlet-name>
@@ -25,8 +23,6 @@
 	<servlet-name>shoppingcart</servlet-name> 
 	<url-pattern>/shoppingcartAjax</url-pattern>
  </servlet-mapping>
- 
- 
   <!-- product -->
   <servlet>
   	<servlet-name>product</servlet-name>
@@ -35,8 +31,6 @@
  <servlet-mapping>
 	<servlet-name>product</servlet-name> 
 	<url-pattern>/product.do</url-pattern>
-<<<<<<< HEAD
-=======
  </servlet-mapping> 
 <servlet>
   	<servlet-name>sign-up</servlet-name>
@@ -53,7 +47,6 @@
  <servlet-mapping>
   	<servlet-name>ajax</servlet-name>
   	<url-pattern>/CheckName</url-pattern>
->>>>>>> master
  </servlet-mapping>
   
   

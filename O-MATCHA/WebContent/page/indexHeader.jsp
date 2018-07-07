@@ -32,10 +32,10 @@
      	 	<div class="pull-left" >
 	        	<ul id="navbar" class="nav navbar-nav pull-left" style="margin:15px;font-size:16px;font-family:'微软雅黑'">
 	          		<li><a href="<%=path%>/page/index.jsp">首页</a></li>
-	          		<li><a href="product.do" >全部商品</a></li>
-	          		<li><a href="cake.do">美食甜点</a></li>		  
-	          		<li><a href="coffee.do">咖啡时光</a></li>
-	          		<li><a href="drink.do">夏日饮品</a></li>
+	          		<li><a href="product.do?type=all" >全部商品</a></li>
+	          		<li><a href="product.do?type=cake">美食甜点</a></li>		  
+	          		<li><a href="product.do?type=coffee">咖啡时光</a></li>
+	          		<li><a href="product.do?type=drink">夏日饮品</a></li>
 	         		<li><a href="<%=path%>/page/aboutus.jsp">关于我们</a></li>
 	        	</ul>
      	 	</div>

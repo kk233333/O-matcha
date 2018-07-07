@@ -35,6 +35,25 @@
  <servlet-mapping>
 	<servlet-name>product</servlet-name> 
 	<url-pattern>/product.do</url-pattern>
+<<<<<<< HEAD
+=======
+ </servlet-mapping> 
+<servlet>
+  	<servlet-name>sign-up</servlet-name>
+  	<servlet-class>com.omatcha.servlet.signupservlet</servlet-class>
+ </servlet>
+ <servlet-mapping>
+  	<servlet-name>sign-up</servlet-name>
+  	<url-pattern>/page/signup.do</url-pattern>
+ </servlet-mapping> 
+ <servlet>
+  	<servlet-name>ajax</servlet-name>
+  	<servlet-class>com.omatcha.servlet.CheckName</servlet-class>
+ </servlet>
+ <servlet-mapping>
+  	<servlet-name>ajax</servlet-name>
+  	<url-pattern>/CheckName</url-pattern>
+>>>>>>> master
  </servlet-mapping>
   
   

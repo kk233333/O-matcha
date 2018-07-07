@@ -1,7 +1,10 @@
 package com.omatcha.servlet;
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -18,7 +21,8 @@ import net.sf.json.JSONObject;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.omatcha.pojo.Tabeclass;
+import com.omatcha.pojo.Shopping;
+import com.omatcha.pojo.ShoppingCart;
 import com.omatcha.test.Yyp;
 
 public class ShoppingServlet extends HttpServlet {
@@ -53,20 +57,28 @@ public class ShoppingServlet extends HttpServlet {
 			ss.setAttribute("Paymentmethod", Paymentmethod);
 			String abc ="ok";
 			
+			long dingdannumber=System.currentTimeMillis();
+			Date date =new Date();	
+			DateFormat  f=new   SimpleDateFormat( "yyyy年MM月dd日     hh:MM ");
+			String xiadantime=f.format(date);
+			ss.setAttribute("dingdannumber", dingdannumber);
+			ss.setAttribute("xiadantime", xiadantime);
 			ObjectMapper om = new ObjectMapper();
 			om.writeValue(resp.getWriter(), abc);
 			
 			
 			List<List<String>> list = JSONArray.fromObject(req.getParameter("splist"));
-				List<Tabeclass>splist =new ArrayList();
+				List<Shopping>splist =new ArrayList();
 			for (int i = 0; i < list.size(); i++) {
 				JSONObject jsonobject = JSONObject.fromObject(list.get(i));
-				Tabeclass user= (Tabeclass)JSONObject.toBean(jsonobject,Tabeclass.class);
+				Shopping user= (Shopping)JSONObject.toBean(jsonobject,Shopping.class);
 				splist.add(user);
 			}
-			
+			for (int i = 0; i < splist.size(); i++) {
+				System.out.println(splist.get(i));
+			}
 				ss.setAttribute("Orderlist", splist);
-			System.out.println(splist.size());
+			
 				
 			
 				 

@@ -38,14 +38,14 @@
 			
 				<h2>订单信息</h2><hr style="height:0px;border:1px solid gray;"/>
 				<div class="bane">
-				<span>下单时间：</span><span id="time" >2018年7月3日15:30</span><br/><br/>
+				<span>下单时间：</span><span id="time" >${xiadantime}</span><br/><br/>
 				<span>付款金额：</span><span>￥</span><span>${money}</span><br/><br/>
 				<span>收货人：</span><span >${Consignee}</span><br/>
 				
 				</div>
 				<div class="bane">
 				
-				<span id="biangao">订单编号：</span><span id="bianhao">909096068686668</span><br/><br/>
+				<span id="biangao">订单编号：</span><span id="bianhao">${dingdannumber}</span><br/><br/>
 				<span id="fangshi">付款方式：</span><span id="zhifufangshi">${Paymentmethod}</span><br/><br/>
 				<span id="dizi">收货地址：</span><span>${address}</span><br/>
 				</div>
@@ -108,7 +108,7 @@
 			
 			<a  onclick="queren(this)" id="modal-422240" href="#modal-container-422240" role="button" class="btn" data-toggle="modal" style="margin-left:400px;">确认订单信息</a>
 		
-				<a class="btn" id="xiugai" href="<%=path%>/page/shopping.jsp">返回修改</a>
+				<!--<a class="btn" id="xiugai" href="<%=path%>/page/shopping.jsp">返回修改</a>-->
 			
 			
 			

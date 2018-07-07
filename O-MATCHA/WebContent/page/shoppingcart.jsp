@@ -7,6 +7,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
+		<META NAME="save" CONTENT="history">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<script type="text/javascript" src="ShoppingCart/js/jquery-1.7.2.js"></script>
 		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -29,12 +30,12 @@
 			var list=[];
 			var shangping= $("tbody tr");
 			var number=shangping.size();
-			alert(number);
-			
-			
+				var count=1;
 			for(var i=1;i<number;i++){
 				
 				var bc=$(shangping[i]);
+				var boolea=$($((bc.children())[0]).children()[0]).is(":checked");  
+				if(boolea){
 				var td=$((bc.children())[1]);
 				var spname=$($(td.children()).children()[1]).text();
 				var guige=$($(td.children()).children()[4]).text();
@@ -44,8 +45,6 @@
 				var type =$($($(td.children()).children()[8]).children()[0]).text();
 				var zhufu =$($($($($((bc.children())[6]).children()).children()).children()[3]).children()).val();
 				var src=$(td.children()).children()[0].src;
-				
-				
 				
 				var tableclass=new Object();
 						
@@ -57,10 +56,9 @@
 				tableclass.countmoney=countmoney;
 				tableclass.type=type;
 				tableclass.zhufu=zhufu;
-				list[i]=(tableclass);	
-			
-				alert(src);
-			
+				list[count]=(tableclass);	
+				count++;
+				}
 			}
 			
 			
@@ -72,7 +70,7 @@
 				dataType:"json",
 				success:function(data){
 					if(data!=null){
-						//  window.location.href ='/O-MATCHA/page/invoice.jsp';
+						 window.location.href ='/O-MATCHA/page/shopping.jsp';
 					}
 				}
 			});
@@ -100,7 +98,7 @@
 	</head>
 	
 	
-	
+	<!--shuanl()-->
 	
 	<body onload="shuanl()">
 		<div class="container">
@@ -186,7 +184,7 @@
 						<td id="tdone" value="198.50">
 							￥<span>198.50</span>
 						</td>
-						<td id ="shuliang">
+						<td id ="shuliang" class="sl">
 							<button  onclick="addshuliang(this)">+</button> &nbsp;<span>1</span>&nbsp;&nbsp;<button onclick="jianshuliang(this)">-</button>
 						</td>
 						<td id ="heji" >
@@ -253,13 +251,13 @@
 							</div>
 						</td>
 						<td id="tdone">
-							￥<span>198.50</span>
+							￥<span>150.50</span>
 						</td>
-						<td id ="shuliang">
+						<td id ="shuliang" class="sl">
 							<button onclick="addshuliang(this)">+</button>&nbsp;<span>1</span>&nbsp;&nbsp;<button onclick="jianshuliang(this)">-</button>
 						</td>
 						<td id ="heji">
-							￥<span >198.50</span>
+							￥<span >150.50</span>
 						</td>
 						<td  id="tdtow">
 							<a href="#" title="添加到我的幸福收藏夹"><img src="ShoppingCart/images/1222.bmp" /></a>&nbsp;&nbsp;<a href="#" onclick="shanchu(this)" title="删除此商品"><img src="ShoppingCart/images/12122.jpg" /></a>

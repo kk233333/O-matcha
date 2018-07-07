@@ -17,16 +17,26 @@ import java.util.List;
  * @author qingxiping
  */
 public class DButil {
+<<<<<<< HEAD
+	//修改
+	public static int update(String sql,Object...objects){
+=======
 	// 修改
 	public static int update(String sql, Object... objects) {
+>>>>>>> master
 		Connection c = DBSource.getConnection();
 		PreparedStatement ps = null;
 		try {
 			ps = c.prepareStatement(sql);
+<<<<<<< HEAD
+			for (int i = 1; i <= objects.length; i++) {
+				ps.setObject(i, objects[i-1]);
+=======
 			if (objects != null) {
 				for (int i = 1; i <= objects.length; i++) {
 					ps.setObject(i, objects[i - 1]);
 				}
+>>>>>>> master
 			}
 			int i = ps.executeUpdate();
 			return i;
@@ -50,10 +60,15 @@ public class DButil {
 		List<Object> list = new ArrayList<Object>();
 		try {
 			ps = c.prepareStatement(sql);
+<<<<<<< HEAD
+			for (int i = 1; i <= objects.length; i++) {
+				ps.setObject(i, objects[i-1]);
+=======
 			if (objects != null) {
 				for (int i = 1; i <= objects.length; i++) {
 					ps.setObject(i, objects[i - 1]);
 				}
+>>>>>>> master
 			}
 			rs = ps.executeQuery();
 			ResultSetMetaData metaData = rs.getMetaData();

@@ -1,24 +1,26 @@
 package com.omatcha.test;
 
-import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
-import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.omatcha.pojo.Shopping;
 
 public class Yyp {
-	public static <T> T jsonToObject(String jsonString, Class<T> pojoCalss) {  
-		try{  
-		    Object pojo;  
-		    net.sf.json.JSONObject jsonObject = net.sf.json.JSONObject.fromObject(jsonString);  
-		    pojo = net.sf.json.JSONObject.toBean(jsonObject, pojoCalss);  
-		    return (T)pojo;  
-		}catch(Exception ex){  
-		    ex.printStackTrace();  
-		      
-		    return null;  
-		}  
+	public static void main(String[] args) {
+		Date date =new Date();	
+		DateFormat  f=new   SimpleDateFormat( "yyyy年MM月dd日     hh:MM ");
+		String t=f.format(date);
+		System.out.println(t);
+		
+		List list =new ArrayList();
+		list.add(new Shopping());
+		list.add(new Shopping());
+		System.out.println(list .toString());
+		
 	}
-	
+		
 
 }

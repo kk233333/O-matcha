@@ -67,8 +67,17 @@ function quanxuan(obj){
 	var cat1 = $("input:checkbox[name='sProblem']").not("input:checked");
 	 if(isChecked){
 		cat1.prop('checked',true); 
+		var a=0;
+		for(var i=0;i<$(".sl").size();i++){
+			a+=parseFloat($($(".sl")[i]).next().children().text());
+		}
+		
+		  $("#money01").html((a).toFixed(2) );
+		 $("#jieshaun2").html((a).toFixed(2));
 	  }else{
 		cat.prop('checked',false); 
+		  $("#money01").html((0).toFixed(2) );
+		 $("#jieshaun2").html((0).toFixed(2));
 	  }
 	var test = $("input[name='sProblem']:checked");
 	 var orange=test.parent().next().next().next().next().next().children().text();
@@ -76,7 +85,7 @@ function quanxuan(obj){
 	  var dog1 = $("tbody input:checkbox[name='sProblem']").not("input:checked");
 	 for(var i=0;i<dog.length;i++){
 		//	if((dog.is(":checked"))){
-				xuanzhong(dog[i]);		
+					
 		//	}
 	 }
 		
@@ -122,8 +131,7 @@ function Single(){
 	var money1= parseFloat($("#jieshaun2").text());
 	if(money1<=0){
 		abc.attr("class","btn btn-primary disabled btn-default");
-		// $("#xiadanjiesuan2").unbind();
-		  //$("#xiadanjiesuan1").unbind();
+		
 	}
 	if(money1>0){
 		abc.attr("class","btn btn-default btn-primary");
@@ -137,7 +145,25 @@ function shuanl(){
 	$("#xiadanjiesuan1").on('click', function(){
 	shoppingcartAjax();
 	});
+	
+	
+	var test = $("tbody input[name='sProblem']:checked");
+	for(var i=0;i<test.size();i++){
+	 var orange=parseFloat($(test[i]).parent().next().next().next().next().children().text());
+	 var xiadan= $("#money01")
+	 var money= parseFloat($("#money01").text());
+	 var xiadan1= $("#jieshaun2")
+	 var money1= parseFloat($("#jieshaun2").text());
+	 if(test.is(":checked")){
+		 xiadan.html((money+orange).toFixed(2) );
+		 xiadan1.html((money1+orange).toFixed(2));
+	 }else{
+		  xiadan.html((money-orange).toFixed(2));
+		  xiadan1.html((money1-orange).toFixed(2));
+	 } 
+	}
 	Single();
+	
 }
 function qiehuan(obj){
 	var abc =$(obj);

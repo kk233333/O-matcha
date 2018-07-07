@@ -1,7 +1,7 @@
-﻿<%@page import="com.omatcha.pojo.Tabeclass"%>
+﻿
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
- 	 <%@page import="com.omatcha.pojo.Tabeclass"%>
+ 	 
  	 <%@page import="java.util.List"%>
  	 <%@page import="java.util.ArrayList"%>
     <%
@@ -31,10 +31,7 @@
 		<script type="text/javascript" src="ShoppingCart/js/mobile_date.js"></script>
 		
 		<script >
-			/*<%List list =new ArrayList();Tabeclass tabe=null;%>
-			<%tabe =new Tabeclass();%>
-			<%request.getSession().setAttribute("list",list); %>
-			%>*/
+			
 			
 			var fangshi = "支付宝支付";
 			function zhifufangs(obj){
@@ -60,7 +57,7 @@
 			var list=[];
 			var shangping= $("tbody tr");
 			var number=shangping.size();
-			alert(number);
+			
 			
 			for(var i=0;i<number;i++){
 				var bc=$(shangping[i] );
@@ -79,8 +76,7 @@
 				tableclass.guige=guige;
 				tableclass.src=src;
 				tableclass.spnumber=spnumber;
-				list[i]=(tableclass);	
-				alert(onemoney);	
+				list[i]=(tableclass);		
 			}
 			
 			
@@ -155,7 +151,7 @@
 									<option>金牛区</option>
 									<option>郫都区</option>
 								</select>
-								<p><input id="dizhi2" placeholder="请输入详细地址" style="margin-top:15px;width:600px;"></input></p>
+								<p><input id="dizhi2" placeholder="请输入详细地址" style="margin-top:15px;width:600px;"></input> <a id="dizhi3"href="<%=path%>/page/map.html"">查看店面详细地址</a></p>
 					</div>
 					
 					<div class="fangda"style="margin-top:80px;">
@@ -213,14 +209,14 @@
 									
 								</thead>
 								<tbody >
-									
+									<c:forEach items="${confirmlist}" var="confirm">
 										<tr  style="border:1px solid gray;margin:50px;">
 										<td id="tdone">礼盒1</td>
 										
 										<td >
 											<div style="width:250px;"> 
-												<img  style="width:80px;height:80px; float:left"alt="80x80" src="ShoppingCart/images/o_1c2g5gj3b1262u4u19rq1hrlrgff.jpg" />
-												<a class="name" href="#">熊熊乐园（戚风款）</a><br/><br/><span id="jiesao">规格：1磅</span>
+												<img  style="width:80px;height:80px; float:left"alt="80x80" src="${confirm.src}" />
+												<a class="name" href="#">${confirm.spname}</a><br/><br/><span id="jiesao">${confirm.guige}</span>
 											</div>
 											
 										</td>
@@ -228,36 +224,14 @@
 											
 										</td>
 										<td id ="shuliang">
-											<span>1</span>
+											<span>${confirm.spnumber}</span>
 										</td>
 										<td class ="heji1" id="heji">
-											￥<span >198.50</span>
+											￥<span >${confirm.countmoney}</span>
 										</td>
 						
 										</tr>
-											
-												
-										<tr  style="border:1px solid gray;margin:50px;">
-										<td id="tdone">礼盒1</td>
-										
-										<td >
-											<div style="width:250px;"> 
-												<img  style="width:80px;height:80px; float:left"alt="80x80" src="ShoppingCart/images/o_1c2g5gj3b1262u4u19rq1hrlrgff.jpg" />
-												<a class="name" href="#">熊熊乐园（戚风款）</a><br/><br/><span id="jiesao">规格：1磅</span>
-											</div>
-											
-										</td>
-										<td >
-											
-										</td>
-										<td id ="shuliang">
-											<span>1</span>
-										</td>
-										<td class ="heji1" id="heji">
-											￥<span >180.50</span>
-										</td>
-						
-										</tr>
+										</c:forEach>
 								</tbody>
 								
 							</table>

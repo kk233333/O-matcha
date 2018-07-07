@@ -9,7 +9,7 @@ import net.sf.json.JSONArray;
 import net.sf.json.JSONException;
 import net.sf.json.JSONObject;
 
-import com.omatcha.pojo.Tabeclass;
+import com.omatcha.pojo.ShoppingCart;
 /***
  * omatcha测试类
  * @author Administrator

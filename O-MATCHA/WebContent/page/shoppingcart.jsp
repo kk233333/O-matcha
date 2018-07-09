@@ -101,6 +101,7 @@
 	<!--shuanl()-->
 	
 	<body onload="shuanl()">
+	 <jsp:include   page="indexHeader.jsp" flush="true"/>
 		<div class="container">
 	<div class="row clearfix">
 		<div class="col-md-12 column" >
@@ -145,7 +146,9 @@
 				</thead>
 				<td><br/><br/></td>
 				<tbody>
-				<tr  style="border:1px solid gray;margin:50px;">
+				<!-- <c:forEach items="${}" var="information"> -->
+				<!-- </c:forEach> -->
+					<tr  style="border:1px solid gray;margin:50px;">
 						<td><input  onclick="xuanzhong(this)" type="checkbox" name="sProblem"></input></td>
 						<td >
 							<div style="width:250px;"> 
@@ -155,19 +158,19 @@
 										 <button class="btn btn-default">请选择你订购蛋糕的生日牌</button> <button style="height:34px;" data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span class="caret"></span></button>
 											<ul class="dropdown-menu">
 												<li>
-													<a onclick="qiehuan(this)" href="#">无</a>
+													<a onclick="qiehuan(this)" style="cursor:pointer">无</a>
 												</li>
 												<li>
-													<a onclick="qiehuan(this)" href="#">生日快乐</a>
+													<a onclick="qiehuan(this)" style="cursor:pointer">生日快乐</a>
 												</li>
 												<li>
-													<a onclick="qiehuan(this)" href="#">节日快乐</a>
+													<a onclick="qiehuan(this)" style="cursor:pointer">节日快乐</a>
 												</li>
 												<li>
-													<a onclick="qiehuan(this)" href="#">新年快乐</a>
+													<a onclick="qiehuan(this)" style="cursor:pointer">新年快乐</a>
 												</li>
 												<li>
-													<a onclick="qiehuan(this)" href="#">Happy Birthday</a>
+													<a onclick="qiehuan(this)" style="cursor:pointer">Happy Birthday</a>
 												</li>
 												<li class="disabled">
 													<a href="#">另一操作</a>
@@ -191,7 +194,7 @@
 							￥<span>198.50</span>
 						</td>
 						<td  id="tdtow">
-							<a href="#" title="添加到我的幸福收藏夹"><img src="ShoppingCart/images/1222.bmp" /></a>&nbsp;&nbsp;<a href="#" onclick="shanchu(this)" title="删除此商品"><img src="ShoppingCart/images/12122.jpg" /></a>
+							<a style="cursor:pointer" title="添加到我的幸福收藏夹"><img src="ShoppingCart/images/1222.bmp" /></a>&nbsp;&nbsp;<a style="cursor:pointer" onclick="shanchu(this)" title="删除此商品"><img src="ShoppingCart/images/12122.jpg" /></a>
 						</td>
 						<td>
 							<div id ="cat">
@@ -213,6 +216,7 @@
 							</div>
 						</td>
 						</tr>
+						
 						<tr  style="border:1px solid gray;margin:50px;">
 						<td><input name="sProblem" onclick="xuanzhong(this)" type="checkbox"></input></td>
 						<td >
@@ -308,7 +312,7 @@
 				</div>
 				<br/><br/><br/><br/><br/><br/>
 				<h4>推荐选择</h4>
-				<hr style="border:0.5px solid gray;"/>
+				<hr style="width:1000px;margin-left:-250px;height:1px;"/>
 				<br/><br/>
 				<div class="tuijian">
 					<ul>
@@ -351,6 +355,6 @@
 	
 	
 	
-	
+	 <jsp:include   page="indexFooter.jsp" flush="true"/>
 	</body>
 </html>

@@ -86,7 +86,6 @@
   	<servlet-name>ajax</servlet-name>
   	<url-pattern>/CheckName</url-pattern>
  </servlet-mapping>
-<<<<<<< HEAD
   <!-- single -->
   <servlet>
   	<servlet-name>single</servlet-name>
@@ -96,7 +95,6 @@
 	<servlet-name>single</servlet-name> 
 	<url-pattern>/single.do</url-pattern>
  </servlet-mapping>  
-=======
  
 
 
@@ -139,6 +137,5 @@
 		<servlet-name>express</servlet-name>
 		<url-pattern>/page/express</url-pattern>
 </servlet-mapping>
->>>>>>> d714808c108721a1a4be8f6d322077276ab5bb55
   
 </web-app>

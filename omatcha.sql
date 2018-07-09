@@ -1,19 +1,75 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : local
-Source Server Version : 50515
+Source Server         : lochost
+Source Server Version : 50553
 Source Host           : localhost:3306
 Source Database       : omatcha
 
 Target Server Type    : MYSQL
-Target Server Version : 50515
+Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-07-04 17:32:08
+Date: 2018-07-09 17:28:20
 */
 
 SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for `cart`
+-- ----------------------------
+DROP TABLE IF EXISTS `cart`;
+CREATE TABLE `cart` (
+  `cid` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` int(11) DEFAULT NULL,
+  PRIMARY KEY (`cid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of cart
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `cartgoods`
+-- ----------------------------
+DROP TABLE IF EXISTS `cartgoods`;
+CREATE TABLE `cartgoods` (
+  `cgid` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `quantity` int(11) DEFAULT NULL,
+  `weight` int(11) DEFAULT NULL,
+  `price` double DEFAULT NULL,
+  `cid` int(11) DEFAULT NULL,
+  PRIMARY KEY (`cgid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of cartgoods
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `expressadress`
+-- ----------------------------
+DROP TABLE IF EXISTS `expressadress`;
+CREATE TABLE `expressadress` (
+  `eid` tinyint(4) NOT NULL AUTO_INCREMENT,
+  `Consignee` varchar(255) DEFAULT NULL,
+  `ephone` varchar(255) DEFAULT NULL,
+  `eprovince` varchar(255) DEFAULT NULL,
+  `ecity` varchar(255) DEFAULT NULL,
+  `ecountry` varchar(255) DEFAULT NULL,
+  `eadress` varchar(255) DEFAULT NULL,
+  `uid` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`eid`),
+  KEY `uid` (`uid`),
+  CONSTRAINT `expressadress_ibfk_1` FOREIGN KEY (`uid`) REFERENCES `user` (`uid`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of expressadress
+-- ----------------------------
+INSERT INTO `expressadress` VALUES ('1', '阿萨德撒大所', '121321231321', '北京', '县', '密云', '4560.', '1');
+INSERT INTO `expressadress` VALUES ('2', '轻息屏', '123456', '北京', '县', '延庆县', '5456465465', '1');
 
 -- ----------------------------
 -- Table structure for `goods`
@@ -29,7 +85,7 @@ CREATE TABLE `goods` (
   `image1` varchar(255) DEFAULT NULL,
   `image2` varchar(255) DEFAULT NULL,
   `image3` varchar(255) DEFAULT NULL,
-  `discount` double DEFAULT NULL,
+  `discount` varchar(0) DEFAULT NULL,
   PRIMARY KEY (`gid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
 
@@ -79,3 +135,30 @@ CREATE TABLE `review` (
 -- ----------------------------
 -- Records of review
 -- ----------------------------
+
+-- ----------------------------
+-- Table structure for `user`
+-- ----------------------------
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user` (
+  `uid` tinyint(4) NOT NULL AUTO_INCREMENT,
+  `uname` varchar(255) DEFAULT NULL,
+  `uphone` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `passwords` varchar(255) DEFAULT NULL,
+  `usex` varchar(255) DEFAULT NULL,
+  `birthday` varchar(255) DEFAULT NULL,
+  `uprovince` varchar(255) DEFAULT NULL,
+  `ucity` varchar(255) DEFAULT NULL,
+  `ucountry` varchar(255) DEFAULT NULL,
+  `uadress` varchar(255) DEFAULT NULL,
+  `portrait` varchar(255) DEFAULT NULL,
+  `Nickname` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`uid`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of user
+-- ----------------------------
+INSERT INTO `user` VALUES ('1', 'wangwei', '18180540222', '676124144@qq.com', 'wa19940910', null, null, null, null, null, null, null, null);
+INSERT INTO `user` VALUES ('2', 'wangwei', '14788888888', '123@qq', '123456789', null, null, null, null, null, null, null, null);

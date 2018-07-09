@@ -8,15 +8,23 @@
 <link href="../wangwei/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <link href="../wangwei/css/downpage-reset.css" rel="stylesheet" type="text/css" media="all" />
 <script src="../wangwei/js/downpage-reset.js"></script>
+<script type="text/javascript">
+	function loadImg(){
+		document.getElementById("valiImg").src='${pageContext.request.contextPath}/vali.img?time='+
+				new Date().getTime();
+	}
+</script>
 </head>
-<body>
+<body onload="loadImg()">
 <div class="container">
 	<div class="row clearfix" id="ground">
 		<div class="col-md-12 column">
 			<input type="text" placeholder="请输入您的手机号" size="40" id="tel" onblur="checktel()" onfocus="blurnum()"></input><br/><br/>
 			<p class="text-warning" hidden="hidden" id="checknum">号码格式不正确</p>
 			<input type="text" placeholder="请输入验证码" id="code1" onblur="checkcodes()" onfocus="blurcode()"></input> 
-			<div id="code"></div>
+			<div id="code"><img src="" id="valiImg"
+						style="width:128px;height:40px;cursor: pointer;"
+						title="看不清？点击换一张" onclick="loadImg()"/></div>
 			<p class="text-warning" hidden="hidden" id="checkcode">验证码不能为空</p>
 			<br/><br/>
 			<input type="text" placeholder="请输入短信验证码"></input> 

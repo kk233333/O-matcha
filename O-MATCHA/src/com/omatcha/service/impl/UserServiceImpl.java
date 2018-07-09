@@ -23,8 +23,16 @@ public class UserServiceImpl implements UserService{
 	public List<Object> selectUserName() {
 		return userDao.selectUserName();
 	}
-	public List<Object> userLoginService(String username, String password) {
+	public Object userLoginService(String username, String password) {
 		return userDao.loginDao(username, password);
+	}
+	@Override
+	public boolean Userslist(Users user) {
+		int i=userDao.InsertUserList(user);
+		if (i>0) {
+			return true;
+		}
+		return false;
 	}
 
 }

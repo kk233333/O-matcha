@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
-<% String path = request.getContextPath(); %>>
+<% String path = request.getContextPath(); %>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>setpassword</title>
@@ -10,6 +11,7 @@
 <link href="../wangwei/css/Usermessage.css" rel="stylesheet" type="text/css" media="all" />
 </head>
 <body>
+<jsp:include   page="/page/indexHeader.jsp" flush="true"/>
 <div class="container">
 	<div class="row clearfix">
 		<div class="col-md-12 column">
@@ -20,7 +22,14 @@
 		<div class="col-md-3 column" id="menu">
 			<div class="row clearfix">
 				<div class="col-md-12 column">
-					<a href="<%=path%>/page/Usertx.jsp" target="rightpage"><img src="../wangwei/images/tx-logo.png" class="img-circle"></a>
+					<a href="<%=path%>/page/Usertx.jsp" target="rightpage">
+					<c:if test="${Portrait!=null}">
+					<img src="../wangwei/images/${Portrait}.png" class="img-circle">
+					</c:if>
+					<c:if test="${Portrait==null}">
+					<img src="../wangwei/images/tx-logo.png" class="img-circle">
+					</c:if>
+					</a>
 				</div>
 			</div>
 			<ul>
@@ -28,7 +37,7 @@
 					<a href="<%=path%>/page/Userlist.jsp" target="rightpage">个人信息</a>
 				</li>
 				<li>
-					<a href="<%=path%>/page/Connection.jsp" target="rightpage">收藏夹</a>
+					<a href="<%=path%>/page/Collection.jsp" target="rightpage">收藏夹</a>
 				</li>
 				<li>
 					<a href="<%=path%>/page/Order.jsp" target="rightpage">我的订单</a>
@@ -50,7 +59,7 @@
 		</div>
 	</div>
 </div>
-
+<jsp:include   page="/page/indexFooter.jsp" flush="true"/>
 
 </body>
 </html>

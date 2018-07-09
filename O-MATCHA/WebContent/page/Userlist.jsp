@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Set-UserMessage</title>
+<title>用户信息</title>
 <script type="text/javascript" src="../wangwei/js/ssxld.js" charset="UTF-8"></script>
 <link rel="stylesheet" href="../wangwei/css/bootstrap.css" type="text/css" media="all">
 <link rel="stylesheet" href="../wangwei/css/Userlist.css" type="text/css">
@@ -16,12 +16,12 @@
 <div class="container" id="ground">
 	<div class="row clearfix">
 		<div class="col-md-12 column">
-			<form role="form">
+			<form role="form" id="form" action="userlist" method="post" >
 				<div class="form-group">
-					 <label for="name">昵称</label><input type="text" class="form-control" id="name" />
+					 <label for="name">昵称</label><input type="text" class="form-control" id="name" name="Nickname"/>
 				</div>
 				<div class="form-group">
-					 <label for="sex">性别</label><select class="form-control" id="sex">
+					 <label for="sex">性别</label><select class="form-control" id="sex" name="usex">
 					 <option>保密</option>
 					 <option>男</option>
 					 <option>女</option>
@@ -30,23 +30,20 @@
 				<div class="form-group">
                 <label class="control-label">生日</label>
                 <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-                    <input class="form-control" type="text" value="" readonly="">
+                    <input class="form-control" type="text" value="" readonly="" name="birthday">
                     <span class="add-on"><i class="icon-remove"></i></span>
 					<span class="add-on"><i class="icon-th"></i></span>
                 </div>
-				<input type="hidden" id="dtp_input2" value=""><br>
 				</div>
 				<div class="form-group">
-					 <label for="Adress">地址</label><input type="text" class="form-control" id="Adress" />
-					 <select class="form-group" id="cmbProvince" name="cmbProvince"></select>  
-					 <select class="form-group" id="cmbCity" name="cmbCity"></select>  
-					 <select class="form-group" id="cmbArea" name="cmbArea"></select>  
-					 <input type="text" value="详细地址" onblur="if(this.value=''){this.value='详细地址'}" onfocus="if(this.value='详细地址'){this.value='';this.style.color='#ff0000'}">
+					 <label for="Adress">地址</label>
+					 <select class="form-control" id="cmbProvince" name="cmbProvince"></select><br/> 
+					 <select class="form-control" id="cmbCity" name="cmbCity" ></select>  <br/>
+					 <select class="form-control" id="cmbArea" name="cmbArea" ></select>  <br/>
+					 <input class="form-control" type="text" value="详细地址" onblur="if(this.value=''){this.value='详细地址'}" onfocus="if(this.value='详细地址'){this.value='';this.style.color='#ff0000'}" name="uadress"/>
 				</div>
 				
-				
-				
-				 <button type="submit" class="btn btn-default">Submit</button>
+				 <input type="submit" class="btn btn-default" value="提交信息"/>
 			</form>
 		</div>
 	</div>

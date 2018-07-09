@@ -11,5 +11,6 @@ import com.omatcha.pojo.Users;
 public interface UserService {
 	public boolean signUpService(Users user);
 	public List<Object> selectUserName();
-	public List<Object> userLoginService(String username, String password);
+	public Object userLoginService(String username, String password);
+	public boolean Userslist(Users user);
 }

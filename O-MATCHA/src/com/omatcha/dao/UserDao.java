@@ -10,5 +10,7 @@ public interface UserDao {
 	//查询所偶user对象的姓名
 	public List<Object> selectUserName();
 	//登录的Dao
-	public List<Object> loginDao(String username, String password);	
+	public Object loginDao(String username, String password);
+	//用户信息的Dao
+	public int InsertUserList(Users user);
 }

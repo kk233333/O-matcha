@@ -6,13 +6,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>index-header</title>
-<script type="text/javascript" src="<%=path%>/qingxiping/js/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" href="<%=path%>/qingxiping/bootstrap-3.3.5-dist/css/bootstrap.min.css"/>
-<script type="text/javascript" src="<%=path%>/qingxiping/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="<%=path%>/qingxiping/css/index.css"/>
 <script type="text/javascript" src="<%=path%>/qingxiping/js/index.js"></script>
+
 </head>
 <body>
+
 <!--导航栏-->
 	<div id="main-header">
 		<div class="navbar navbar-default navbar-fixed-top">
@@ -29,14 +28,14 @@
 				</span>
 				<a id="changecity" href="#modal7" role="button" class="btn" data-toggle="modal">切换城市</a>
 			</div>
-     	 	<div class="pull-left" >
+     	 	<div class="pull-left">
 	        	<ul id="navbar" class="nav navbar-nav pull-left" style="margin:15px;font-size:16px;font-family:'微软雅黑'">
-	          		<li><a href="<%=path%>/page/index.jsp">首页</a></li>
-	          		<li><a href="product.do?type=all" >全部商品</a></li>
-	          		<li><a href="product.do?type=cake">美食甜点</a></li>		  
-	          		<li><a href="product.do?type=coffee">咖啡时光</a></li>
-	          		<li><a href="product.do?type=drink">夏日饮品</a></li>
-	         		<li><a href="<%=path%>/page/aboutus.jsp">关于我们</a></li>
+	          		<li><a href="<%=path %>/page/index.jsp">首页</a></li>
+	          		<li><a href="<%=path %>/product.do">全部商品</a></li>
+	          		<li><a href="<%=path %>/cake.do">美食甜点</a></li>		  
+	          		<li><a href="<%=path %>/coffee.do">咖啡时光</a></li>
+	          		<li><a href="<%=path %>/drink.do">夏日饮品</a></li>
+	         		<li><a href="<%=path %>/page/aboutUs.jsp">关于我们</a></li>
 	        	</ul>
      	 	</div>
      	 	<div class="pull-right" style="line-height:80px;text-align:center;width:200px">
@@ -47,11 +46,11 @@
 					<a href="#">
 						<span style="margin-left:10px" class="glyphicon glyphicon-search"></span>
 					</a>
-					<a href="#">
+					<a href="<%=path%>/page/shoppingcart.jsp">
 						<span style="margin-left:10px" class="glyphicon glyphicon-shopping-cart"><span style="position:relative;top:-12px;left:-2px;padding:2px 4px;" class="badge pull-right">0</span></span>
 						
 					</a>
-					<a href="<%=path%>/page/shoppingcart.jsp">
+					<a href="<%=path%>/page/login.jsp">
 						<span id="usericon" style="margin-left:5px" class="glyphicon glyphicon-user"></span>
 					</a>
 					<span id="username" style="width:40px;margin-left:5px;display:none">xxx</span>

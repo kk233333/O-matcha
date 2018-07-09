@@ -9,15 +9,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.omatcha.service.GoodsService;
 import com.omatcha.service.impl.GoodsServiceImpl;
 /***
- * 实现商品分页展示
+ * 美食甜点的servlet类
  * @author qingxiping
  *
  */
-public class ProductServlet extends HttpServlet{
+public class CakeServlet extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -32,31 +31,28 @@ public class ProductServlet extends HttpServlet{
 		GoodsService gs = new GoodsServiceImpl();
 		HttpSession session = req.getSession();
 		String type = (String) req.getParameter("type");
-		String sql = "select * from goods";
-		List goodsList = gs.queryGoods(sql,null);
+			String sql = "select * from goods where type=?";
+			String t = "蛋糕";
+			List goodsList = gs.queryGoods(sql,"蛋糕");
 			int total = goodsList.size();
 			int start = 0;
 			int count = 8;
 			try{
-				start = Integer.parseInt(req.getParameter("start"));
+				start = Integer.parseInt(req.getParameter("cstart"));
 			}catch(Exception e){
 				
 			}
 			
 			int next = start+count>total?start:start+count;
-			session.setAttribute("next",next);
+			session.setAttribute("cnext",next);
 			
 			int pre = start-count>0?start-count:0;
-			session.setAttribute("pre", pre);
+			session.setAttribute("cpre", pre);
 			
-			List goodsPagerList = gs.goodsPager(start, count);
-			session.setAttribute("goodslist", goodsPagerList);		
+			List goodsPagerList = gs.goodsTypePager(start, count,"蛋糕");
+			session.setAttribute("cakelist", goodsPagerList);		
 			
-			req.getRequestDispatcher("page/product.jsp").forward(req, resp);
+			req.getRequestDispatcher("page/cake.jsp").forward(req, resp);
 		}
-		
-	
 	}
-
-	
 

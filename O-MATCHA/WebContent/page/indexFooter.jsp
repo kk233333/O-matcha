@@ -6,9 +6,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>indexFooter</title>
-<script type="text/javascript" src="<%=path%>/qingxiping/js/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" href="<%=path%>/qingxiping/bootstrap-3.3.5-dist/css/bootstrap.min.css"/>
-<script type="text/javascript" src="<%=path%>/qingxiping/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="<%=path%>/qingxiping/css/index.css"/>
 <script type="text/javascript" src="<%=path%>/qingxiping/js/index.js"></script>
 </head>
@@ -37,6 +34,33 @@
     </div>
   </div>
 </div>
-
+<div class="modal fade" id="modal7" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+							<h5>选择区域:</h5>
+						</div>
+						<div class="modal-body">
+							<div class="provinceSel">
+							<select class="btn btn-default" id="selProvince" onchange="provinceChange();"></select> 
+							
+						</div>
+						 <div class="citySel">
+                <select class="btn btn-default" id="selCity";"></select>
+          
+            </div>
+			<div class="tips">
+					温馨提示：若购买中更换收货城市，可能导致购物车内容均被清空！
+				</div>
+						</div>
+						<div class="modal-footer">
+							 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button> <button type="button" id="savecity" class="btn btn-primary">确认</button>
+						</div>
+					</div>
+					
+				</div>
+				
+			</div>
 </body>
 </html>

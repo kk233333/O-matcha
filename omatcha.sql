@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : local
+Source Server         : orange
 Source Server Version : 50515
 Source Host           : localhost:3306
 Source Database       : omatcha
@@ -10,10 +10,42 @@ Target Server Type    : MYSQL
 Target Server Version : 50515
 File Encoding         : 65001
 
-Date: 2018-07-04 17:32:08
+Date: 2018-07-09 17:17:40
 */
 
 SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for `cart`
+-- ----------------------------
+DROP TABLE IF EXISTS `cart`;
+CREATE TABLE `cart` (
+  `cid` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` int(11) DEFAULT NULL,
+  PRIMARY KEY (`cid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of cart
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `cartgoods`
+-- ----------------------------
+DROP TABLE IF EXISTS `cartgoods`;
+CREATE TABLE `cartgoods` (
+  `cgid` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `quantity` int(11) DEFAULT NULL,
+  `weight` int(11) DEFAULT NULL,
+  `price` double DEFAULT NULL,
+  `cid` int(11) DEFAULT NULL,
+  PRIMARY KEY (`cgid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of cartgoods
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for `goods`
@@ -29,7 +61,7 @@ CREATE TABLE `goods` (
   `image1` varchar(255) DEFAULT NULL,
   `image2` varchar(255) DEFAULT NULL,
   `image3` varchar(255) DEFAULT NULL,
-  `discount` double DEFAULT NULL,
+  `discount` varchar(0) DEFAULT NULL,
   PRIMARY KEY (`gid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
 
@@ -60,6 +92,28 @@ INSERT INTO `goods` VALUES ('21', '布丁', '18', '饮料', '奶昔', null, 'dri
 INSERT INTO `goods` VALUES ('22', '抹茶', '24', '饮料', '奶昔', null, 'drink1.png', 'drink4.png', 'drink3.png', null);
 INSERT INTO `goods` VALUES ('23', '巴黎之花', '23', '饮料', '鸡尾酒', null, 'drink4.png', 'drink2.png', 'drink1.png', null);
 INSERT INTO `goods` VALUES ('24', '爱尔兰甜酒', '26', '饮料', '鸡尾酒', null, 'drink2.png', 'drink4.png', 'drink1.png', null);
+
+-- ----------------------------
+-- Table structure for `myorder`
+-- ----------------------------
+DROP TABLE IF EXISTS `myorder`;
+CREATE TABLE `myorder` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` int(11) DEFAULT NULL,
+  `xiadantime` varchar(255) DEFAULT NULL,
+  `dingdannumber` varchar(255) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `money` varchar(255) DEFAULT NULL,
+  `Paymentmethod` varchar(255) DEFAULT NULL,
+  `Consignee` varchar(255) DEFAULT NULL,
+  `Commodityinformation` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `uid` (`uid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of myorder
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for `review`

@@ -30,13 +30,13 @@
 	</head>
 	
 		<body onload="bianhao()">
+		<jsp:include   page="indexHeader.jsp" flush="true"/>
 			<div class="container" style="margin-top:100px;">
 	<div class="row clearfix">
 	<div class="col-md-2 column"></div>
 		<div class="col-md-8 column">
 			
-			
-				<h2>订单信息</h2><hr style="height:0px;border:1px solid gray;"/>
+				<h2>订单信息</h2><hr style="height:0px;border:1px solid gray;width:700px;margin-left:-180px;"/>
 				<div class="bane">
 				<span>下单时间：</span><span id="time" >${xiadantime}</span><br/><br/>
 				<span>付款金额：</span><span>￥</span><span>${money}</span><br/><br/>
@@ -146,6 +146,6 @@
 	</div>
 </div>
 	
-			
+	<jsp:include   page="indexFooter.jsp" flush="true"/>	
 	</body>
 </html>

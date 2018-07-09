@@ -18,11 +18,11 @@ var prov1= [sc1,hb1,js1];
 var number;
 
 function tranData(){
-	var proObj = document.getElementById("provice");
+	var proObj = document.getElementById("shengfen");
 	var index = proObj.selectedIndex;
 		number=index;
 	var data = prov[index];
-	var cityObj = document.getElementById("city");
+	var cityObj = document.getElementById("chengshi");
 	while(cityObj.childNodes.length>0){
 		cityObj.removeChild(cityObj.firstChild);
 	}
@@ -35,7 +35,7 @@ function tranData(){
 	orange();
 }
 function tranData1(){
-	var proObj = document.getElementById("city");
+	var proObj = document.getElementById("chengshi");
 	var index = proObj.selectedIndex;
 	var data = prov1[number][index];
 	var cityObj = document.getElementById("qu");

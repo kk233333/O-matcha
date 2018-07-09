@@ -12,7 +12,7 @@
 <div class="container" id="from">
 	<div class="row clearfix">
 		<div class="col-md-12 column">
-			<form role="form">
+			<form role="form" action="uploadtx" method="post" enctype="multipart/form-data">
 				<div class="form-group">
 					 <input type="file" id="exampleInputFile" value="上传"/>
 					 </div>
@@ -22,7 +22,7 @@
 					<div id="tx-moder2"><img alt="100x100" src="../wangwei/images/tx-moder2.png">100*100px</div>
 					<div id="tx-moder3"><img alt="80x80" src="../wangwei/images/tx-moder1.png">80*80px</div>
 					</div>
-				 <button type="submit" class="btn btn-default" id="submit">保存头像</button>
+				 <input type="submit" class="btn btn-default" id="submit" value="保存头像"/>
 			</form>
 		</div>
 	</div>

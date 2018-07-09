@@ -17,6 +17,7 @@ import com.omatcha.service.impl.UserServiceImpl;
 
 public class LoginServlet extends HttpServlet{
 	UserService us = new UserServiceImpl();
+	Users user;
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		doPost(req, resp);
@@ -34,12 +35,12 @@ public class LoginServlet extends HttpServlet{
 	 String remember = req.getParameter("passcookies");
 	 
 	 
-	 List<Object> list = us.userLoginService(username, password);
+	  user =(Users)us.userLoginService(username, password);
 	 //登录方法
-	 if (us.userLoginService(username, password).size()>0) {
+	 if (us.userLoginService(username, password)!=null) {
 		 session.setAttribute("wusername", username);
 		 session.setAttribute("wpassword", password);
-		 session.setAttribute("id", list.get(0));
+		 session.setAttribute("uid", user.getUid());
 		
 		//将密码记住在cookie
 			if (remember != null) {
@@ -49,14 +50,8 @@ public class LoginServlet extends HttpServlet{
 				c2.setMaxAge(1000);//这里设置保存这条Cookie的时间
 				resp.addCookie(c1);//添加Cookie
 				resp.addCookie(c2);
-				PrintWriter writer = resp.getWriter();
-				writer.write("<script>alert('已成功记住账号密码');</script>");
-				writer.flush();
-				
 			} else {
-				PrintWriter writer = resp.getWriter();
-				writer.write("<script>alert('未选择记住账号密码');</script>");
-				writer.flush();
+				
 				}
 			 req.getRequestDispatcher("/page/index.jsp").forward(req, resp);
 	}

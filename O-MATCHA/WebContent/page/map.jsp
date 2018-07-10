@@ -11,7 +11,10 @@
         body{height:100%;margin:0px;padding:0px}
         #container{height:100%}
     </style>
-    <script src="http://api.map.baidu.com/api?v=1.4" type="text/javascript"></script>
+	<script type="text/javascript" src="ShoppingCart/js/jquery-1.7.2.js"></script>
+	<script src="ShoppingCart/bootstrap-3.3.5-dist/js/bootstrap.js"></script>
+	<link rel="stylesheet"  href="ShoppingCart/bootstrap-3.3.5-dist/css/bootstrap.css"/>
+	<script src="http://api.map.baidu.com/api?v=1.4" type="text/javascript"></script>
 </head>
 <body>
 <jsp:include   page="indexHeader.jsp" flush="true"/>

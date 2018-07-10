@@ -78,22 +78,37 @@
 			
 		}
 			
-		
-			
-			
-
+			function shanchu(obj){
+				var abc =$(obj);
+				var id=	$(abc.parent().next().children().children().children()[1]).children().val();
+				var orange =abc.parent().parent();
+				orange.remove();
+				var cat=abc.parent().prev().prev().prev().prev().prev().children();
+				 var xiadan= $("#money01")
+				 var money= parseFloat($("#money01").text());
+				 var xiadan1= $("#jieshaun2")
+				 var money1= parseFloat($("#jieshaun2").text());
+				 var dog =abc.parent().prev().children().text();
+				if(cat.is(":checked")){
+					 xiadan.html((money-parseFloat(dog)).toFixed(2));
+					 xiadan1.html((money1-parseFloat(dog)).toFixed(2));
+				}
+				
+				$.ajax({//常用的就是ajax 也可以是get 和 post
+					url:"${pageContext.request.contextPath}/delectcommodity?cgid="+id,
+					type:"post",
+					traditional :true, 
+					data:{},
+					dataType:"json",
+					success:function(data){
+						
+					}
+					
+				});	
+				
+				
+			}
 		</script>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 	<title>购物车  新鲜现做 就是O-MATCHA生日蛋糕/下午茶预订首选!</title>
 	</head>
 	
@@ -146,14 +161,14 @@
 				</thead>
 				<td><br/><br/></td>
 				<tbody>
-				<!-- <c:forEach items="${}" var="information"> -->
-				<!-- </c:forEach> -->
+				<c:forEach items="${cartgoodslist}" var="information">
+				 
 					<tr  style="border:1px solid gray;margin:50px;">
 						<td><input  onclick="xuanzhong(this)" type="checkbox" name="sProblem"></input></td>
 						<td >
 							<div style="width:250px;"> 
-								<img  style="width:80px;height:80px; float:left"alt="80x80" src="ShoppingCart/images/o_1c2g5gj3b1262u4u19rq1hrlrgff.jpg" />
-								<a class="name" >熊熊乐园（戚风款）</a><br/><br/><span id="jiesao">规格：1磅</span><br/><br/><br/>
+								<img  style="width:80px;height:80px; float:left"alt="80x80" src="../qingxiping/images/goods/${information.image}" />
+								<a class="name" >${information.name}</a><br/><br/><span id="jiesao">${information.weight}</span><br/><br/><br/>
 									<div class="btn-group" id="sha">
 										 <button class="btn btn-default">请选择你订购蛋糕的生日牌</button> <button style="height:34px;" data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span class="caret"></span></button>
 											<ul class="dropdown-menu">
@@ -185,16 +200,16 @@
 							</div>
 						</td>
 						<td id="tdone" value="198.50">
-							￥<span>198.50</span>
+							￥<span>${information.price}</span>
 						</td>
 						<td id ="shuliang" class="sl">
-							<button  onclick="addshuliang(this)">+</button> &nbsp;<span>1</span>&nbsp;&nbsp;<button onclick="jianshuliang(this)">-</button>
+							<button  onclick="addshuliang(this)">+</button> &nbsp;<span>${information.quantity}</span>&nbsp;&nbsp;<button onclick="jianshuliang(this)">-</button>
 						</td>
 						<td id ="heji" >
-							￥<span>198.50</span>
+							￥<span>${information.price}</span>
 						</td>
 						<td  id="tdtow">
-							<a style="cursor:pointer" title="添加到我的幸福收藏夹"><img src="ShoppingCart/images/1222.bmp" /></a>&nbsp;&nbsp;<a style="cursor:pointer" onclick="shanchu(this)" title="删除此商品"><img src="ShoppingCart/images/12122.jpg" /></a>
+							<a style="cursor:pointer"  title="添加到我的幸福收藏夹"><img src="ShoppingCart/images/1222.bmp" /></a>&nbsp;&nbsp;<a style="cursor:pointer" onclick="shanchu(this)" title="删除此商品"><img src="ShoppingCart/images/12122.jpg" /></a>
 						</td>
 						<td>
 							<div id ="cat">
@@ -203,11 +218,11 @@
 										祝福贺卡
 									</li>
 									<li>
-										<input type="radio" value="0" name="gender" onclick="xuyao(this)">需要</input>
+										<input type="radio" value="${information.cgid}" name="${information.cgid}" onclick="xuyao(this)">需要</input>
 
 									</li>
 									<li>
-										<input type="radio" value="1" name="gender" checked  onclick="buxuyao(this)">不需要</input>
+										<input type="radio" value="1" name="${information.cgid}" checked  onclick="buxuyao(this)">不需要</input>
 									</li>
 									<li>
 										<input  style="height:30px;width:300px; display:none;" placeholder="限定30字哦！"></input>
@@ -216,6 +231,11 @@
 							</div>
 						</td>
 						</tr>
+						</c:forEach>
+						
+						
+						
+						
 						
 						<tr  style="border:1px solid gray;margin:50px;">
 						<td><input name="sProblem" onclick="xuanzhong(this)" type="checkbox"></input></td>
@@ -264,7 +284,7 @@
 							￥<span >150.50</span>
 						</td>
 						<td  id="tdtow">
-							<a href="#" title="添加到我的幸福收藏夹"><img src="ShoppingCart/images/1222.bmp" /></a>&nbsp;&nbsp;<a href="#" onclick="shanchu(this)" title="删除此商品"><img src="ShoppingCart/images/12122.jpg" /></a>
+							<a href="#" title="添加到我的幸福收藏夹"><img src="ShoppingCart/images/1222.bmp" /></a>&nbsp;&nbsp;<a href="#" onclick="shanchu(this)" title="删除此商品"  ><img src="ShoppingCart/images/12122.jpg" /></a>
 						</td>
 						<td>
 							<div id ="cat">
@@ -273,7 +293,7 @@
 										祝福贺卡
 									</li>
 									<li>
-										<input type="radio" value="0" name="gender1" onclick="xuyao(this)">需要</input>
+										<input type="radio" value="20" name="gender1" onclick="xuyao(this)">需要</input>
 
 									</li>
 									<li>

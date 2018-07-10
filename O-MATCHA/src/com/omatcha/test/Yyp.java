@@ -6,21 +6,14 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import com.omatcha.dao.impl.AddOrderimpl;
 import com.omatcha.pojo.Shopping;
 
 public class Yyp {
 	public static void main(String[] args) {
-		Date date =new Date();	
-		DateFormat  f=new   SimpleDateFormat( "yyyy年MM月dd日     hh:MM ");
-		String t=f.format(date);
-		System.out.println(t);
-		
-		List list =new ArrayList();
-		list.add(new Shopping());
-		list.add(new Shopping());
-		System.out.println(list .toString());
+		AddOrderimpl add =new AddOrderimpl();
+		int a =add.AddOrder(1, "fgdfg", "gfdgdf", "gfdgdf", "gfdgdf", "gfdgdf", "gfdgdf", new ArrayList().toString());
+			System.out.println(a);
 		
 	}
-		
-
 }

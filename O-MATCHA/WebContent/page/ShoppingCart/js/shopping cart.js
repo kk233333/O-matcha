@@ -111,21 +111,16 @@ function xuanzhong(obj){
 	 Single();
 	  
 }
-function shanchu(obj){
-	var abc =$(obj);
-	var orange =abc.parent().parent();
-	orange.remove();
-	var cat=abc.parent().prev().prev().prev().prev().prev().children();
-	 var xiadan= $("#money01")
-	 var money= parseFloat($("#money01").text());
-	 var xiadan1= $("#jieshaun2")
-	 var money1= parseFloat($("#jieshaun2").text());
-	 var dog =abc.parent().prev().children().text();
-	if(cat.is(":checked")){
-		 xiadan.html((money-parseFloat(dog)).toFixed(2));
-		 xiadan1.html((money1-parseFloat(dog)).toFixed(2));
-	}
-}
+
+
+
+
+
+
+
+
+
+
 
 
 function Single(){

@@ -111,7 +111,8 @@ function panduan(obj){
 	var abc=$(obj);
 	if(boolea){
 		abc.attr("onclick","shoppingAjax()");
-		abc.removeAttr("href"); 
+		shoppingAjax();
+		//abc.removeAttr("href"); 
 		
 	}
 	

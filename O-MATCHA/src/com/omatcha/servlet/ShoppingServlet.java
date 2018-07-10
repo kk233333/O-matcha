@@ -21,6 +21,7 @@ import net.sf.json.JSONObject;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.omatcha.dao.impl.AddOrderimpl;
 import com.omatcha.pojo.Shopping;
 import com.omatcha.pojo.ShoppingCart;
 import com.omatcha.test.Yyp;
@@ -55,16 +56,25 @@ public class ShoppingServlet extends HttpServlet {
 			ss.setAttribute("money", money);
 			String Paymentmethod =req.getParameter("fangshi");
 			ss.setAttribute("Paymentmethod", Paymentmethod);
-			String abc ="ok";
+			String abc ="5";
+					//(String) ss.getAttribute("uid");
 			
 			long dingdannumber=System.currentTimeMillis();
+			
 			Date date =new Date();	
 			DateFormat  f=new   SimpleDateFormat( "yyyy年MM月dd日     hh:MM ");
 			String xiadantime=f.format(date);
-			ss.setAttribute("dingdannumber", dingdannumber);
+			ss.setAttribute("dingdannumber", String.valueOf(dingdannumber));
 			ss.setAttribute("xiadantime", xiadantime);
+			
 			ObjectMapper om = new ObjectMapper();
 			om.writeValue(resp.getWriter(), abc);
+			
+			
+			
+			
+			
+			
 			
 			
 			List<List<String>> list = JSONArray.fromObject(req.getParameter("splist"));
@@ -78,10 +88,6 @@ public class ShoppingServlet extends HttpServlet {
 				System.out.println(splist.get(i));
 			}
 				ss.setAttribute("Orderlist", splist);
-			
-				
-			
-				 
 			
 	}
 

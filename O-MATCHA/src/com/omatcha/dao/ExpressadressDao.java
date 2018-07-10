@@ -9,5 +9,5 @@ public interface ExpressadressDao {
 		//新增地址
 		public int insertExprssadress(Expressadress exprssadress);	
 		//查询已有地址
-		public Object selectExprssadress(Users user);
+		public List<Object> selectExprssadress(Users user);
 }

@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ResetPassword</title>
 <link href="../wangwei/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-<script src="../wangwei/js2/downpage-setpwd.js"></script>
+<script src="../wangwei/js/downpage-setpwd.js"></script>
 </head>
 <body>
 <div class="container">

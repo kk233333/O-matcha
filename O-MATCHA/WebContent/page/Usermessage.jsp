@@ -7,6 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>setpassword</title>
+<script src="../wangwei/js/jquery-1.11.1.min.js"></script>
 <link href="../wangwei/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <link href="../wangwei/css/Usermessage.css" rel="stylesheet" type="text/css" media="all" />
 </head>
@@ -43,7 +44,7 @@
 					<a href="<%=path%>/page/Order.jsp" target="rightpage">我的订单</a>
 				</li>
 				<li>
-					<a href="">收货地址</a>
+					<a href="<%=path%>/page/Expressaddress.jsp" target="rightpage">收货地址</a>
 				</li>
 				<li>
 					<a href="<%=path%>/page/resetPassword.jsp" target="rightpage">修改密码 </a>
@@ -59,7 +60,7 @@
 		</div>
 	</div>
 </div>
-<jsp:include   page="/page/indexFooter.jsp" flush="true"/>
+<jsp:include page="/page/indexFooter.jsp" flush="true"/>
 
 </body>
 </html>

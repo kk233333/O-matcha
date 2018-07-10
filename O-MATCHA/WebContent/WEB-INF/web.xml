@@ -128,7 +128,7 @@
 </servlet>
 <servlet-mapping>
 	<servlet-name>ValiCodeServlet</servlet-name>
-	<url-pattern>/vali.img</url-pattern>
+	<url-pattern>/page/CodeServlet</url-pattern>
 </servlet-mapping>
  
  <!-- 上传头像 -->
@@ -160,6 +160,19 @@
 		<servlet-name>express</servlet-name>
 		<url-pattern>/page/express</url-pattern>
 </servlet-mapping>
+
+
+<!-- 查询地址 -->
+<servlet>
+		<servlet-name>adress</servlet-name>
+		<servlet-class>com.omatcha.servlet.SelectExpressadress</servlet-class>
+</servlet>
+<servlet-mapping>
+		<servlet-name>adress</servlet-name>
+		<url-pattern>/page/adress</url-pattern>
+</servlet-mapping>
+
+
   <!-- cartgoods -->
    <servlet>
 		<servlet-name>cart</servlet-name>

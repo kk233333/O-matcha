@@ -4,11 +4,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>登录界面</title>
-<!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="" />
+<title>登录界面</title>
+<!-- for-mobile-apps -->
+<!-- //font-awesome icons -->
+<!-- js -->
+<script src="../wangwei/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../wangwei/js/jquery.marquee.min.js"></script>
+<!-- //js -->
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="../wangwei/js/move-top.js"></script>
+<script type="text/javascript" src="../wangwei/js/easing.js"></script>
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //for-mobile-apps -->
@@ -16,15 +24,7 @@
 <link href="../wangwei/css/style.css" rel="stylesheet" type="text/css" media="all" />
 <!-- font-awesome icons -->
 <link rel="stylesheet" href="../wangwei/css/font-awesome.min.css" />
-<!-- //font-awesome icons -->
-<!-- js -->
-<script src="../wangwei/js/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="../wangwei/js/jquery.marquee.min.js"></script>
-<!-- //js -->
 
-<!-- start-smoth-scrolling -->
-<script type="text/javascript" src="../wangwei/js/move-top.js"></script>
-<script type="text/javascript" src="../wangwei/js/easing.js"></script>
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
 		$(".scroll").click(function(event){		
@@ -57,8 +57,7 @@
 		}
 	%>
 
-
-<iframe src="../page/indexHeader.jsp" width="100%" frameborder="0" height="80px"></iframe>
+<jsp:include page="/page/indexHeader.jsp" flush="true"/>
 <!-- login -->
 	<div class="login">
 		<div class="container">
@@ -97,6 +96,6 @@
 	</div>
 <!-- //login -->
 <!-- footer -->
-	<iframe src="../page/indexFooter.jsp" width="100%" frameborder="0" height="100px"></iframe>
+	<jsp:include   page="/page/indexFooter.jsp" flush="true"/>
 </body>
 </html>

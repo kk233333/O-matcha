@@ -18,6 +18,10 @@ public class Users {
 	private String uadress;
 	private String portrait;
 	private String birthday;
+	private String Nickname;
+	
+	
+	
 	
 	public Users() {
 		super();
@@ -25,32 +29,34 @@ public class Users {
 	
 	
 	
+	
+	
+	
+	public String getUcountry() {
+		return ucountry;
+	}
+	public void setUcountry(String ucountry) {
+		this.ucountry = ucountry;
+	}
+	public String getNickname() {
+		return Nickname;
+	}
+	public void setNickname(String nickname) {
+		Nickname = nickname;
+	}
 	public String getBirthday() {
 		return birthday;
 	}
-
-
-
 	public void setBirthday(String birthday) {
 		this.birthday = birthday;
 	}
-
-
-
 	public String getPortrait() {
 		return portrait;
 	}
-
-
 	public void setPortrait(String portrait) {
 		this.portrait = portrait;
 	}
-
-
-	
-	
-	
-	public int getUid() {
+    public int getUid() {
 		return uid;
 	}
 	public void setUid(int uid) {
@@ -98,12 +104,7 @@ public class Users {
 	public void setUcity(String ucity) {
 		this.ucity = ucity;
 	}
-	public String getUcounty() {
-		return ucountry;
-	}
-	public void setUcounty(String ucountry) {
-		this.ucountry = ucountry;
-	}
+	
 	public String getUadress() {
 		return uadress;
 	}

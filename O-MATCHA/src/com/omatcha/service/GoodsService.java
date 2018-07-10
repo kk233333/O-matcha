@@ -15,7 +15,7 @@ public interface GoodsService {
 	public Goods singleGoods(Class clazz,int id);
 		
 	//查询全部商品
-	public List<Object> queryGoods();
+	public List<Object> queryGoods(String sql,Object...objects);
 		
 	//分页查询商品
 	public List<Object> goodsPager(int start,int count);

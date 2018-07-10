@@ -26,10 +26,17 @@ public class UserDaoImpl implements UserDao{
 		return DButil.query(sql,Users.class, null);
 	}
 
-	public List<Object> loginDao(String username, String password) {
+	public Object loginDao(String username, String password) {
 		String sql = "select * from user where uname=? and passwords= ?";
 		String str [] ={username,password};
-		return DButil.query(sql, Users.class, str);
+		return DButil.selectSingleObject(sql, Users.class, str);
+	}
+
+	@Override
+	public int InsertUserList(Users user) {
+		String sql = "insert into user(Nickname,usex,birthday,uprovince,ucity,ucountry,uadress) values(?,?,?,?,?,?,?)";
+		String str [] ={user.getNickname(),user.getUsex(),user.getBirthday(),user.getUprovince(),user.getUcity(),user.getUcountry(),user.getUadress()};
+		return DButil.update(sql, str);
 	}
 
 }

@@ -2960,7 +2960,7 @@ div#stacked-graph .label {
 	width: 15px;
     height: 15px;
     display: inline-block;
-    border: 1px solid #ffffff;
+    border: 1px solid black;
     position: absolute;
     top: 2px;
     left: 4px;

@@ -6,21 +6,20 @@ ul.size {
 ul.size li {
   display: inline-block;
   margin: 0 10px 0 0;
+  color: #999;
+  font-size: 1em;
+  background: #fff;
+  padding: 5px 0;
+  cursor:pointer;
 }
-ul.size h3 {
+#big {
     color: #F07818;
     font-size: 1.4em;
     text-transform: uppercase;
     margin: 0 0 0.5em;
     font-weight: 600;
 }
-ul.size li a {
-    color: #999;
-    font-size: 1em;
-    background: #fff;
-    padding: 5px 0;
-}
-ul.rating li a:hover, .price_single a:hover, ul.size li a:hover {
+ul.rating li a:hover, .price_single a:hover, ul.size li:hover {
   color: #ee4a02;
   text-decoration: none;
 }

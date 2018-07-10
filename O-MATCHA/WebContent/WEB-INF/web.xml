@@ -137,5 +137,13 @@
 		<servlet-name>express</servlet-name>
 		<url-pattern>/page/express</url-pattern>
 </servlet-mapping>
-  
+  <!-- cartgoods -->
+   <servlet>
+		<servlet-name>cart</servlet-name>
+		<servlet-class>com.omatcha.servlet.CartGoodsServlet</servlet-class>
+</servlet>
+	<servlet-mapping>
+		<servlet-name>cart</servlet-name>
+		<url-pattern>/cart.do</url-pattern>
+  </servlet-mapping>
 </web-app>

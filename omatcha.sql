@@ -1,13 +1,8 @@
 /*
 Navicat MySQL Data Transfer
 
-<<<<<<< HEAD
-Source Server         : orange
-Source Server Version : 50515
-=======
 Source Server         : lochost
 Source Server Version : 50553
->>>>>>> d714808c108721a1a4be8f6d322077276ab5bb55
 Source Host           : localhost:3306
 Source Database       : omatcha
 
@@ -15,11 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-<<<<<<< HEAD
-Date: 2018-07-09 17:17:40
-=======
 Date: 2018-07-09 17:28:20
->>>>>>> d714808c108721a1a4be8f6d322077276ab5bb55
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -57,8 +48,6 @@ CREATE TABLE `cartgoods` (
 -- ----------------------------
 
 -- ----------------------------
-<<<<<<< HEAD
-=======
 -- Table structure for `expressadress`
 -- ----------------------------
 DROP TABLE IF EXISTS `expressadress`;
@@ -83,7 +72,6 @@ INSERT INTO `expressadress` VALUES ('1', '阿萨德撒大所', '121321231321', '
 INSERT INTO `expressadress` VALUES ('2', '轻息屏', '123456', '北京', '县', '延庆县', '5456465465', '1');
 
 -- ----------------------------
->>>>>>> d714808c108721a1a4be8f6d322077276ab5bb55
 -- Table structure for `goods`
 -- ----------------------------
 DROP TABLE IF EXISTS `goods`;

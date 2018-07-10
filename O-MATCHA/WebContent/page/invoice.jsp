@@ -27,6 +27,27 @@
 		<script type="text/javascript" src="ShoppingCart/js/mobile_date.js"></script>
 	   
 	<title>购物车  新鲜现做 就是O-MATCHA生日蛋糕/下午茶预订首选!</title>
+	<script>
+		function shoppingAjax(){
+			alert("dfsfd");
+			$.ajax({
+				url:"${pageContext.request.contextPath}/orderAjax",
+				type:"post",
+				traditional :false, 
+				data:{},
+				dataType:"json",
+				success:function(data){
+					
+				}
+			});
+			
+			
+		}
+	
+	</script>
+	
+	
+	
 	</head>
 	
 		<body onload="bianhao()">

@@ -6,11 +6,19 @@
 <% String path = request.getContextPath(); %>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>注册界面</title>
-<!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="" />
+<title>注册界面</title>
+<!-- for-mobile-apps -->
+<!-- js -->
+<script src="<%=path%>/wangwei/js/jquery-1.9.1.min.js"></script>
+<script src="<%=path%>/wangwei/js/jquery-1.11.1.min.js"></script>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="<%=path%>/wangwei/js/move-top.js"></script>
+<script type="text/javascript" src="<%=path%>/wangwei/js/easing.js"></script>
+<script type="text/javascript" src="<%=path%>/wangwei/js/sign-up.js"></script>
+<script type="text/javascript" src="<%=path%>/wangwei/js/jquery.marquee.min.js"></script>
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //for-mobile-apps -->
@@ -19,16 +27,12 @@
 <!-- font-awesome icons -->
 <link rel="stylesheet" href="<%=path%>/wangwei/css/font-awesome.min.css" />
 <!-- //font-awesome icons -->
-<!-- js -->
-<script src="<%=path%>/wangwei/js/jquery-1.9.1.min.js"></script>
-<script src="<%=path%>/wangwei/js/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="<%=path%>/wangwei/js/jquery.marquee.min.js"></script>
+
+
+
 <!-- //js -->
 <link href="http://fonts.googleapis.com/css?family=Muli:300,300i,400,400i" rel="stylesheet">
-<!-- start-smoth-scrolling -->
-<script type="text/javascript" src="<%=path%>/wangwei/js/move-top.js"></script>
-<script type="text/javascript" src="<%=path%>/wangwei/js/easing.js"></script>
-<script type="text/javascript" src="<%=path%>/wangwei/js/sign-up.js"></script>
+
 <script type="text/javascript">
 var xmlhttp;
 function checkUserName(){
@@ -68,7 +72,7 @@ function checkUserName(){
 </head>
 	
 <body>
-<jsp:include   page="/page/indexHeader.jsp" flush="true"/>
+<jsp:include page="/page/indexHeader.jsp" flush="true"/>
 <div class="login">
 		<div class="container">
 			<h3>注册O-MATCHA</h3>

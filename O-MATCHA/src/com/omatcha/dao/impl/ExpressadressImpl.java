@@ -17,10 +17,10 @@ public class ExpressadressImpl implements ExpressadressDao{
 	}
 
 	@Override
-	public Object selectExprssadress(Users user) {
+	public  List<Object> selectExprssadress(Users user) {
 		String sql = "select * from expressadress where uid=?";
 		int str [] ={user.getUid()};
-		return DButil.selectSingleObject(sql, Expressadress.class, str);
+		return DButil.query(sql, Expressadress.class, str);
 	}
 
 }

@@ -7,7 +7,7 @@ import com.omatcha.dao.UserDao;
 import com.omatcha.dao.impl.ExpressadressImpl;
 import com.omatcha.dao.impl.UserDaoImpl;
 import com.omatcha.pojo.Expressadress;
-
+import com.omatcha.pojo.Users;
 import com.omatcha.service.ExpressadressService;
 
 public class ExpressadressServiceImpl implements ExpressadressService{
@@ -22,9 +22,8 @@ public class ExpressadressServiceImpl implements ExpressadressService{
 	}
 
 	@Override
-	public List<Object> selectExpressadress() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Object> selectExprssadress(Users user){
+		return expressadressdao.selectExprssadress(user);
 	}
 
 	

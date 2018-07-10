@@ -29,7 +29,7 @@
 		<link type="text/css" rel="stylesheet" href="ShoppingCart/css/mobile_date.css">
 		<script type="text/javascript" src="ShoppingCart/js/jquery-1.8.3.min.js"></script>
 		<script type="text/javascript" src="ShoppingCart/js/mobile_date.js"></script>
-		
+		<script type="text/javascript" src="ShoppingCart/js/ssxld.js"></script>
 		<script >
 			
 			
@@ -91,7 +91,10 @@
 				dataType:"json",
 				success:function(data){
 					if(data!=null){
+						$("#modal-85897").removeAttr("href"); 
 						  window.location.href ='/O-MATCHA/page/invoice.jsp';
+					}else{
+						$(".modal-body").html("请登录您的账号！！");
 					}
 				}
 			});
@@ -135,21 +138,14 @@
 					
 					<div class="fangda">
 						<span>收货人地址</span> 
-						<select id="shengfen" onchange="tranData()" style="margin-left:26px;">
-									<option>四川省</option>
-									<option>湖北省</option>
-									<option>江苏省</option>
-									
+						<select id="shengfen"  style="margin-left:26px"; >
+								
 								</select>
-								<select  id="chengshi" onchange="tranData1()" >
-									<option>成都市</option>
-									<option>绵阳市</option>
-									<option>巴中市</option>
+								<select  id="chengshi"  >
+								
 								</select>
 								<select id="qu" >
-									<option>成华区</option>
-									<option>金牛区</option>
-									<option>郫都区</option>
+								
 								</select>
 								<p><input id="dizhi2" placeholder="请输入详细地址" style="margin-top:15px;width:600px;"></input> <a id="dizhi3"href="<%=path%>/page/map.jsp"">查看店面详细地址</a></p>
 					</div>
@@ -290,7 +286,7 @@
 								<div class="modal-header">
 									 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 									<h4 class="modal-title" id="myModalLabel">
-										提示信息！！！
+										O-MATCHA  温馨提示！
 									</h4>
 								</div>
 								<div class="modal-body">
@@ -321,5 +317,12 @@
 		
 	
 	<jsp:include   page="indexFooter.jsp" flush="true"/>
+	<script type="text/javascript">  
+	addressInit('shengfen', 'chengshi', 'qu');  
+    //$("#shengfen").val("广西");
+   // $("#chengshi").find("option[value='柳州市']").attr("selected",true);
+   // $("#chengshi").val("柳州市");
+   // $("#qu").val("柳南区");
+	</script>	
 	</body>
 </html>

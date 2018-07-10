@@ -45,7 +45,7 @@
 			</div>
 		</div>
 	</div>
-	<!--//single-page-->
+	<!--single-page-->
 	<div class="single">
 		<div class="container">
 			<div class="single-grids">				
@@ -66,7 +66,7 @@
 				</div>	
 				<div class="col-md-6 single-grid simpleCart_shelfItem" style="padding: 50px 30px;">		
 					<h3>${goods.name}</h3>
-					<p>全巧克力的蛋糕:它不是最眩、最醒目的，但是总有忠实拥趸对它青睐有加。香浓诱人的巧克力口味；柔软的口感、甜蜜的味道,完美的全巧克力蛋糕经得起各种口味的挑剔.表面富有曲线美的巧克力花纹与蛋糕的名称相得益彰</p>
+					<p id="describe">全巧克力的蛋糕:它不是最眩、最醒目的，但是总有忠实拥趸对它青睐有加。香浓诱人的巧克力口味；柔软的口感、甜蜜的味道,完美的全巧克力蛋糕经得起各种口味的挑剔.表面富有曲线美的巧克力花纹与蛋糕的名称相得益彰</p>
 					<ul class="size">
 						<h3>大小</h3>
 							<li><a href="?weight=1">1 KG</a></li>
@@ -154,7 +154,7 @@
 					</div>
 					<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
 						<div class="panel-body">
-							Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+							Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
 						</div>
 					</div>
 				</div>
@@ -253,33 +253,5 @@
 	</div>	
 	<!--底部信息栏-->
 		<jsp:include   page="indexFooter.jsp" flush="true"/>
-	<div class="modal fade" id="modal7" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-							<h5>选择区域:</h5>
-						</div>
-						<div class="modal-body">
-							<div class="provinceSel">
-							<select class="btn btn-default" id="selProvince" onchange="provinceChange();"></select> 
-							
-						</div>
-						 <div class="citySel">
-                <select class="btn btn-default" id="selCity" onchange="cityChange();"></select>
-          
-            </div>
-			<div class="tips">
-					温馨提示：若购买中更换收货城市，可能导致购物车内容均被清空！
-				</div>
-						</div>
-						<div class="modal-footer">
-							 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button> <button type="button" id="savecity" class="btn btn-primary">确认</button>
-						</div>
-					</div>
-					
-				</div>
-				
-			</div>
 </body>
 </html>

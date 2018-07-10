@@ -74,10 +74,12 @@ function quanxuan(obj){
 		
 		  $("#money01").html((a).toFixed(2) );
 		 $("#jieshaun2").html((a).toFixed(2));
+		 $("button[name=Single]").attr("class","btn btn-default btn-primary");
 	  }else{
 		cat.prop('checked',false); 
 		  $("#money01").html((0).toFixed(2) );
 		 $("#jieshaun2").html((0).toFixed(2));
+		  $("button[name=Single]").attr("class","btn btn-primary disabled btn-default");
 	  }
 	var test = $("input[name='sProblem']:checked");
 	 var orange=test.parent().next().next().next().next().next().children().text();

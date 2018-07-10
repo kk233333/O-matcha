@@ -231,3 +231,9 @@ span.item_price {
     text-decoration: none;
     border-radius: 5px;
 }
+#describe{
+	font-family:"微软雅黑";
+	line-height: 1.8em;
+    font-size: 15px;
+    color: #999;
+}

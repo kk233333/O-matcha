@@ -47,7 +47,7 @@
 		function shoppingAjax(){
 			var shouhuren =$("#shouhuo").val();
 			var shouhurenshouji =$("#shouji1").val();
-			var dizhi=$('#provice').val()+"_"+$('#city').val()+"_"+$('#qu').val()+"_"+$('#dizhi2').val();
+			var dizhi=$('#shengfen').val()+"_"+$('#chengshi').val()+"_"+$('#qu').val()+"_"+$('#dizhi2').val();
 			var yuyuer =$("#yuyue").val();
 			var yuyuerenshouji =$("#shouji2").val();
 			var time =$("#gezi").val();
@@ -80,7 +80,7 @@
 			}
 			
 			
-			$.ajax({//常用的就是ajax 也可以是get 和 post
+			$.ajax({
 				url:"${pageContext.request.contextPath}/shoppingAjax",
 				type:"post",
 				traditional :false, 
@@ -108,7 +108,7 @@
 	
 	
 	<body onload="tranData()" >
-	
+	<jsp:include   page="indexHeader.jsp" flush="true"/>
 		
 		<div class="container">
 			<div class="row clearfix">
@@ -135,13 +135,13 @@
 					
 					<div class="fangda">
 						<span>收货人地址</span> 
-						<select id="provice" onchange="tranData()" style="margin-left:26px;">
+						<select id="shengfen" onchange="tranData()" style="margin-left:26px;">
 									<option>四川省</option>
 									<option>湖北省</option>
 									<option>江苏省</option>
 									
 								</select>
-								<select  id="city" onchange="tranData1()" >
+								<select  id="chengshi" onchange="tranData1()" >
 									<option>成都市</option>
 									<option>绵阳市</option>
 									<option>巴中市</option>
@@ -151,7 +151,7 @@
 									<option>金牛区</option>
 									<option>郫都区</option>
 								</select>
-								<p><input id="dizhi2" placeholder="请输入详细地址" style="margin-top:15px;width:600px;"></input> <a id="dizhi3"href="<%=path%>/page/map.html"">查看店面详细地址</a></p>
+								<p><input id="dizhi2" placeholder="请输入详细地址" style="margin-top:15px;width:600px;"></input> <a id="dizhi3"href="<%=path%>/page/map.jsp"">查看店面详细地址</a></p>
 					</div>
 					
 					<div class="fangda"style="margin-top:80px;">
@@ -320,6 +320,6 @@
 		</div>
 		
 	
-	
+	<jsp:include   page="indexFooter.jsp" flush="true"/>
 	</body>
 </html>

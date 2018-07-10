@@ -1,4 +1,9 @@
 eclipse.preferences.version=1
 encoding//WebContent/page=UTF-8
+<<<<<<< HEAD
+encoding//WebContent/page/Collection.jsp=UTF-8
+encoding//WebContent/wangwei/js/ssxld.js=UTF-8
+=======
 encoding//WebContent/page/Expressaddress.jsp=UTF-8
+>>>>>>> d714808c108721a1a4be8f6d322077276ab5bb55
 encoding//src/DB.properties=UTF-8

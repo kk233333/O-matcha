@@ -31,8 +31,8 @@ public class GoodsServiceImpl implements GoodsService{
 		return goodsdao.goodsSpeciesPager(start, count, species);
 	}
 
-	public List<Object> queryGoods() {
-		return goodsdao.queryGoods();
+	public List<Object> queryGoods(String sql,Object...objects) {
+		return goodsdao.queryGoods(sql,objects);
 	}
 
 }

@@ -7,9 +7,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.omatcha.dao.impl.CartDaoImpl;
+import com.omatcha.service.CartService;
+import com.omatcha.service.impl.CartServiceImpl;
 
-public class DelectcommodityServlet extends HttpServlet{
+
+public class CountServlet extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -20,20 +22,11 @@ public class DelectcommodityServlet extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-			System.out.println("进来了哦");
-			String uid=(String)req.getSession().getAttribute("uid");
-			
-			if(uid!=null){
-				int a=Integer.valueOf((String)req.getParameter("cgid"));
-				CartDaoImpl cd =new CartDaoImpl();
-				cd.deleteGoods(a);
-			}else{
-				System.out.println("在这里进行删除老板的单列 list 里的 对象");
-			}
-			
-			
-			
+		CartService cs = new CartServiceImpl();
+		int count = 0;
 		
 	}
+	
+	
 
 }

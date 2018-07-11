@@ -1,33 +1,19 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : lochost
-Source Server Version : 50553
+Source Server         : local
+Source Server Version : 50515
 Source Host           : localhost:3306
 Source Database       : omatcha
 
 Target Server Type    : MYSQL
-Target Server Version : 50553
+Target Server Version : 50515
 File Encoding         : 65001
 
-Date: 2018-07-09 17:28:20
+Date: 2018-07-11 18:06:01
 */
 
 SET FOREIGN_KEY_CHECKS=0;
-
--- ----------------------------
--- Table structure for `cart`
--- ----------------------------
-DROP TABLE IF EXISTS `cart`;
-CREATE TABLE `cart` (
-  `cid` int(11) NOT NULL AUTO_INCREMENT,
-  `uid` int(11) DEFAULT NULL,
-  PRIMARY KEY (`cid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of cart
--- ----------------------------
 
 -- ----------------------------
 -- Table structure for `cartgoods`
@@ -35,31 +21,39 @@ CREATE TABLE `cart` (
 DROP TABLE IF EXISTS `cartgoods`;
 CREATE TABLE `cartgoods` (
   `cgid` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) DEFAULT NULL,
+  `cname` varchar(255) DEFAULT NULL,
   `quantity` int(11) DEFAULT NULL,
   `weight` int(11) DEFAULT NULL,
   `price` double DEFAULT NULL,
-  `cid` int(11) DEFAULT NULL,
-  PRIMARY KEY (`cgid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `image` varchar(255) DEFAULT NULL,
+  `uid` int(11) DEFAULT NULL,
+  PRIMARY KEY (`cgid`),
+  KEY `uid` (`uid`),
+  CONSTRAINT `cartgoods_ibfk_1` FOREIGN KEY (`uid`) REFERENCES `user` (`uid`)
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of cartgoods
 -- ----------------------------
+INSERT INTO `cartgoods` VALUES ('26', '两情相悦', '4', '2', '248', 'mixcake1_1.jpg', '1');
+INSERT INTO `cartgoods` VALUES ('27', '榴恋草莓', '2', '2', '188', 'mixcake2_1.jpg', '1');
+INSERT INTO `cartgoods` VALUES ('28', '拿铁咖啡', '2', '2', '98', 'coffee4.jpg', '1');
+INSERT INTO `cartgoods` VALUES ('29', '拿铁咖啡', '2', '2', '98', 'coffee4.jpg', '1');
+INSERT INTO `cartgoods` VALUES ('32', '马来西亚白咖啡', '2', '2', '68', 'coffee1.jpg', '2');
 
 -- ----------------------------
 -- Table structure for `expressadress`
 -- ----------------------------
 DROP TABLE IF EXISTS `expressadress`;
 CREATE TABLE `expressadress` (
-  `eid` tinyint(4) NOT NULL AUTO_INCREMENT,
+  `eid` int(4) NOT NULL AUTO_INCREMENT,
   `Consignee` varchar(255) DEFAULT NULL,
   `ephone` varchar(255) DEFAULT NULL,
   `eprovince` varchar(255) DEFAULT NULL,
   `ecity` varchar(255) DEFAULT NULL,
   `ecountry` varchar(255) DEFAULT NULL,
   `eadress` varchar(255) DEFAULT NULL,
-  `uid` tinyint(4) DEFAULT NULL,
+  `uid` int(4) DEFAULT NULL,
   PRIMARY KEY (`eid`),
   KEY `uid` (`uid`),
   CONSTRAINT `expressadress_ibfk_1` FOREIGN KEY (`uid`) REFERENCES `user` (`uid`)
@@ -163,7 +157,7 @@ CREATE TABLE `review` (
 -- ----------------------------
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
-  `uid` tinyint(4) NOT NULL AUTO_INCREMENT,
+  `uid` int(4) NOT NULL AUTO_INCREMENT,
   `uname` varchar(255) DEFAULT NULL,
   `uphone` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,

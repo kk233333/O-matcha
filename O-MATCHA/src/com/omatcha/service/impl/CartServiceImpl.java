@@ -30,8 +30,8 @@ public class CartServiceImpl implements CartService{
 	}
 
 	@Override
-	public List<Object> queryGoods() {
-		return cartDao.queryGoods();
+	public List<Object> queryGoods(String sql,Object...objects) {
+		return cartDao.queryGoods(sql,objects);
 	}
 
 }

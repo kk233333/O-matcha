@@ -44,7 +44,7 @@
 				cat.css("color","black");
 			}
 		
-		function shoppingAjax(){
+		function shoppingAjax(logong){
 			var shouhuren =$("#shouhuo").val();
 			var shouhurenshouji =$("#shouji1").val();
 			var dizhi=$('#shengfen').val()+"_"+$('#chengshi').val()+"_"+$('#qu').val()+"_"+$('#dizhi2').val();
@@ -69,6 +69,7 @@
 				var guige=$(abc[4]).text();
 				var src =$(abc[0])[0].src;
 				var spnumber =$(td[3]).children().text();
+				var cgid =$(td[2]).children().val();
 				
 				var tableclass=new Object();
 				tableclass.onemoney=onemoney;
@@ -76,12 +77,13 @@
 				tableclass.guige=guige;
 				tableclass.src=src;
 				tableclass.spnumber=spnumber;
+				tableclass.cgid=cgid;
 				list[i]=(tableclass);		
 			}
 			
 			
 			$.ajax({
-				url:"${pageContext.request.contextPath}/shoppingAjax",
+				url:"${pageContext.request.contextPath}/shoppingAjax?who="+logong,
 				type:"post",
 				traditional :false, 
 				data:{"shouname":shouhuren,"shounumber":shouhurenshouji,"dizhi":dizhi,
@@ -90,17 +92,22 @@
 						},
 				dataType:"json",
 				success:function(data){
-					if(data!=null){
+					if(data!="login"&&data!=null&&data!="tis"){
+						window.location.href ='/O-MATCHA/page/invoice.jsp';	
 						$("#modal-85897").removeAttr("href"); 
-						  window.location.href ='/O-MATCHA/page/invoice.jsp';
-					}else{
+					}
+					if(data=="tis"){
 						$(".modal-body").html("请登录您的账号！！");
 					}
+					if(data=="login"){
+						window.location.href ='/O-MATCHA/page/login.jsp';	
+					}
+					
 				}
-			});
-			
-			
+			});	
 		}
+		
+	
 
 		</script>
 		
@@ -121,7 +128,7 @@
 					
 					<div class="biaotou" style="margin-top:100px;">
 					<span>如果您之前有购买，可登录直接获取地址，方便快捷并可获取积分信息 </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<button id="denglu" >登&nbsp;录</button><br/><br/>
+					<button id="denglu" onclick="shoppingAjax('logong')" >登&nbsp;录</button><br/><br/>
 					</div>
 					<div class="biaotou">
 					<span>配送方式</span> <input  type="radio" name="名称" checked="checked"/><span>配送上门</span ><input  type="radio" name="名称" /><span>门店自提</span >
@@ -217,7 +224,7 @@
 											
 										</td>
 										<td >
-											
+											<input type="hidden" value="${confirm.cgid}"></input>
 										</td>
 										<td id ="shuliang">
 											<span>${confirm.spnumber}</span>

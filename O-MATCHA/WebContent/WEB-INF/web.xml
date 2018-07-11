@@ -211,5 +211,13 @@
 	<servlet-mapping>
 		<servlet-name>forgetpwd</servlet-name>
 		<url-pattern>/page/forgetpwd</url-pattern>
+  <!-- count -->
+   <servlet>
+		<servlet-name>count</servlet-name>
+		<servlet-class>com.omatcha.servlet.CountServlet</servlet-class>
+</servlet>
+	<servlet-mapping>
+		<servlet-name>count</servlet-name>
+		<url-pattern>/count.do</url-pattern>
   </servlet-mapping>
 </web-app>

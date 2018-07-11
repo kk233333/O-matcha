@@ -8,7 +8,19 @@
 <title>index-header</title>
 <link rel="stylesheet" type="text/css" href="<%=path%>/qingxiping/css/index.css"/>
 <script type="text/javascript" src="<%=path%>/qingxiping/js/index.js"></script>
+<script>
 
+		$.ajax({
+			url:"${pageContext.request.contextPath}/count.do",
+			type:"post",
+			data:{},
+			dataType:"json",
+			success:function(data){	
+				
+			}
+		});
+
+</script>
 </head>
 <body>
 

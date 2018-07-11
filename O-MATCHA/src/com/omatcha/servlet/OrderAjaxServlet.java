@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.omatcha.dao.impl.AddOrderimpl;
+import com.omatcha.dao.impl.CartDaoImpl;
 
 public class OrderAjaxServlet extends HttpServlet {
 
@@ -28,7 +29,14 @@ public class OrderAjaxServlet extends HttpServlet {
 		AddOrderimpl add =new AddOrderimpl();
 		int a =add.AddOrder(uid,(String)ss.getAttribute("xiadantime"), (String)ss.getAttribute("dingdannumber"), (String)ss.getAttribute("address"), (String)ss.getAttribute("money"), (String)ss.getAttribute("Paymentmethod"), (String)ss.getAttribute("Consignee"), ((List)ss.getAttribute("Orderlist")).toString());
 		System.out.println(a);
-			
+		
+		// 根据cgid 删除购物车数据库的数据
+		String cgids=req.getParameter("cgid");	
+		String[] cgid=cgids.split("-");
+		CartDaoImpl cd =new CartDaoImpl();
+		for (int i = 0; i < cgid.length; i++) {
+			cd.deleteGoods(Integer.valueOf(cgid[i]));
+		}
 		
 	}
 

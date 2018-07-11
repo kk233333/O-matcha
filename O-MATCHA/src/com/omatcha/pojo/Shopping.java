@@ -9,6 +9,7 @@ public class Shopping implements Serializable {
 	private String spnumber;
 	private String src;
 	private String onemoney;
+	private String cgid;
 	public String getSpname() {
 		return spname;
 	}
@@ -39,11 +40,17 @@ public class Shopping implements Serializable {
 	public void setOnemoney(String onemoney) {
 		this.onemoney = onemoney;
 	}
+	public String getCgid() {
+		return cgid;
+	}
+	public void setCgid(String cgid) {
+		this.cgid = cgid;
+	}
 	@Override
 	public String toString() {
 		return "Shopping [spname=" + spname + ", guige=" + guige
 				+ ", spnumber=" + spnumber + ", src=" + src + ", onemoney="
-				+ onemoney + "]";
+				+ onemoney + ", cgid=" + cgid + "]";
 	}
 	
 	

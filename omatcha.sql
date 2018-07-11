@@ -1,33 +1,19 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : lochost
-Source Server Version : 50553
+Source Server         : local
+Source Server Version : 50515
 Source Host           : localhost:3306
 Source Database       : omatcha
 
 Target Server Type    : MYSQL
-Target Server Version : 50553
+Target Server Version : 50515
 File Encoding         : 65001
 
-Date: 2018-07-09 17:28:20
+Date: 2018-07-10 18:11:16
 */
 
 SET FOREIGN_KEY_CHECKS=0;
-
--- ----------------------------
--- Table structure for `cart`
--- ----------------------------
-DROP TABLE IF EXISTS `cart`;
-CREATE TABLE `cart` (
-  `cid` int(11) NOT NULL AUTO_INCREMENT,
-  `uid` int(11) DEFAULT NULL,
-  PRIMARY KEY (`cid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of cart
--- ----------------------------
 
 -- ----------------------------
 -- Table structure for `cartgoods`
@@ -39,9 +25,12 @@ CREATE TABLE `cartgoods` (
   `quantity` int(11) DEFAULT NULL,
   `weight` int(11) DEFAULT NULL,
   `price` double DEFAULT NULL,
-  `cid` int(11) DEFAULT NULL,
-  PRIMARY KEY (`cgid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `image` varchar(255) DEFAULT NULL,
+  `uid` int(11) DEFAULT NULL,
+  PRIMARY KEY (`cgid`),
+  KEY `uid` (`uid`),
+  CONSTRAINT `cartgoods_ibfk_1` FOREIGN KEY (`uid`) REFERENCES `user` (`uid`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of cartgoods
@@ -52,14 +41,14 @@ CREATE TABLE `cartgoods` (
 -- ----------------------------
 DROP TABLE IF EXISTS `expressadress`;
 CREATE TABLE `expressadress` (
-  `eid` tinyint(4) NOT NULL AUTO_INCREMENT,
+  `eid` int(4) NOT NULL AUTO_INCREMENT,
   `Consignee` varchar(255) DEFAULT NULL,
   `ephone` varchar(255) DEFAULT NULL,
   `eprovince` varchar(255) DEFAULT NULL,
   `ecity` varchar(255) DEFAULT NULL,
   `ecountry` varchar(255) DEFAULT NULL,
   `eadress` varchar(255) DEFAULT NULL,
-  `uid` tinyint(4) DEFAULT NULL,
+  `uid` int(4) DEFAULT NULL,
   PRIMARY KEY (`eid`),
   KEY `uid` (`uid`),
   CONSTRAINT `expressadress_ibfk_1` FOREIGN KEY (`uid`) REFERENCES `user` (`uid`)
@@ -163,7 +152,7 @@ CREATE TABLE `review` (
 -- ----------------------------
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
-  `uid` tinyint(4) NOT NULL AUTO_INCREMENT,
+  `uid` int(4) NOT NULL AUTO_INCREMENT,
   `uname` varchar(255) DEFAULT NULL,
   `uphone` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,

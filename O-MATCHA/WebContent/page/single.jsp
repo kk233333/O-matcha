@@ -21,7 +21,24 @@
 		animation: "slide",
 		controlNav: "thumbnails"
 	  });
+	  var weight = $('#size:first').html();
+	  var quantity = $('#quantity').val();
+	  $('#size li').click(function(){
+          $(this).css({ "color": "#F07818"})
+          .siblings().css({ "color": "#999999"});
+          weight = $(this).html();
+      });
+	  $.ajax({
+			url:"${pageContext.request.contextPath}/cart.do",
+			type:"post",
+			data:{"weight":weight,"quantity":quantity},
+			dataType:"json",
+			success:function(data){	
+				
+			}
+		});
 	});
+	
 </script>
 </head>
 <body>
@@ -33,10 +50,7 @@
 			<div class="col-md-12 column">
 				<ul class="breadcrumb" style="background-color:#fff;margin-bottom: 0;">
 					<li>
-						 <a href="#">${goods.type}</a>
-					</li>
-					<li>
-						 <a href="#">${goods.species}</a>
+						 <a href="<%=path %>/cake.do">${goods.type}</a>
 					</li>
 					<li class="active">
 						${goods.name}
@@ -67,12 +81,12 @@
 				<div class="col-md-6 single-grid simpleCart_shelfItem" style="padding: 50px 30px;">		
 					<h3>${goods.name}</h3>
 					<p id="describe">全巧克力的蛋糕:它不是最眩、最醒目的，但是总有忠实拥趸对它青睐有加。香浓诱人的巧克力口味；柔软的口感、甜蜜的味道,完美的全巧克力蛋糕经得起各种口味的挑剔.表面富有曲线美的巧克力花纹与蛋糕的名称相得益彰</p>
-					<ul class="size">
-						<h3>大小</h3>
-							<li><a href="?weight=1">1 KG</a></li>
-							<li><a href="?weight=2">2 KG</a></li>
-							<li><a href="?weight=3">3 KG</a></li>
-							<li><a href="?weight=4">4 KG</a></li>
+					<h3 id="big">大小</h3>
+					<ul id="size" class="size">
+							<li>1 KG</li>
+							<li>2 KG</li>
+							<li>3 KG</li>
+							<li>4 KG</li>
 					</ul>
 					<ul class="size">
 						<h3>价格</h3>
@@ -83,10 +97,10 @@
 					</ul>
 					<p class="qty"> 数量   </p><input min="1" type="number" id="quantity" name="quantity" value="1" class="form-control input-small">
 					<div id="addcart" class="btn_form">
-						<a href="#" class="add-cart item_add">加入购物车</a>	
+						<a href="<%=path %>/cart.do?a=add" class="add-cart item_add">加入购物车</a>	
 					</div>
 					<div id="buynow" class="btn_form">
-						<a href="#" class="add-cart item_add"> 立 即  购 买 </a>	
+						<a href="<%=path %>/cart.do?a=buynow" class="add-cart item_add"> 立 即  购 买 </a>	
 					</div>
 					<div class="tag">
 						<p>分类 : <a href="#"> 蛋糕</a></p>

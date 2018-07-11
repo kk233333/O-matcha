@@ -41,12 +41,12 @@ public class InsertExpressadress extends HttpServlet{
 		expressadress.setEadress(eadress);
 		
 		if (ea.insertExpressadress(expressadress)) {
-			session.setAttribute("consignee", consignee);
-			session.setAttribute("ephone", ephone);
-			session.setAttribute("eprovince", eprovince);
-			session.setAttribute("ecity", ecity);
-			session.setAttribute("earea", earea);
-			session.setAttribute("eadress", eadress);
+			session.setAttribute("crconsignee", consignee);
+			session.setAttribute("crephone", ephone);
+			session.setAttribute("creprovince", eprovince);
+			session.setAttribute("crecity", ecity);
+			session.setAttribute("crearea", earea);
+			session.setAttribute("creadress", eadress);
 			
 		}
 		

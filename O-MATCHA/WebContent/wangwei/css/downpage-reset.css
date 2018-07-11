@@ -2,11 +2,10 @@
 	width:40%;
 	height:40px;
 	float:right;
-	margin-top:-5px;
+	margin-top:10px;
 }
 #ground{
 	width:350px;
-	
 }
 #sms{
 	width:120px;
@@ -15,3 +14,4 @@
 	margin-top:-2px;
 	text-align:center;
 }
+

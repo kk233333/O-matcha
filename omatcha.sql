@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50515
 File Encoding         : 65001
 
-Date: 2018-07-10 18:11:16
+Date: 2018-07-11 18:06:01
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -21,7 +21,7 @@ SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS `cartgoods`;
 CREATE TABLE `cartgoods` (
   `cgid` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) DEFAULT NULL,
+  `cname` varchar(255) DEFAULT NULL,
   `quantity` int(11) DEFAULT NULL,
   `weight` int(11) DEFAULT NULL,
   `price` double DEFAULT NULL,
@@ -30,11 +30,16 @@ CREATE TABLE `cartgoods` (
   PRIMARY KEY (`cgid`),
   KEY `uid` (`uid`),
   CONSTRAINT `cartgoods_ibfk_1` FOREIGN KEY (`uid`) REFERENCES `user` (`uid`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of cartgoods
 -- ----------------------------
+INSERT INTO `cartgoods` VALUES ('26', '两情相悦', '4', '2', '248', 'mixcake1_1.jpg', '1');
+INSERT INTO `cartgoods` VALUES ('27', '榴恋草莓', '2', '2', '188', 'mixcake2_1.jpg', '1');
+INSERT INTO `cartgoods` VALUES ('28', '拿铁咖啡', '2', '2', '98', 'coffee4.jpg', '1');
+INSERT INTO `cartgoods` VALUES ('29', '拿铁咖啡', '2', '2', '98', 'coffee4.jpg', '1');
+INSERT INTO `cartgoods` VALUES ('32', '马来西亚白咖啡', '2', '2', '68', 'coffee1.jpg', '2');
 
 -- ----------------------------
 -- Table structure for `expressadress`

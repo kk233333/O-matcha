@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.omatcha.pojo.CartGoods;
+import com.omatcha.pojo.Cartgoodlist;
 import com.omatcha.pojo.Goods;
 import com.omatcha.service.CartService;
 import com.omatcha.service.GoodsService;
@@ -37,9 +38,9 @@ public class CartGoodsServlet extends HttpServlet{
 		GoodsService gs = new GoodsServiceImpl();
 		HttpSession session = req.getSession();
 		String a = req.getParameter("a");
-		Goods goods = null;
+		Goods goods = null;	
 		CartGoods cartGoods = null;
-		List TempCart = new ArrayList();
+		List TempCart = Cartgoodlist.getCartgoodlist().getL();
 		String w = req.getParameter("weight");
 		String q = req.getParameter("quantity");
 		int weight = Integer.parseInt(w.substring(0,1));
@@ -78,11 +79,14 @@ public class CartGoodsServlet extends HttpServlet{
 			int buy = 1;
 			om.writeValue(resp.getWriter(), buy);
 		}
-		session.setAttribute("TempCartList", TempCart);
-		
-		String sql = "SELECT cgid,cname,SUM(quantity),weight,price,image,uid FROM cartgoods GROUP BY cname";
-		List cartgoodslist = cs.queryGoods();
-		
+				
+		if(uid!=null){
+			String sql = "SELECT cgid,cname,SUM(quantity),weight,price,image,uid FROM cartgoods where uid=? GROUP BY cname";
+			List cartgoodslist = cs.queryGoods(sql,Integer.parseInt(uid));
+			session.setAttribute("cartgoodslist", cartgoodslist);
+		}else{
+			session.setAttribute("cartgoodslist", TempCart);
+		}
 		
 		
 	}

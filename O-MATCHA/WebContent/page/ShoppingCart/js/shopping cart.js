@@ -161,6 +161,8 @@ function shuanl(){
 	}
 	Single();
 	
+	
+	
 }
 function qiehuan(obj){
 	var abc =$(obj);

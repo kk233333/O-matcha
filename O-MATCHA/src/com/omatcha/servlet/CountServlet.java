@@ -7,6 +7,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.omatcha.service.CartService;
+import com.omatcha.service.impl.CartServiceImpl;
+
+
 public class CountServlet extends HttpServlet{
 
 	@Override
@@ -18,6 +22,8 @@ public class CountServlet extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
+		CartService cs = new CartServiceImpl();
+		int count = 0;
 		
 	}
 	

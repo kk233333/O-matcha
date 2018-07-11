@@ -182,4 +182,13 @@
 		<servlet-name>cart</servlet-name>
 		<url-pattern>/cart.do</url-pattern>
   </servlet-mapping>
+  <!-- count -->
+   <servlet>
+		<servlet-name>count</servlet-name>
+		<servlet-class>com.omatcha.servlet.CountServlet</servlet-class>
+</servlet>
+	<servlet-mapping>
+		<servlet-name>count</servlet-name>
+		<url-pattern>/count.do</url-pattern>
+  </servlet-mapping>
 </web-app>

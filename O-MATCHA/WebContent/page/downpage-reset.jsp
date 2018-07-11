@@ -59,7 +59,7 @@ function show(){
 		<div class="col-md-12 column">
 			<input type="text" placeholder="请输入您的手机号" size="40" id="tel" onblur="checktel()" ></input>
 			<p class="text-warning"  id="checknum"></p>
-			<input type="text" placeholder="请输入验证码" id="code1"  name="vlcode"></input> 
+			<input type="text" placeholder="请输入验证码" id="code1"  name="vlcode" onblur="validate ()"></input> 
 			<div id="code">
 			<img src="" id="valiImg" style="width:128px;height:40px;cursor: pointer;"title="看不清？点击换一张" onclick="show()"/></div>
 			<p class="text-warning"  id="checkcode"name="wortip"></p>

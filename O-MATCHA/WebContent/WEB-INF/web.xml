@@ -109,6 +109,16 @@
   	<servlet-name>ajax</servlet-name>
   	<url-pattern>/CheckName</url-pattern>
  </servlet-mapping>
+ 
+ <!-- 查询电话 -->
+ <servlet>
+  	<servlet-name>phone</servlet-name>
+  	<servlet-class>com.omatcha.servlet.CheckPhone</servlet-class>
+ </servlet>
+ <servlet-mapping>
+  	<servlet-name>phone</servlet-name>
+  	<url-pattern>/CheckPhone</url-pattern>
+ </servlet-mapping>
   <!-- single -->
   <servlet>
   	<servlet-name>single</servlet-name>
@@ -151,7 +161,7 @@
 		<url-pattern>/page/userlist</url-pattern>
   </servlet-mapping>
   
-<!-- 用户信息 -->
+<!-- 新增地址 -->
 <servlet>
 		<servlet-name>express</servlet-name>
 		<servlet-class>com.omatcha.servlet.InsertExpressadress</servlet-class>
@@ -181,5 +191,25 @@
 	<servlet-mapping>
 		<servlet-name>cart</servlet-name>
 		<url-pattern>/cart.do</url-pattern>
+  </servlet-mapping>
+  
+    <!-- 修改密码 -->
+   <servlet>
+		<servlet-name>modipwd</servlet-name>
+		<servlet-class>com.omatcha.servlet.ModipwdServlet</servlet-class>
+</servlet>
+	<servlet-mapping>
+		<servlet-name>modipwd</servlet-name>
+		<url-pattern>/page/modipwd</url-pattern>
+  </servlet-mapping>
+  
+  <!-- 忘记密码 -->
+   <servlet>
+		<servlet-name>forgetpwd</servlet-name>
+		<servlet-class>com.omatcha.servlet.Forgetpwd</servlet-class>
+</servlet>
+	<servlet-mapping>
+		<servlet-name>forgetpwd</servlet-name>
+		<url-pattern>/page/forgetpwd</url-pattern>
   </servlet-mapping>
 </web-app>

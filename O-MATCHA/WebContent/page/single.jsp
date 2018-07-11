@@ -16,29 +16,35 @@
 <link rel="stylesheet" type="text/css" href="<%=path%>/qingxiping/css/flexslider.css" /> 
 <script type="text/javascript" src="<%=path%>/qingxiping/js/jquery.flexslider.js"></script>
 <script>
-	$(window).load(function() {
+	var weight = '1 KG';
+	var quantity = 1;
+	$(window).load(function() {	
+		
 	  $('.flexslider').flexslider({
 		animation: "slide",
 		controlNav: "thumbnails"
 	  });
-	  var weight = $('#size:first').html();
-	  var quantity = $('#quantity').val();
+
 	  $('#size li').click(function(){
           $(this).css({ "color": "#F07818"})
           .siblings().css({ "color": "#999999"});
           weight = $(this).html();
-      });
-	  $.ajax({
-			url:"${pageContext.request.contextPath}/cart.do",
-			type:"post",
-			data:{"weight":weight,"quantity":quantity},
-			dataType:"json",
-			success:function(data){	
-				
-			}
-		});
+      });  
 	});
-	
+	function refresh(arg){
+		var quantity = $('#quantity').val();
+		  $.ajax({
+				url:"${pageContext.request.contextPath}/cart.do?a="+arg,
+				type:"post",
+				data:{"weight":weight,"quantity":quantity},
+				dataType:"json",
+				success:function(data){	
+					if(data!=null){
+						  window.location.href ='/O-MATCHA/page/shoppingcart.jsp';
+					}
+				}
+			});
+	  } 
 </script>
 </head>
 <body>
@@ -97,14 +103,14 @@
 					</ul>
 					<p class="qty"> 数量   </p><input min="1" type="number" id="quantity" name="quantity" value="1" class="form-control input-small">
 					<div id="addcart" class="btn_form">
-						<a href="<%=path %>/cart.do?a=add" class="add-cart item_add">加入购物车</a>	
+						<a id="add" class="add-cart item_add" onclick="refresh('add')" style="cursor:pointer">加入购物车</a>	
 					</div>
 					<div id="buynow" class="btn_form">
-						<a href="<%=path %>/cart.do?a=buynow" class="add-cart item_add"> 立 即  购 买 </a>	
+						<a id="buy" class="add-cart item_add" onclick="refresh('buynow')" style="cursor:pointer"> 立 即  购 买 </a>	
 					</div>
 					<div class="tag">
-						<p>分类 : <a href="#"> 蛋糕</a></p>
-						<p>标签 : <a href="#"> 巧克力 甜品 </a></p>
+						<p>分类 : ${goods.type}</p>
+						<p>标签 : ${goods.species}</p>
 					</div>
 				</div>
 			</div>

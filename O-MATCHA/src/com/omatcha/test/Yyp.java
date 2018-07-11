@@ -11,9 +11,9 @@ import com.omatcha.pojo.Shopping;
 
 public class Yyp {
 	public static void main(String[] args) {
-		AddOrderimpl add =new AddOrderimpl();
-		int a =add.AddOrder(1, "fgdfg", "gfdgdf", "gfdgdf", "gfdgdf", "gfdgdf", "gfdgdf", new ArrayList().toString());
-			System.out.println(a);
+		String abc ="sdfsdf";
+	
+		System.out.println(	abc.split("l")[0]);
 		
 	}
 }

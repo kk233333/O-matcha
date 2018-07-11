@@ -56,7 +56,7 @@ public class ShoppingServlet extends HttpServlet {
 			ss.setAttribute("money", money);
 			String Paymentmethod =req.getParameter("fangshi");
 			ss.setAttribute("Paymentmethod", Paymentmethod);
-			String abc ="5";
+			String uid ="5";
 					//(String) ss.getAttribute("uid");
 			
 			long dingdannumber=System.currentTimeMillis();
@@ -66,16 +66,6 @@ public class ShoppingServlet extends HttpServlet {
 			String xiadantime=f.format(date);
 			ss.setAttribute("dingdannumber", String.valueOf(dingdannumber));
 			ss.setAttribute("xiadantime", xiadantime);
-			
-			ObjectMapper om = new ObjectMapper();
-			om.writeValue(resp.getWriter(), abc);
-			
-			
-			
-			
-			
-			
-			
 			
 			List<List<String>> list = JSONArray.fromObject(req.getParameter("splist"));
 				List<Shopping>splist =new ArrayList();
@@ -88,6 +78,23 @@ public class ShoppingServlet extends HttpServlet {
 				System.out.println(splist.get(i));
 			}
 				ss.setAttribute("Orderlist", splist);
+				
+				ObjectMapper om = new ObjectMapper();
+				String who=req.getParameter("who");
+				
+				if(uid==null&&who.equals("logong")){
+					System.out.println("login");
+					om.writeValue(resp.getWriter(), "login");
+					ss.setAttribute("jump", "jump");
+				}
+				if(uid==null&&who.equals("undefined")){
+					System.out.println("tis");
+					om.writeValue(resp.getWriter(), "tis");
+				}
+				if(uid!=null&&who.equals("undefined")){
+					System.out.println(uid);
+					om.writeValue(resp.getWriter(), uid);
+				}
 			
 	}
 

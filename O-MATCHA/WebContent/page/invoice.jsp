@@ -29,12 +29,23 @@
 	<title>购物车  新鲜现做 就是O-MATCHA生日蛋糕/下午茶预订首选!</title>
 	<script>
 		function shoppingAjax(){
-			alert("dfsfd");
+			
+			var cgidlista;
+			for(var i=0;i<$('input:hidden').size();i++){
+				if(i==0){
+					cgidlista=$($('input:hidden')[i]).val();
+				}else{
+					cgidlista=$($('input:hidden')[i]).val()+"-"+cgidlista;
+				}
+				
+				alert(cgidlista);
+			}
+			
 			$.ajax({
 				url:"${pageContext.request.contextPath}/orderAjax",
 				type:"post",
-				traditional :false, 
-				data:{},
+				traditional :true, 
+				data:{"cgid":cgidlista},
 				dataType:"json",
 				success:function(data){
 					
@@ -110,7 +121,8 @@
 											
 										</td>
 										<td >
-											
+											<input type="hidden" value="${commodity.cgid}"></input>
+											<input type="hidden" value="20"></input>
 										</td>
 										<td id ="shuliang">
 											${commodity.spnumber}

@@ -45,9 +45,10 @@
 				var type =$($($(td.children()).children()[8]).children()[0]).text();
 				var zhufu =$($($($($((bc.children())[6]).children()).children()).children()[3]).children()).val();
 				var src=$(td.children()).children()[0].src;
+				var cgid=$($((bc.children())[6]).children().children().children()[1]).children().val();
 				
 				var tableclass=new Object();
-						
+				tableclass.cgid=cgid;		
 				tableclass.onemoney=onemoney;
 				tableclass.spname=spname;
 				tableclass.guige=guige;
@@ -293,7 +294,7 @@
 										祝福贺卡
 									</li>
 									<li>
-										<input type="radio" value="20" name="gender1" onclick="xuyao(this)">需要</input>
+										<input type="radio" value="25" name="gender1" onclick="xuyao(this)">需要</input>
 
 									</li>
 									<li>

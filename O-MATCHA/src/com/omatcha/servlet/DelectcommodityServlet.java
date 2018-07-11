@@ -20,13 +20,19 @@ public class DelectcommodityServlet extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		
-			
 			System.out.println("进来了哦");
-			System.out.println(req.getParameter("cgid"));
-			int a=Integer.valueOf((String)req.getAttribute("cgid"));
-			CartDaoImpl cd =new CartDaoImpl();
-			cd.deleteGoods(a);
+			String uid=(String)req.getSession().getAttribute("uid");
+			
+			if(uid!=null){
+				int a=Integer.valueOf((String)req.getParameter("cgid"));
+				CartDaoImpl cd =new CartDaoImpl();
+				cd.deleteGoods(a);
+			}else{
+				System.out.println("在这里进行删除老板的单列 list 里的 对象");
+			}
+			
+			
+			
 		
 	}
 

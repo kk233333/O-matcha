@@ -169,7 +169,7 @@
 						<td >
 							<div style="width:250px;"> 
 								<img  style="width:80px;height:80px; float:left"alt="80x80" src="../qingxiping/images/goods/${information.image}" />
-								<a class="name" >${information.name}</a><br/><br/><span id="jiesao">${information.weight}</span><br/><br/><br/>
+								<a class="name" >${information.name}</a><br/><br/><span id="jiesao">规格：${information.weight} 磅</span><br/><br/><br/>
 									<div class="btn-group" id="sha">
 										 <button class="btn btn-default">请选择你订购蛋糕的生日牌</button> <button style="height:34px;" data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span class="caret"></span></button>
 											<ul class="dropdown-menu">
@@ -207,7 +207,7 @@
 							<button  onclick="addshuliang(this)">+</button> &nbsp;<span>${information.quantity}</span>&nbsp;&nbsp;<button onclick="jianshuliang(this)">-</button>
 						</td>
 						<td id ="heji" >
-							￥<span>${information.price}</span>
+							￥<span>parseFloat(${information.price})*parseFloat(${information.quantity})</span>
 						</td>
 						<td  id="tdtow">
 							<a style="cursor:pointer"  title="添加到我的幸福收藏夹"><img src="ShoppingCart/images/1222.bmp" /></a>&nbsp;&nbsp;<a style="cursor:pointer" onclick="shanchu(this)" title="删除此商品"><img src="ShoppingCart/images/12122.jpg" /></a>

@@ -63,7 +63,7 @@ public class CodeServlet extends HttpServlet{
 		javax.servlet.ServletOutputStream imageOut = resp.getOutputStream();
 		JPEGImageEncoder encoder = JPEGCodec.createJPEGEncoder(imageOut);
 		encoder.encode(image);
-		System.out.println(code);
+		
 	}
 	
 	

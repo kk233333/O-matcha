@@ -111,10 +111,8 @@ public class Users {
 	public void setUadress(String uadress) {
 		this.uadress = uadress;
 	}
-	
-	
-	
-	
-	
+
+
+
 	
 }

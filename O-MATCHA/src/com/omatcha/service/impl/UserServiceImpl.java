@@ -34,5 +34,21 @@ public class UserServiceImpl implements UserService{
 		}
 		return false;
 	}
-
+	@Override
+	public boolean modipwd(Users user) {
+		int i=userDao.modipwd(user);
+		if (i>0) {
+			return true;
+		}
+		return false;
+	}
+	
+	@Override
+	public boolean forgetpwd(Users user) {
+		int i=userDao.forgetpwd(user);
+		if (i>0) {
+			return true;
+		}
+		return false;
+	}
 }

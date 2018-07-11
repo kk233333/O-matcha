@@ -37,5 +37,9 @@ public class CartDaoImpl implements CartDao{
 		String sql = "select * from cartgoods";
 		return DButil.query(sql, CartGoods.class, null);
 	}
+	public List<Object> uidqueryGoods(int uid) {
+		String sql = "select * from cartgoods WHERE uid=?";
+		return DButil.query(sql, CartGoods.class, uid);
+	}
 
 }

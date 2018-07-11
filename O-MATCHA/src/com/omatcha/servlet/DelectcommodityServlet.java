@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.omatcha.dao.impl.CartDaoImpl;
+
 public class DelectcommodityServlet extends HttpServlet{
 
 	@Override
@@ -19,14 +21,12 @@ public class DelectcommodityServlet extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		
-			//int a=Integer.valueOf((String)req.getAttribute("cgid"));
+			
 			System.out.println("进来了哦");
 			System.out.println(req.getParameter("cgid"));
-			
-		
-		
-		
-		
+			int a=Integer.valueOf((String)req.getAttribute("cgid"));
+			CartDaoImpl cd =new CartDaoImpl();
+			cd.deleteGoods(a);
 		
 	}
 

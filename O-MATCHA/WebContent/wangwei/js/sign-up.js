@@ -1,20 +1,3 @@
-function checkphone(){
-	var tel = document.getElementById("input-8").value;
-	var regx=/^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/;
-	if(tel==null||tel.trim()==""||!(regx.test(tel))){
-		var text_2=document.getElementById("cuephone");
-		text_2.removeAttribute("hidden");
-		return false;
-	}
-	return true;
-}
-
-function focusphone(){
-	var text_2=document.getElementById("cuephone");
-		text_2.setAttribute("hidden",true);
-}
-
-
 
 function checkpasswords(){
 	var pwd = document.getElementById("input-10").value;
@@ -50,7 +33,7 @@ function focusconpwd(){
 }
 
 function checksubmit(){
-	if(checkphone()&&checkpasswords()&&checkconpwd()){
+	if(checkphone()&&checkpasswords()&&checkconpwd()&&checkname()){
 		return true;
 		}
 	return false;

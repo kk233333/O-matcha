@@ -81,7 +81,7 @@
 						<label for="brand1"><span></span>记住密码</label>
 					</div>
 					<div class="agileinfo_remember_right">
-						<a href="../page/resetPassword.jsp">忘记密码？</a>
+						<a href="../page/forgetpwd.jsp">忘记密码？</a>
 					</div>
 					<div class="clearfix"> </div>
 				</div>

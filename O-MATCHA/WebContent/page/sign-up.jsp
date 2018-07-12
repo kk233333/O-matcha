@@ -33,32 +33,7 @@
 <!-- //js -->
 <link href="http://fonts.googleapis.com/css?family=Muli:300,300i,400,400i" rel="stylesheet">
 
-<script type="text/javascript">
-var xmlhttp;
-function checkUserName(){
-	var uname = $("#input-7").val();
-	// $.ajax方法实现
-	$.ajax({
-        url:"${pageContext.request.contextPath}/CheckName",
-        type:"post",
-        data:{"username":uname},
-        dataType:"json",
-       
-        success:function(data){
-        	if(data.msg ==1){
-        		document.getElementById("duplication").innerHtml="1111";
-        	}
-        	else{
-        		document.getElementById("duplication").innerHtml="该用户已注册";
-        	}
-        },
-        	error:function(){
-        	document.getElementById("duplication").innerHtml="2222";
-        }
-	});
-  }
 
-</script>
 
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
@@ -67,6 +42,68 @@ function checkUserName(){
 			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
 		});
 	});
+</script>
+<script type="text/javascript">
+
+function checkname(){ 
+	var temp = false;
+	var inputName = document.getElementById("input-7").value;  
+	   $.ajax({
+		  url:'${pageContext.request.contextPath}/CheckName',
+	  	  type:'post',
+	  	  data:{"username":inputName},
+	  	  dataType:'json',
+	  	  async : false,
+	  	  success:function(data){
+	  		  if (inputName.length>0) {
+	  			if (data.msg==1) {
+	  			document.getElementById("duplication").innerText=" ";
+	  			temp= true;
+						}
+	  		  else {
+	  			document.getElementById("duplication").innerText="该用户已存在";
+	  			temp= false;
+			}
+	  		  }
+	  		  else{
+	  			temp= false;
+	  		  }
+	  	  }
+	  });
+	   return temp;
+}
+
+</script>
+<script type="text/javascript">
+function checkphone(){ 
+	var regx=/^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/;
+	var temp = false;
+	var inputPhone = document.getElementById("input-8").value;  
+	   $.ajax({
+		  url:'${pageContext.request.contextPath}/CheckPhone',
+	  	  type:'post',
+	  	  data:{"inputPhone":inputPhone},
+	  	  dataType:'json',
+	  	  async : false,
+	  	  success:function(data){
+	  		  if ((inputPhone.length>0)&&regx.test(inputPhone)) {
+	  			if (data.msg==1) {
+	  			document.getElementById("cuephone").innerText=" ";
+	  			temp= true;
+						}
+	  		  else {
+	  			document.getElementById("cuephone").innerText="号码已存在";
+	  			temp= false;
+			}
+	  		  }
+	  		  else{
+	  			document.getElementById("cuephone").innerText="号码不能为空/格式不正确";
+	  			temp= false;
+	  		  }
+	  	  }
+	  });
+	   return temp;
+}
 </script>
 <!-- start-smoth-scrolling -->
 </head>
@@ -78,7 +115,7 @@ function checkUserName(){
 			<h3>注册O-MATCHA</h3>
 			<form action="signup.do?a=signup" method="post" onsubmit="return checksubmit()">
 				<span class="input input--kuro">
-					<input class="input__field input__field--kuro kuro_w3" type="text" id="input-7" placeholder="" required="" name="username" onkeyup="checkUserName()">
+					<input class="input__field input__field--kuro kuro_w3" type="text" id="input-7" placeholder="" required=""  onkeyup="checkname()">
 					
 					<label class="input__label input__label--kuro" for="input-7">
 						<span class="input__label-content input__label-content--kuro">用户名</span>
@@ -87,12 +124,12 @@ function checkUserName(){
 					<p class="text-warning text-center" id="duplication"></p>
 					
 					<span class="input input--kuro">
-					<input class="input__field input__field--kuro kuro_w3" type="tel" id="input-8" placeholder="" required="" name="userphone" onblur="checkphone()" onfocus="focusphone()">
+					<input class="input__field input__field--kuro kuro_w3" type="tel" id="input-8" placeholder="" required=""  onkeyup="checkphone()" >
 					<label class="input__label input__label--kuro" for="input-8">
 						<span class="input__label-content input__label-content--kuro">电话</span>
 					</label>
 				</span>
-				<p class="text-warning text-center" hidden="hidden" id="cuephone">电话格式不正确</p>
+				<p class="text-warning text-center"  id="cuephone"></p>
 				<span class="input input--kuro">
 					<input class="input__field input__field--kuro kuro_w3" type="email" id="input-9" placeholder="" required="" name="useremail">
 					<label class="input__label input__label--kuro" for="input-9">

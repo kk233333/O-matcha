@@ -13,4 +13,8 @@ public interface UserDao {
 	public Object loginDao(String username, String password);
 	//用户信息的Dao
 	public int InsertUserList(Users user);
+	//修改密码
+	public int modipwd(Users user);
+	//忘记密码
+	public int forgetpwd(Users user);
 }

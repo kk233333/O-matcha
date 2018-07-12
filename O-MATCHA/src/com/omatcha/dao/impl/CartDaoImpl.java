@@ -33,8 +33,7 @@ public class CartDaoImpl implements CartDao{
 	}
 
 	@Override
-	public List<Object> queryGoods() {
-		String sql = "select * from cartgoods";
+	public List<Object> queryGoods(String sql,Object...objects) {
 		return DButil.query(sql, CartGoods.class, null);
 	}
 	public List<Object> uidqueryGoods(int uid) {

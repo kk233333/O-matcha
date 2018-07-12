@@ -13,4 +13,6 @@ public interface UserService {
 	public List<Object> selectUserName();
 	public Object userLoginService(String username, String password);
 	public boolean Userslist(Users user);
+	public boolean modipwd(Users user);
+	public boolean forgetpwd(Users user);
 }

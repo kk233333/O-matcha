@@ -8,7 +8,19 @@
 <title>index-header</title>
 <link rel="stylesheet" type="text/css" href="<%=path%>/qingxiping/css/index.css"/>
 <script type="text/javascript" src="<%=path%>/qingxiping/js/index.js"></script>
-<script>
+<script type="text/javascript">
+	$(function(){
+		$('#usericon').mouseover(function(){
+			$('#client').css({'display':'block'});
+		});
+		$('#client').mouseover(function(){
+			$('#client').css({'display':'block'});
+		});
+		$('#client').mouseout(function(){
+			$('#client').css({'display':'none'});
+		});
+		ajax();
+	});
 	function ajax(){
 		$.ajax({
 			url:"${pageContext.request.contextPath}/count.do",
@@ -24,10 +36,7 @@
 			}
 		});
 	}
-	var timer = setinterval(function(){
-		ajax();
-	},500);
-
+	
 </script>
 </head>
 <body>
@@ -74,6 +83,14 @@
 						<span id="usericon" style="margin-left:5px" class="glyphicon glyphicon-user"></span>
 					</a>
 					<span id="username" style="width:40px;margin-left:5px;display:none"><img src="" />xxx</span>
+					<ul id="client" class="" style="line-height:20px;">
+						<li>
+							 <a href="#">个人中心</a>
+						</li>
+						<li>
+							 <a href="#">退出登录</a>
+						</li>
+					</ul>
 				</div>
      	 		
      	 	</div>

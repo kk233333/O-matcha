@@ -124,3 +124,30 @@ hr {
 #navbar a:hover{
 	color:#FF8000;
 }
+#client{
+	margin:0;
+	padding:0;
+	width:80px;
+	height:50px;
+	list-style:none;
+	font-family:"微软雅黑";
+	font-size:12px;
+	background:#fff;
+	position:absolute;
+	left:1190px;
+	top:55px;
+	text-align:center;
+	display:none;
+}
+#client li{
+	width:80px;
+	height:25px;
+	text-align:center;
+}
+#client li a{
+	text-decoration:none;
+	color:#000000;
+}
+#client li a:hover{
+	color:#FF8000;
+}

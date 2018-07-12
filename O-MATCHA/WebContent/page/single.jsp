@@ -15,6 +15,8 @@
 <!--flexslider是个滑动切换插件，这里引入-->
 <link rel="stylesheet" type="text/css" href="<%=path%>/qingxiping/css/flexslider.css" /> 
 <script type="text/javascript" src="<%=path%>/qingxiping/js/jquery.flexslider.js"></script>
+<!--放大镜-->
+<script type="text/javascript" src="<%=path%>/qingxiping/js/imagezoom.js"></script>
 <script>
 	var weight = '1 KG';
 	var quantity = 1;
@@ -44,6 +46,7 @@
 					}
 				}
 			});
+		  ajax();
 	  } 
 </script>
 </head>

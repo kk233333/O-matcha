@@ -108,6 +108,7 @@
 					
 				});	
 				kongcart();
+				ajax();
 			}
 		</script>
 	<title>购物车  新鲜现做 就是O-MATCHA生日蛋糕/下午茶预订首选!</title>

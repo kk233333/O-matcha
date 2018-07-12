@@ -10,7 +10,7 @@
 <script type="text/javascript" src="<%=path%>/qingxiping/js/index.js"></script>
 <script type="text/javascript">
 	$(function(){
-		$('#usericon').mouseover(function(){
+		$('#username').mouseover(function(){
 			$('#client').css({'display':'block'});
 		});
 		$('#client').mouseover(function(){
@@ -28,7 +28,7 @@
 			data:{},
 			dataType:"json",
 			success:function(data){	
-				$('#count').html = data.count;
+				$('#count').text(data.count);
 				if(data.portrait!=null){
 					$('#username').css({"display":"block"})
 					$('#usericon').css({"display":"none"})
@@ -36,7 +36,6 @@
 			}
 		});
 	}
-	
 </script>
 </head>
 <body>

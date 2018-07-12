@@ -50,14 +50,14 @@ public class CartGoodsServlet extends HttpServlet{
 		if("add".equals(a)){
 			goods = (Goods) req.getSession().getAttribute("goods");
 			cartGoods = new CartGoods();
-			cartGoods.setName(goods.getName());
+			cartGoods.setCname(goods.getName());
 			cartGoods.setQuantity(quantity);
 			cartGoods.setPrice(goods.getPrice());
 			cartGoods.setWeight(weight);
 			cartGoods.setImage(goods.getImage1());
 			b:if(uid==null){
 				for (Object object : TempCart) {
-					if(cartGoods.getName().equals(((CartGoods)object).getName())){
+					if(cartGoods.getCname().equals(((CartGoods)object).getCname())){
 						((CartGoods)object).setQuantity(((CartGoods)object).getQuantity()+cartGoods.getQuantity());
 						break b;
 					}
@@ -70,14 +70,14 @@ public class CartGoodsServlet extends HttpServlet{
 		}else if("buynow".equals(a)){
 			goods = (Goods) req.getSession().getAttribute("goods");
 			cartGoods = new CartGoods();
-			cartGoods.setName(goods.getName());
+			cartGoods.setCname(goods.getName());
 			cartGoods.setQuantity(quantity);
 			cartGoods.setPrice(goods.getPrice());
 			cartGoods.setWeight(weight);
 			cartGoods.setImage(goods.getImage1());
 			a:if(uid==null){
 				for (Object object : TempCart) {
-					if(cartGoods.getName().equals(((CartGoods)object).getName())){
+					if(cartGoods.getCname().equals(((CartGoods)object).getCname())){
 						((CartGoods)object).setQuantity(((CartGoods)object).getQuantity()+cartGoods.getQuantity());
 						break a;
 					}

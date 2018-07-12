@@ -16,7 +16,7 @@ public class CartDaoImpl implements CartDao{
 	@Override
 	public int addGoods(CartGoods cartGoods) {
 		String sql = "insert into cartgoods values (null,?,?,?,?,?,?)";
-		Object[] obj = {cartGoods.getName(),cartGoods.getQuantity(),cartGoods.getWeight(),cartGoods.getPrice(),cartGoods.getImage(),cartGoods.getUid()};
+		Object[] obj = {cartGoods.getCname(),cartGoods.getQuantity(),cartGoods.getWeight(),cartGoods.getPrice(),cartGoods.getImage(),cartGoods.getUid()};
 		return DButil.update(sql, obj);
 	}
 

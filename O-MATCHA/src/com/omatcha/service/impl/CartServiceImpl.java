@@ -34,4 +34,9 @@ public class CartServiceImpl implements CartService{
 		return cartDao.queryGoods(sql,objects);
 	}
 
+	@Override
+	public int queryCount(String sql, Object... objects) {		
+		return cartDao.queryCount(sql, objects);
+	}
+
 }

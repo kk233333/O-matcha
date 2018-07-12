@@ -41,6 +41,7 @@ public class LoginServlet extends HttpServlet{
 		 session.setAttribute("wusername", username);
 		 session.setAttribute("wpassword", password);
 		 session.setAttribute("uid", user.getUid());
+		 session.setAttribute("wuser", user);
 		
 		//将密码记住在cookie
 			if (remember != null) {

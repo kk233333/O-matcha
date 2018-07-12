@@ -122,7 +122,6 @@
 										</td>
 										<td >
 											<input type="hidden" value="${commodity.cgid}"></input>
-											<input type="hidden" value="20"></input>
 										</td>
 										<td id ="shuliang">
 											${commodity.spnumber}

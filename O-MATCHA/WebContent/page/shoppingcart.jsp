@@ -107,8 +107,7 @@
 					}
 					
 				});	
-				
-				
+				kongcart();
 			}
 		</script>
 	<title>购物车  新鲜现做 就是O-MATCHA生日蛋糕/下午茶预订首选!</title>
@@ -172,7 +171,7 @@
 								<img  style="width:80px;height:80px; float:left"alt="80x80" src="../qingxiping/images/goods/${information.image}" />
 								<a class="name" >${information.name}</a><br/><br/><span id="jiesao">规格：${information.weight} 磅</span><br/><br/><br/>
 									<div class="btn-group" id="sha">
-										 <button class="btn btn-default">请选择你订购蛋糕的生日牌</button> <button style="height:34px;" data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span class="caret"></span></button>
+										 <button class="btn btn-default">请选择产品的祝福标签</button> <button style="height:34px;" data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span class="caret"></span></button>
 											<ul class="dropdown-menu">
 												<li>
 													<a onclick="qiehuan(this)" style="cursor:pointer">无</a>
@@ -236,79 +235,17 @@
 						</c:forEach>
 						
 						
-						
-						
-						
-						<tr  style="border:1px solid gray;margin:50px;">
-						<td><input name="sProblem" onclick="xuanzhong(this)" type="checkbox"></input></td>
-						<td >
-							<div style="width:250px;"> 
-								<img  style="width:80px;height:80px; float:left"alt="80x80" src="ShoppingCart/images/o_1c2g5gj3b1262u4u19rq1hrlrgff.jpg" />
-								<a class="name" href="#">熊熊乐园（戚风款）</a>
-								<br/><br/><span id="jiesao">规格：1磅</span><br/><br/><br/>
-									<div class="btn-group" id="sha">
-										 <button class="btn btn-default">请选择你订购蛋糕的生日牌</button> <button style="height:34px;" data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span class="caret"></span></button>
-											<ul class="dropdown-menu">
-												<li>
-													<a  onclick="qiehuan(this)" href="#">无</a>
-												</li>
-												<li>
-													<a onclick="qiehuan(this)" href="#">生日快乐</a>
-												</li>
-												<li>
-													<a onclick="qiehuan(this)" href="#">节日快乐</a>
-												</li>
-												<li>
-													<a onclick="qiehuan(this)" href="#">新年快乐</a>
-												</li>
-												<li>
-													<a onclick="qiehuan(this)" href="#">Happy Birthday</a>
-												</li>
-												<li class="disabled">
-													<a href="#">另一操作</a>
-												</li>
-												<li class="divider">
-												</li>
-												<li>
-													<input style="float:left" maxlength="14" placeholder="限定14字哦！" ></input><button onclick="qiehuan1(this)" id="ok">确定</button>
-												</li>
-											</ul>
-									</div>
-							</div>
-						</td>
-						<td id="tdone">
-							￥<span>150.50</span>
-						</td>
-						<td id ="shuliang" class="sl">
-							<button onclick="addshuliang(this)">+</button>&nbsp;<span>1</span>&nbsp;&nbsp;<button onclick="jianshuliang(this)">-</button>
-						</td>
-						<td id ="heji">
-							￥<span >150.50</span>
-						</td>
-						<td  id="tdtow">
-							<a href="#" title="添加到我的幸福收藏夹"><img src="ShoppingCart/images/1222.bmp" /></a>&nbsp;&nbsp;<a href="#" onclick="shanchu(this)" title="删除此商品"  ><img src="ShoppingCart/images/12122.jpg" /></a>
-						</td>
-						<td>
-							<div id ="cat">
-								<ul id ="orange">
-									<li>
-										祝福贺卡
-									</li>
-									<li>
-										<input type="radio" value="25" name="gender1" onclick="xuyao(this)">需要</input>
-
-									</li>
-									<li>
-										<input type="radio" value="1" name="gender1" checked  onclick="buxuyao(this)">不需要</input>
-									</li>
-									<li>
-										<input style="height:30px;width:300px;display:none;" placeholder="限定30字哦！"></input>
-									</li>
-								</ul>
-							</div>
-						</td>
-						</tr>     
 						</tbody>
+						
+						<tfoot id="tablefoot" >
+							<tr>
+							<td colspan="6" align="center">
+							<img  src="ShoppingCart/images/empty.jpg"/>
+							<p>您的购物车还是空的，赶紧行动吧！</p>
+							</td>
+							</tr> 
+						</tfoot>  
+						
 			</table>
 				<br/>
 				<div style="height:50px;background-color:#EEEEEE;">

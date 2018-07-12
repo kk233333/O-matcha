@@ -39,7 +39,7 @@ public class DelectcommodityServlet extends HttpServlet{
 				System.out.println(name);
 				List <CartGoods>list=Cartgoodlist.getCartgoodlist().getL();
 				for (int i = 0; i < list.size(); i++) {
-					if(list.get(i).getName().equals(name)){
+					if(list.get(i).getCname().equals(name)){
 						list.remove(i);
 					}
 				}

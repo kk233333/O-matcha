@@ -16,7 +16,7 @@ public class CartDaoImpl implements CartDao{
 	@Override
 	public int addGoods(CartGoods cartGoods) {
 		String sql = "insert into cartgoods values (null,?,?,?,?,?,?)";
-		Object[] obj = {cartGoods.getName(),cartGoods.getQuantity(),cartGoods.getWeight(),cartGoods.getPrice(),cartGoods.getImage(),cartGoods.getUid()};
+		Object[] obj = {cartGoods.getCname(),cartGoods.getQuantity(),cartGoods.getWeight(),cartGoods.getPrice(),cartGoods.getImage(),cartGoods.getUid()};
 		return DButil.update(sql, obj);
 	}
 
@@ -44,8 +44,12 @@ public class CartDaoImpl implements CartDao{
 
 	@Override
 	public int queryCount(String sql, Object... objects) {
-		List list = DButil.query(sql, Count.class, objects);
-		int count = ((Count) list.get(0)).getCount();
+		List list = DButil.query(sql, CartGoods.class, objects);
+		int count = 0;
+		if(list!=null){
+			if(list.get(0)!=null)
+			count = ((CartGoods) list.get(0)).getQuantity();
+		}	
 		return count;
 	}
 

@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class CartGoods implements Serializable {
 	private int cgid;
-	private String name;
+	private String cname;
 	private int quantity;
 	private int weight;
 	private double price;
@@ -16,11 +16,11 @@ public class CartGoods implements Serializable {
 	public void setCgid(int cgid) {
 		this.cgid = cgid;
 	}
-	public String getName() {
-		return name;
+	public String getCname() {
+		return cname;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setCname(String cname) {
+		this.cname = cname;
 	}
 	public int getQuantity() {
 		return quantity;

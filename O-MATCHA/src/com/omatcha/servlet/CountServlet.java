@@ -37,8 +37,10 @@ public class CountServlet extends HttpServlet{
 		String uid = (String) session.getAttribute("uid");
 		List list = (List) session.getAttribute("cartgoodslist");
 		if(uid==null){
-			for (Object obj : list) {
-				count+=((CartGoods) obj).getQuantity();
+			if(list!=null){
+				for (Object obj : list) {
+					count+=((CartGoods) obj).getQuantity();
+				}
 			}
 		}else{
 			count = cs.queryCount(sql, Integer.parseInt(uid));

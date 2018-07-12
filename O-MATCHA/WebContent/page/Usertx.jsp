@@ -12,9 +12,9 @@
 <div class="container" id="from">
 	<div class="row clearfix">
 		<div class="col-md-12 column">
-			<form role="form" action="uploadtx" method="post" enctype="multipart/form-data">
+			<form  action="uploadtx" method="post" enctype="multipart/form-data">
 				<div class="form-group">
-					 <input type="file" id="exampleInputFile" value="上传"/>
+					 <input type="file" id="exampleInputFile" name="asdsad" value="上传"/>
 					 </div>
 					 <div id="tx-moder">
 					支持JPG／PNG格式，不超过5 MB

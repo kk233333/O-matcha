@@ -225,4 +225,25 @@
 		<servlet-name>count</servlet-name>
 		<url-pattern>/count.do</url-pattern>
   </servlet-mapping>
+  
+  <!-- 发短信 -->
+   <servlet>
+		<servlet-name>send</servlet-name>
+		<servlet-class>com.omatcha.servlet.SendsmgServlet</servlet-class>
+</servlet>
+	<servlet-mapping>
+		<servlet-name>send</servlet-name>
+		<url-pattern>/page/send</url-pattern>
+  </servlet-mapping>
+  
+   <!-- 判断短信 -->
+   <servlet>
+		<servlet-name>checksend</servlet-name>
+		<servlet-class>com.omatcha.servlet.CheckSendmsgServlet</servlet-class>
+</servlet>
+	<servlet-mapping>
+		<servlet-name>checksend</servlet-name>
+		<url-pattern>/page/checksend</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

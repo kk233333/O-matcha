@@ -3,9 +3,11 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<% String path = request.getContextPath(); %>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ResetPassword</title>
+<script src="<%=path%>/wangwei/js/jquery-1.9.1.min.js"></script>
 <link href="../wangwei/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <link href="../wangwei/css/downpage-reset.css" rel="stylesheet" type="text/css" media="all" />
 <script src="../wangwei/js/downpage-reset.js"></script>
@@ -46,12 +48,56 @@ function show(){
         document.getElementById("valiImg").src="CodeServlet?code="+createCode();  
         
 }  
-
-
-
+</script>
+<script type="text/javascript">
+function send(){ 
+	var inputPhone = document.getElementById("tel").value;
+		 $.ajax({
+			 url:'${pageContext.request.contextPath}/page/send',
+		  	  type:'post',
+		  	  data:{"modiphone":inputPhone},
+		  	  dataType:'json',
+		  	  success:function(){
+		  	  }
+		 });
+	}
 </script>
 
-
+<script type="text/javascript">
+function checksend(){ 
+	var temp = false;
+	var inputcode = document.getElementById("msgcode").value; 
+		 $.ajax({
+			 url:'${pageContext.request.contextPath}/page/checksend',
+		  	  type:'post',
+		  	  data:{"msgcode":inputcode},
+		  	  dataType:'json',
+		  	  success:function(data){
+		  		  if (inputcode.length>0) {
+		  		  	if (data.msg==1) {
+		  			document.getElementById("msgtip").innerText="";
+		  			 temp = true;
+						}
+		  		  	else{
+		  			document.getElementById("msgtip").innerText="验证码输入错误";
+		  			 temp = false;
+		  		  		}
+		  		  }
+		  		  else{
+		  			document.getElementById("msgtip").innerText="验证码不能为空";
+		  			temp = false;
+		  		  }
+		  	  }
+		 });
+	}
+</script>
+<script type="text/javascript">
+function pass(){ 
+	if (checktel()&&validate ()&&checksend()) {
+		location.href='../page/downpage-setpwd.jsp'
+	}
+}
+</script>
 </head>
 <body onload="show()">
 <div class="container">
@@ -63,9 +109,10 @@ function show(){
 			<div id="code">
 			<img src="" id="valiImg" style="width:128px;height:40px;cursor: pointer;"title="看不清？点击换一张" onclick="show()"/></div>
 			<p class="text-warning"  id="checkcode"name="wortip"></p>
-			<input type="text" placeholder="请输入短信验证码"></input> 
-			<button type="button" class="btn btn-default" id="sms">获取短信验证</button>
-			<button type="button" class="btn btn-default" id="submit">下一步</button>
+			<input type="text" placeholder="请输入短信验证码" id="msgcode" onblur="checksend()"></input> 
+			<button type="button" class="btn btn-default" id="sms" onclick="send()">获取短信验证</button>
+			<p class="text-warning"  id="msgtip"></p>
+			<button type="button" class="btn btn-default" id="submit" onclick="pass()">下一步</button>
 		</div>
 			
 	</div>

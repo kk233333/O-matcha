@@ -13,7 +13,7 @@
 <!-- for-mobile-apps -->
 <!-- js -->
 <script src="<%=path%>/wangwei/js/jquery-1.9.1.min.js"></script>
-<script src="<%=path%>/wangwei/js/jquery-1.11.1.min.js"></script>
+<!--<script src="<%=path%>/wangwei/js/jquery-1.11.1.min.js"></script>-->
 <!-- start-smoth-scrolling -->
 <script type="text/javascript" src="<%=path%>/wangwei/js/move-top.js"></script>
 <script type="text/javascript" src="<%=path%>/wangwei/js/easing.js"></script>
@@ -115,7 +115,7 @@ function checkphone(){
 			<h3>注册O-MATCHA</h3>
 			<form action="signup.do?a=signup" method="post" onsubmit="return checksubmit()">
 				<span class="input input--kuro">
-					<input class="input__field input__field--kuro kuro_w3" type="text" id="input-7" placeholder="" required=""  onkeyup="checkname()">
+					<input class="input__field input__field--kuro kuro_w3" type="text" id="input-7" placeholder="" required=""  onkeyup="checkname()" name="zcname">
 					
 					<label class="input__label input__label--kuro" for="input-7">
 						<span class="input__label-content input__label-content--kuro">用户名</span>
@@ -124,7 +124,7 @@ function checkphone(){
 					<p class="text-warning text-center" id="duplication"></p>
 					
 					<span class="input input--kuro">
-					<input class="input__field input__field--kuro kuro_w3" type="tel" id="input-8" placeholder="" required=""  onkeyup="checkphone()" >
+					<input class="input__field input__field--kuro kuro_w3" type="tel" id="input-8" placeholder="" required=""  onkeyup="checkphone()" name="zcphone">
 					<label class="input__label input__label--kuro" for="input-8">
 						<span class="input__label-content input__label-content--kuro">电话</span>
 					</label>

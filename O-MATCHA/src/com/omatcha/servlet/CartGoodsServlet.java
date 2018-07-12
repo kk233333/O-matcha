@@ -55,11 +55,11 @@ public class CartGoodsServlet extends HttpServlet{
 			cartGoods.setPrice(goods.getPrice());
 			cartGoods.setWeight(weight);
 			cartGoods.setImage(goods.getImage1());
-			if(uid==null){
+			b:if(uid==null){
 				for (Object object : TempCart) {
 					if(cartGoods.getName().equals(((CartGoods)object).getName())){
 						((CartGoods)object).setQuantity(((CartGoods)object).getQuantity()+cartGoods.getQuantity());
-						return;
+						break b;
 					}
 				}
 				TempCart.add(cartGoods);
@@ -75,7 +75,13 @@ public class CartGoodsServlet extends HttpServlet{
 			cartGoods.setPrice(goods.getPrice());
 			cartGoods.setWeight(weight);
 			cartGoods.setImage(goods.getImage1());
-			if(uid==null){
+			a:if(uid==null){
+				for (Object object : TempCart) {
+					if(cartGoods.getName().equals(((CartGoods)object).getName())){
+						((CartGoods)object).setQuantity(((CartGoods)object).getQuantity()+cartGoods.getQuantity());
+						break a;
+					}
+				}
 				TempCart.add(cartGoods);
 			}else{
 				cartGoods.setUid(Integer.parseInt(uid));

@@ -35,8 +35,8 @@ public class signupservlet extends HttpServlet{
 		
 		//注册
 		if("signup".equals(a)){
-			String name = req.getParameter("username");
-			String phonenum = req.getParameter("userphone");
+			String name = req.getParameter("zcname");
+			String phonenum = req.getParameter("zcphone");
 			String email = req.getParameter("useremail");
 			String passwords = req.getParameter("userpassword");
 			

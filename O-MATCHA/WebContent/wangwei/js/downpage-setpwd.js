@@ -4,11 +4,16 @@ function checkpwd(){
 	if(pwd==""||pwd.trim()==""){
 		var text_2=document.getElementById("checkpwd");
 		text_2.removeAttribute("hidden");
+		return false;
 	}
 	else{
 		if(!(regx.test(pwd))){
 			var text_1=document.getElementById("checkpwd").innerText;
 			document.getElementById("checkpwd").removeAttribute("hidden");
+			return false;
+		}
+		else{
+			return true;
 		}
 	}
 }
@@ -26,11 +31,16 @@ function checkapwd(){
 	if(apwd==""||apwd.trim()==""){
 		var text_2=document.getElementById("checkapwd");
 		text_2.removeAttribute("hidden");
+		return false;
 	}
 	else{
 		if(apwd!=pwd){
 			var text_1=document.getElementById("checakpwd");
 			document.getElementById("checkapwd").removeAttribute("hidden");
+			return false;
+		}
+		else{
+			return true;
 		}
 	}
 }

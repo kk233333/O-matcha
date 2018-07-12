@@ -1,7 +1,9 @@
 package com.omatcha.servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -32,8 +34,22 @@ public class ModipwdServlet extends HttpServlet{
 		String newpassword = req.getParameter("newpwd");
 		user.setPasswords(newpassword);
 		user.setUid(lguser.user.getUid());
+		int j ;
+		if (us.modipwd(user)) {
+			j=1;
+		}else{
+			j=2;
+		}
 		
-		us.modipwd(user);
+		if (j==1) {
+			req.getRequestDispatcher("/page/genggaichengong.jsp").forward(req, resp);
+		}
+		else{
+			 PrintWriter writer = resp.getWriter();
+				writer.write("<script>alert('更改失败！');window.location.href='downpage-setpwd.jsp';</script>");
+				writer.flush();
+				writer.close();
+		}
 		
 	}
 

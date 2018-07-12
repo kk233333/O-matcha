@@ -51,7 +51,7 @@ function checkphone(){
 	  	  success:function(data){
 	  		  if ((inputPhone.length>0)&&regx.test(inputPhone)) {
 	  			if (data.msg==1) {
-	  			document.getElementById("forgetnum").innerText="号码不存在";
+	  			document.getElementById("forgetnum").innerText="非用户号码";
 	  			temp= false;
 						}
 	  		  else {
@@ -68,6 +68,60 @@ function checkphone(){
 	   return temp;
 }
 </script>
+<script type="text/javascript">
+function send(){ 
+	var inputPhone = document.getElementById("forgetpnone").value;
+		 $.ajax({
+			 url:'${pageContext.request.contextPath}/page/send',
+		  	  type:'post',
+		  	  data:{"modiphone":inputPhone},
+		  	  dataType:'json',
+		  	  success:function(){
+		  	  }
+		 });
+	}
+</script>
+
+<script type="text/javascript">
+function checksend(){ 
+	var temp = false;
+	var inputcode = document.getElementById("inputcode").value; 
+		 $.ajax({
+			 url:'${pageContext.request.contextPath}/page/checksend',
+		  	  type:'post',
+		  	  data:{"msgcode":inputcode},
+		  	  dataType:'json',
+		  	  success:function(data){
+		  		  if (inputcode.length>0) {
+		  		  	if (data.msg==1) {
+		  			document.getElementById("forgetcode").innerText="";
+		  			 temp = true;
+						}
+		  		  	else{
+		  			document.getElementById("forgetcode").innerText="验证码输入错误";
+		  			 temp = false;
+		  		  		}
+		  		  }
+		  		  else{
+		  			document.getElementById("forgetcode").innerText="验证码不能为空";
+		  			temp = false;
+		  		  }
+		  	  }
+		 });
+	}
+</script>
+
+<script type="text/javascript">
+function passcheck(){ 
+	if (checkname()&&checkphone()&&checksend()&&checkpwd()&&checkapwd()) {
+		return true;
+	}else{
+		alert("请检查您的填写");
+		return false;
+	}
+}
+</script>
+
 <link href="../wangwei/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <link href="../wangwei/css/forgetpwd.css" rel="stylesheet" type="text/css"  />
 </head>
@@ -76,7 +130,7 @@ function checkphone(){
 <div class="container">
 	<div class="row clearfix">
 		<div class="col-md-12 column">
-			<form class="form-horizontal" role="form" action="forgetpwd" method="post">
+			<form class="form-horizontal" role="form" action="forgetpwd" method="post" onsubmit="return passcheck()">
 				<div class="form-group">
 						<input type="text" placeholder="请输入您的账户名"  size="40" id="forgetusername" onkeyup="checkname()" name="modiname"></input><br/><br/>
 						<p class="text-warning" id="forgetname"></p>
@@ -86,8 +140,9 @@ function checkphone(){
 					<p class="text-warning"  id="forgetnum"></p>
 				</div>
 				<div class="form-group">
-				<input type="text" placeholder="请输入短信验证码" size="24"></input> 
-				<button type="button" class="btn btn-default" id="sms">获取短信验证</button><br/><br/>
+				<input type="text" placeholder="请输入短信验证码" size="24" id="inputcode" onblur="checksend()"></input> 
+				<button type="button" class="btn btn-default" id="sms" onclick="">获取短信验证</button><br/><br/>
+				<p class="text-warning"  id="forgetcode"></p>
 				</div>
 				<div class="form-group">
 					<input type="password" placeholder="请设置您的新密码(6-20个字母、数字、下划线 )" size="40" id="pwd" onblur="checkpwd()" onfocus="blurpwd()" name="newpwd"></input><br/><br/>

@@ -9,13 +9,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.omatcha.pojo.Expressadress;
 import com.omatcha.pojo.Users;
-import com.omatcha.service.ExpressadressService;
-import com.omatcha.service.impl.ExpressadressServiceImpl;
+import com.omatcha.service.SelectOrderService;
+import com.omatcha.service.impl.SelectOrderServiceImpl;
 
-public class SelectExpressadress extends HttpServlet{
-	ExpressadressService ea = new ExpressadressServiceImpl();
+public class SelectOrderServlet extends HttpServlet{
+	SelectOrderService sos = new SelectOrderServiceImpl();
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		doPost(req, resp);
@@ -25,15 +24,17 @@ public class SelectExpressadress extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("utf-8");
 		resp.setContentType("text/html;charset=utf-8");
-		HttpSession session = req.getSession(true);
-		Users  user = (Users) session.getAttribute("wuser");
-		List<Object> expressadress = ea.selectExprssadress(user);
-		if (expressadress.size()>0) {
-			session.setAttribute("expressadresslist", expressadress);
+		
+		HttpSession session = req.getSession();
+		Users  uersid = (Users) session.getAttribute("wuser");
+		List<Object> orderlist = sos.selectOrder(uersid);
+		
+		if (orderlist.size()>0) {
+			session.setAttribute("orderlist", orderlist);
 			
 		}
 		
 	}
-
+	
 	
 }

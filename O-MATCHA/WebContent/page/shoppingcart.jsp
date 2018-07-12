@@ -1,4 +1,4 @@
-﻿<%@ page language="java" contentType="text/html; charset=utf-8"
+<%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
      <%
 	String path = request.getContextPath();
@@ -94,12 +94,13 @@
 					 xiadan.html((money-parseFloat(dog)).toFixed(2));
 					 xiadan1.html((money1-parseFloat(dog)).toFixed(2));
 				}
-				
+				var td =abc.parent().prev().prev().prev().prev();
+				var spname=$($(td.children()).children()[1]).text();
 				$.ajax({//常用的就是ajax 也可以是get 和 post
 					url:"${pageContext.request.contextPath}/delectcommodity?cgid="+id,
 					type:"post",
 					traditional :true, 
-					data:{},
+					data:{"spname":spname},
 					dataType:"json",
 					success:function(data){
 						
@@ -207,7 +208,7 @@
 							<button  onclick="addshuliang(this)">+</button> &nbsp;<span>${information.quantity}</span>&nbsp;&nbsp;<button onclick="jianshuliang(this)">-</button>
 						</td>
 						<td id ="heji" >
-							￥<span>parseFloat(${information.price})*parseFloat(${information.quantity})</span>
+							￥<span>${information.price*information.quantity}</span>
 						</td>
 						<td  id="tdtow">
 							<a style="cursor:pointer"  title="添加到我的幸福收藏夹"><img src="ShoppingCart/images/1222.bmp" /></a>&nbsp;&nbsp;<a style="cursor:pointer" onclick="shanchu(this)" title="删除此商品"><img src="ShoppingCart/images/12122.jpg" /></a>
@@ -219,11 +220,11 @@
 										祝福贺卡
 									</li>
 									<li>
-										<input type="radio" value="${information.cgid}" name="${information.cgid}" onclick="xuyao(this)">需要</input>
+										<input type="radio" value="${information.cgid}" name="${information.name}" onclick="xuyao(this)">需要</input>
 
 									</li>
 									<li>
-										<input type="radio" value="1" name="${information.cgid}" checked  onclick="buxuyao(this)">不需要</input>
+										<input type="radio" value="1" name="${information.name}" checked  onclick="buxuyao(this)">不需要</input>
 									</li>
 									<li>
 										<input  style="height:30px;width:300px; display:none;" placeholder="限定30字哦！"></input>

@@ -28,6 +28,10 @@
   <servlet>
   	<servlet-name>Delectcommodity</servlet-name>
   	<servlet-class>com.omatcha.servlet.DelectcommodityServlet</servlet-class>
+  	<init-param>
+	 <param-name>charset</param-name>
+ 	<param-value>utf-8</param-value>
+ 	</init-param>
   </servlet>
  <servlet-mapping>
 	<servlet-name>Delectcommodity</servlet-name> 
@@ -211,6 +215,7 @@
 	<servlet-mapping>
 		<servlet-name>forgetpwd</servlet-name>
 		<url-pattern>/page/forgetpwd</url-pattern>
+	 </servlet-mapping>
   <!-- count -->
    <servlet>
 		<servlet-name>count</servlet-name>

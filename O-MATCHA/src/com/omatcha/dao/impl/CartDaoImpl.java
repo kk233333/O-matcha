@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.omatcha.dao.CartDao;
 import com.omatcha.pojo.CartGoods;
+import com.omatcha.pojo.Count;
 import com.omatcha.util.DButil;
 /***
  * cartDao实现类
@@ -39,6 +40,13 @@ public class CartDaoImpl implements CartDao{
 	public List<Object> uidqueryGoods(int uid) {
 		String sql = "select * from cartgoods WHERE uid=?";
 		return DButil.query(sql, CartGoods.class, uid);
+	}
+
+	@Override
+	public int queryCount(String sql, Object... objects) {
+		List list = DButil.query(sql, Count.class, objects);
+		int count = ((Count) list.get(0)).getCount();
+		return count;
 	}
 
 }

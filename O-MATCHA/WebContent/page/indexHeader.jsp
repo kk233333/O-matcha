@@ -8,18 +8,34 @@
 <title>index-header</title>
 <link rel="stylesheet" type="text/css" href="<%=path%>/qingxiping/css/index.css"/>
 <script type="text/javascript" src="<%=path%>/qingxiping/js/index.js"></script>
-<script>
-
+<script type="text/javascript">
+	$(function(){
+		$('#username').mouseover(function(){
+			$('#client').css({'display':'block'});
+		});
+		$('#client').mouseover(function(){
+			$('#client').css({'display':'block'});
+		});
+		$('#client').mouseout(function(){
+			$('#client').css({'display':'none'});
+		});
+		ajax();
+	});
+	function ajax(){
 		$.ajax({
 			url:"${pageContext.request.contextPath}/count.do",
 			type:"post",
 			data:{},
 			dataType:"json",
 			success:function(data){	
-				
+				$('#count').text(data.count);
+				if(data.portrait!=null){
+					$('#username').css({"display":"block"})
+					$('#usericon').css({"display":"none"})
+				}
 			}
 		});
-
+	}
 </script>
 </head>
 <body>
@@ -59,13 +75,21 @@
 						<span style="margin-left:10px" class="glyphicon glyphicon-search"></span>
 					</a>
 					<a href="<%=path%>/page/shoppingcart.jsp">
-						<span style="margin-left:10px" class="glyphicon glyphicon-shopping-cart"><span style="position:relative;top:-12px;left:-2px;padding:2px 4px;" class="badge pull-right">0</span></span>
+						<span style="margin-left:10px" class="glyphicon glyphicon-shopping-cart"><span style="position:relative;top:-12px;left:-2px;padding:2px 4px;" class="badge pull-right" id="count">0</span></span>
 						
 					</a>
 					<a href="<%=path%>/page/login.jsp">
 						<span id="usericon" style="margin-left:5px" class="glyphicon glyphicon-user"></span>
 					</a>
-					<span id="username" style="width:40px;margin-left:5px;display:none">xxx</span>
+					<span id="username" style="width:40px;margin-left:5px;display:none"><img src="" />xxx</span>
+					<ul id="client" class="" style="line-height:20px;">
+						<li>
+							 <a href="#">个人中心</a>
+						</li>
+						<li>
+							 <a href="#">退出登录</a>
+						</li>
+					</ul>
 				</div>
      	 		
      	 	</div>

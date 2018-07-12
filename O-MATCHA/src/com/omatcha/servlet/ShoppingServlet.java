@@ -56,8 +56,8 @@ public class ShoppingServlet extends HttpServlet {
 			ss.setAttribute("money", money);
 			String Paymentmethod =req.getParameter("fangshi");
 			ss.setAttribute("Paymentmethod", Paymentmethod);
-			String uid ="5";
-					//(String) ss.getAttribute("uid");
+			String uid =
+					 String.valueOf(ss.getAttribute("uid"));
 			
 			long dingdannumber=System.currentTimeMillis();
 			

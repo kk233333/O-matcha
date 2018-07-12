@@ -31,6 +31,7 @@ public class DelectcommodityServlet extends HttpServlet{
 			String uid=(String)req.getSession().getAttribute("uid");
 			System.out.println(req.getParameter("cgid"));
 			String name =req.getParameter("spname");
+			System.out.println(uid);
 			if(uid!=null){
 				int a=Integer.valueOf((String)req.getParameter("cgid"));
 				CartDaoImpl cd =new CartDaoImpl();

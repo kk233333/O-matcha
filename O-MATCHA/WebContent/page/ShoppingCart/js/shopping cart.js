@@ -143,7 +143,7 @@ function shuanl(){
 	shoppingcartAjax();
 	});
 	
-	
+	kongcart();
 	var test = $("tbody input[name='sProblem']:checked");
 	for(var i=0;i<test.size();i++){
 	 var orange=parseFloat($(test[i]).parent().next().next().next().next().children().text());
@@ -161,7 +161,14 @@ function shuanl(){
 	}
 	Single();
 	
-	
+}
+function kongcart(){
+	if($("tbody tr").size()>1){
+		$("#tablefoot").hide();
+	}
+	if($("tbody tr").size()==1){
+		$("#tablefoot").show();
+	}
 	
 }
 function qiehuan(obj){

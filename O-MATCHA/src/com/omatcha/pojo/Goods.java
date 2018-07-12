@@ -1,10 +1,13 @@
 package com.omatcha.pojo;
+
+import java.io.Serializable;
+
 /***
  * 商品的实体类
  * @author qingxiping
  *
  */
-public class Goods {
+public class Goods implements Serializable {
 	private int gid;
 	private String name;
 	private double price;

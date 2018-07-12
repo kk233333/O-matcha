@@ -1,6 +1,8 @@
 package com.omatcha.pojo;
 
-public class CartGoods {
+import java.io.Serializable;
+
+public class CartGoods implements Serializable {
 	private int cgid;
 	private String name;
 	private int quantity;

@@ -18,6 +18,7 @@ public interface CartDao {
 	public int UpdateGoods(int cgid,int quantity);
 	//查询购物车商品
 	public List<Object> queryGoods(String sql,Object...objects);
-	
+	//查询购物车商品数量
+	public int queryCount(String sql,Object...objects);
 
 }

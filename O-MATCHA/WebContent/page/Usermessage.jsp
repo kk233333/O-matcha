@@ -6,12 +6,14 @@
 <% String path = request.getContextPath(); %>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>setpassword</title>
+<title>设置头像</title>
 <script src="../wangwei/js/jquery-1.11.1.min.js"></script>
+
 <link href="../wangwei/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <link href="../wangwei/css/Usermessage.css" rel="stylesheet" type="text/css" media="all" />
 </head>
 <body>
+
 <jsp:include   page="/page/indexHeader.jsp" flush="true"/>
 <div class="container">
 	<div class="row clearfix">
@@ -24,10 +26,10 @@
 			<div class="row clearfix">
 				<div class="col-md-12 column">
 					<a href="<%=path%>/page/Usertx.jsp" target="rightpage">
-					<c:if test="${Portrait!=null}">
-					<img src="../wangwei/images/${Portrait}.png" class="img-circle">
+					<c:if test="${portrait!=null}">
+					<img src="../page/tx/${portrait}" class="img-circle" style="width:120px;height:100px">
 					</c:if>
-					<c:if test="${Portrait==null}">
+					<c:if test="${portrait==null}">
 					<img src="../wangwei/images/tx-logo.png" class="img-circle">
 					</c:if>
 					</a>

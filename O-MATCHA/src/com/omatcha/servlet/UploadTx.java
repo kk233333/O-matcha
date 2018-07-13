@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,6 +18,8 @@ import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
+import com.omatcha.pojo.Users;
+
 public class UploadTx extends HttpServlet{
 
 	@Override
@@ -26,9 +29,8 @@ public class UploadTx extends HttpServlet{
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		System.out.println("csdadsadsadsad");
 		//确定上传位置
-		String path = this.getServletContext().getRealPath("/wangwei/tx");
+		String path = this.getServletContext().getRealPath("page/tx");
 		File file = new File(path);
 		if(!file.exists()&&!file.isDirectory()){
 			file.mkdir();
@@ -48,7 +50,6 @@ public class UploadTx extends HttpServlet{
 		//5.使用ServletFileUpload解析器解析上传数据，解析结果返回一个集合
 		try {
 			List<FileItem> list = upload.parseRequest(req);
-			System.out.println(list.size());
 			for (FileItem fileItem : list) {
 				//如果fileItem中封装的是普通输入项的数据
 				if(fileItem.isFormField()){
@@ -66,10 +67,15 @@ public class UploadTx extends HttpServlet{
 					//fileName只取是文件名
 					fileName = fileName.substring(fileName.lastIndexOf("\\")+1);
 					
-					LoginServlet loginuser = new LoginServlet();
-					loginuser.user.setPortrait(fileName);
-					
-					
+					HttpSession session = req.getSession(true);
+					// user = (Users) session.getAttribute("wuser");
+					/*Users user = new Users();
+					user.setUid(1);*/
+					//user.setPortrait(fileName);
+					String txglj =path+"\\"+fileName;
+					System.out.println(txglj);
+					session.setAttribute("portrait", fileName);
+					session.setAttribute("txglj", txglj);
 					
 					//获取fileItem的上传文件输入流
 					InputStream in = fileItem.getInputStream();
@@ -83,8 +89,7 @@ public class UploadTx extends HttpServlet{
 					out.close();
 					fileItem.delete();
 					
-					HttpSession session = req.getSession(true);
-					session.setAttribute("Portrait", loginuser.user.getPortrait());
+					
 				}
 			}
 		} catch (FileUploadException e) {

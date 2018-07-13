@@ -9,7 +9,12 @@ import net.sf.json.JSONArray;
 import net.sf.json.JSONException;
 import net.sf.json.JSONObject;
 
+import com.omatcha.dao.CartDao;
+import com.omatcha.dao.impl.CartDaoImpl;
+import com.omatcha.pojo.CartGoods;
 import com.omatcha.pojo.ShoppingCart;
+import com.omatcha.service.CartService;
+import com.omatcha.service.impl.CartServiceImpl;
 /***
  * omatcha测试类
  * @author Administrator

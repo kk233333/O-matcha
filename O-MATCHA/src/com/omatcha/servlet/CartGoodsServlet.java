@@ -1,6 +1,7 @@
 package com.omatcha.servlet;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,7 +45,7 @@ public class CartGoodsServlet extends HttpServlet{
 		String w = req.getParameter("weight");
 		String q = req.getParameter("quantity");
 		int weight = Integer.parseInt(w.substring(0,1));
-		int quantity = Integer.parseInt(q);	
+		BigDecimal quantity = new BigDecimal(q);
 		String uid = String.valueOf(session.getAttribute("uid"));
 		
 		if("add".equals(a)){
@@ -58,7 +59,7 @@ public class CartGoodsServlet extends HttpServlet{
 			b:if(uid.equals("null")){
 				for (Object object : TempCart) {
 					if(cartGoods.getCname().equals(((CartGoods)object).getCname())){
-						((CartGoods)object).setQuantity(((CartGoods)object).getQuantity()+cartGoods.getQuantity());
+						((CartGoods)object).setQuantity(((CartGoods)object).getQuantity().add(cartGoods.getQuantity()));
 						break b;
 					}
 				}
@@ -78,7 +79,7 @@ public class CartGoodsServlet extends HttpServlet{
 			a:if(uid.equals("null")){
 				for (Object object : TempCart) {
 					if(cartGoods.getCname().equals(((CartGoods)object).getCname())){
-						((CartGoods)object).setQuantity(((CartGoods)object).getQuantity()+cartGoods.getQuantity());
+						((CartGoods)object).setQuantity(((CartGoods)object).getQuantity().add(cartGoods.getQuantity()));
 						break a;
 					}
 				}
@@ -90,12 +91,12 @@ public class CartGoodsServlet extends HttpServlet{
 			ObjectMapper om = new ObjectMapper();
 			int buy = 1;
 			om.writeValue(resp.getWriter(), buy);
-		}
-				
+		}		
 		if(!uid.equals("null")){
 			String sql = "SELECT cgid,cname,SUM(quantity) as quantity,weight,price,image,uid FROM cartgoods where uid=? GROUP BY cname";
 			List cartgoodslist = cs.queryGoods(sql,Integer.parseInt(uid));
 			session.setAttribute("cartgoodslist", cartgoodslist);
+			System.out.println(cartgoodslist);
 		}else{
 			session.setAttribute("cartgoodslist", TempCart);
 		}

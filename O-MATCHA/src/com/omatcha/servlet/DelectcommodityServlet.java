@@ -28,11 +28,11 @@ public class DelectcommodityServlet extends HttpServlet{
 		resp.setContentType("text/html;charset=utf-8");//设置响应的字符编码
 			
 			System.out.println("进来了哦");
-			String uid=(String)req.getSession().getAttribute("uid");
+			String uid=String.valueOf(req.getSession().getAttribute("uid"));
 			System.out.println(req.getParameter("cgid"));
 			String name =req.getParameter("spname");
 			System.out.println(uid);
-			if(uid!=null){
+			if(!uid.equals("null")){
 				int a=Integer.valueOf((String)req.getParameter("cgid"));
 				CartDaoImpl cd =new CartDaoImpl();
 				cd.deleteGoods(a);

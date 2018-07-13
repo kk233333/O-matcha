@@ -1,11 +1,12 @@
 package com.omatcha.pojo;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 public class CartGoods implements Serializable {
 	private int cgid;
 	private String cname;
-	private int quantity;
+	private BigDecimal quantity;
 	private int weight;
 	private double price;
 	private String image;
@@ -22,10 +23,10 @@ public class CartGoods implements Serializable {
 	public void setCname(String cname) {
 		this.cname = cname;
 	}
-	public int getQuantity() {
+	public BigDecimal getQuantity() {
 		return quantity;
 	}
-	public void setQuantity(int quantity) {
+	public void setQuantity(BigDecimal quantity) {
 		this.quantity = quantity;
 	}
 	public int getWeight() {

@@ -39,17 +39,17 @@ public class CountServlet extends HttpServlet{
 		if(uid.equals("null")){
 			if(list!=null){
 				for (Object obj : list) {
-					count+=((CartGoods) obj).getQuantity();
+					count+=Integer.parseInt(((CartGoods) obj).getQuantity().toString());
 				}
 			}
 		}else{
 			count = cs.queryCount(sql, Integer.parseInt(uid));
-			//Users user = (Users) session.getAttribute("wuser");
-			//portrait = user.getPortrait();	
+			Users user = (Users) session.getAttribute("wuser");
+			portrait = user.getPortrait();	
 		}
 		Map map = new HashMap();
 		map.put("count", count+"");
-		map.put("portrait", null);
+		map.put("portrait", portrait);
 		ObjectMapper om = new ObjectMapper();		
 		om.writeValue(resp.getWriter(), map);
 		

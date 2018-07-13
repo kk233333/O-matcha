@@ -26,7 +26,7 @@
 		<script >
 		
 			function shoppingcartAjax(){
-				ajax();
+				
 			var list=[];
 			var shangping= $("tbody tr");
 			var number=shangping.size();

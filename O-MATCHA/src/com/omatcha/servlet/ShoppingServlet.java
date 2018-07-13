@@ -82,17 +82,17 @@ public class ShoppingServlet extends HttpServlet {
 				ObjectMapper om = new ObjectMapper();
 				String who=req.getParameter("who");
 				
-				if(uid==null&&who.equals("logong")){
+				if(uid.equals("null")&&who.equals("logong")){
 					System.out.println("login");
 					om.writeValue(resp.getWriter(), "login");
 					ss.setAttribute("jump", "jump");
 				}
-				if(uid==null&&who.equals("undefined")){
+				if(uid.equals("null")&&who.equals("undefined")){
 					System.out.println("tis");
 					om.writeValue(resp.getWriter(), "tis");
 				}
-				if(uid!=null&&who.equals("undefined")){
-					System.out.println(uid);
+				if(!(uid.equals("null"))&&who.equals("undefined")){
+					System.out.println("gfdgd");
 					om.writeValue(resp.getWriter(), uid);
 				}
 			

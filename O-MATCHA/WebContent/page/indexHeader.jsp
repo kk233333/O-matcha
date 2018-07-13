@@ -17,10 +17,14 @@
 			dataType:"json",
 			success:function(data){	
 				$('#count').text(data.count);
-				if(data.portrait!=null){
-					$('#username').css({"display":"block"})
-					$('#usericon').css({"display":"none"})
+				if(data.uid!="null"){
+					if(data.portraitPath!=null){
+						$('#username').css({"display":"block"})
+						$('#usericon').css({"display":"none"})
+						$('#tx').src(data.portraitPath)
+					}
 				}
+				
 			}
 		});
 	}
@@ -79,12 +83,12 @@
 						
 					</a>
 					<a href="<%=path%>/page/login.jsp">
-						<span id="usericon" style="margin-left:5px" class="glyphicon glyphicon-user"></span>
+						<span id="usericon" style="margin-left:5px;display:none" class="glyphicon glyphicon-user"></span>
 					</a>
-					<span id="username" style="width:40px;margin-left:5px;display:none"><img src="" />xxx</span>
+					<span id="username" float:right;width:25px;margin-left:5px;display:block"><img id="tx" src="" style="width:20px;height:20px"/></span>
 					<ul id="client" class="" style="line-height:20px;">
 						<li>
-							 <a href="<%=path%>/page/usermessage.jsp">个人中心</a>
+							 <a href="<%=path%>/page/Usermessage.jsp">个人中心</a>
 						</li>
 						<li>
 							 <a href="<%=path%>/logout.do">退出登录</a>

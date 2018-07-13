@@ -39,8 +39,10 @@ public class Test {
 //		   // TODO Auto-generated catch block
 //		   e.printStackTrace();
 //		  }
-		
-		
+		CartService cs = new CartServiceImpl();
+		String sql = "select cgid,cname,sum(quantity) as quantity,weight,price,image,uid from cartgoods where uid=?";
+		int count = cs.queryCount(sql, 7);
+		System.out.println(count);
 	}
 
 }

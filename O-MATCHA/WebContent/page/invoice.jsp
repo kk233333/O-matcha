@@ -31,21 +31,21 @@
 		function shoppingAjax(){
 			
 			var cgidlista;
-			for(var i=0;i<$('input:hidden').size();i++){
+			for(var i=0;i<$(".name").size();i++){
 				if(i==0){
-					cgidlista=$($('input:hidden')[i]).val();
+					cgidlista=$($(".name")[i]).text();
 				}else{
-					cgidlista=$($('input:hidden')[i]).val()+"-"+cgidlista;
+					cgidlista=$($(".name")[i]).text()+"-"+cgidlista;
 				}
-				
 				alert(cgidlista);
+				
 			}
 			
 			$.ajax({
 				url:"${pageContext.request.contextPath}/orderAjax",
 				type:"post",
 				traditional :true, 
-				data:{"cgid":cgidlista},
+				data:{"cname":cgidlista},
 				dataType:"json",
 				success:function(data){
 					

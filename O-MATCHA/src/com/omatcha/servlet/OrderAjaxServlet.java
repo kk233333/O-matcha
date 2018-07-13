@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 import com.omatcha.dao.impl.AddOrderimpl;
 import com.omatcha.dao.impl.CartDaoImpl;
 import com.omatcha.pojo.Shopping;
+import com.omatcha.util.DButil;
 
 public class OrderAjaxServlet extends HttpServlet {
 
@@ -24,6 +25,7 @@ public class OrderAjaxServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
+		
 			HttpSession ss=req.getSession();
 		int uid =(int) ss.getAttribute("uid");
 	
@@ -34,7 +36,6 @@ public class OrderAjaxServlet extends HttpServlet {
 				(String)ss.getAttribute("address"), (String)ss.getAttribute("money"), 
 				(String)ss.getAttribute("Paymentmethod"), (String)ss.getAttribute("Consignee"), 
 				uid+number);
-		System.out.println(a);
 		for (int i = 0; i < list.size(); i++) {
 		String spname=	list.get(i).getSpname();
 		String guige=	list.get(i).getGuige();
@@ -42,13 +43,15 @@ public class OrderAjaxServlet extends HttpServlet {
 		String spmoney=	list.get(i).getOnemoney();
 		add.AddOrdersp(spname, guige, spnumber, spmoney, uid+number);
 		}
+		System.out.println(a);
+		// 根据uid 和商品名称   删除购物车数据库的数据
+		String sql ="DELETE FROM cartgoods where uid=? AND cname=?";
+		String cnames=req.getParameter("cname");
 		
-		// 根据cgid 删除购物车数据库的数据
-		String cgids=req.getParameter("cgid");	
-		String[] cgid=cgids.split("-");
-		CartDaoImpl cd =new CartDaoImpl();
-		for (int i = 0; i < cgid.length; i++) {
-			cd.deleteGoods(Integer.valueOf(cgid[i]));
+		String[] cname=cnames.split("-");
+		for (int i = 0; i < cname.length; i++) {
+			DButil.update(sql, uid,cname[i]);
+			
 		}
 		
 	}

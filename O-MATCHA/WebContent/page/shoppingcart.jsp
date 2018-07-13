@@ -170,7 +170,7 @@
 						<td >
 							<div style="width:250px;"> 
 								<img  style="width:80px;height:80px; float:left"alt="80x80" src="../qingxiping/images/goods/${information.image}" />
-								<a class="name" >${information.name}</a><br/><br/><span id="jiesao">规格：${information.weight} 磅</span><br/><br/><br/>
+								<a class="name" >${information.cname}</a><br/><br/><span id="jiesao">规格：${information.weight} 磅</span><br/><br/><br/>
 									<div class="btn-group" id="sha">
 										 <button class="btn btn-default">请选择产品的祝福标签</button> <button style="height:34px;" data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span class="caret"></span></button>
 											<ul class="dropdown-menu">
@@ -220,11 +220,11 @@
 										祝福贺卡
 									</li>
 									<li>
-										<input type="radio" value="${information.cgid}" name="${information.name}" onclick="xuyao(this)">需要</input>
+										<input type="radio" value="${information.cgid}" name="${information.cname}" onclick="xuyao(this)">需要</input>
 
 									</li>
 									<li>
-										<input type="radio" value="1" name="${information.name}" checked  onclick="buxuyao(this)">不需要</input>
+										<input type="radio" value="1" name="${information.cname}" checked  onclick="buxuyao(this)">不需要</input>
 									</li>
 									<li>
 										<input  style="height:30px;width:300px; display:none;" placeholder="限定30字哦！"></input>

@@ -34,9 +34,10 @@ public class Userslist extends HttpServlet{
 		String uarea = req.getParameter("cmbArea");
 		String uadress = req.getParameter("uadress");
 		
-		LoginServlet loginuser = new LoginServlet();
+		//LoginServlet loginuser = new LoginServlet();
+		Users user = (Users) session.getAttribute("wuser");
 		
-		Users user = loginuser.user;
+		//Users user = loginuser.user;
 		user.setNickname(unickname);
 		user.setUsex(usex);
 		user.setBirthday(birthday);

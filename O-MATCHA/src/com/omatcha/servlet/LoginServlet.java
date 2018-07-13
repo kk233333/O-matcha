@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 import com.omatcha.pojo.Users;
 import com.omatcha.service.UserService;
 import com.omatcha.service.impl.UserServiceImpl;
+import com.omatcha.util.AddShoppingCart;
 
 public class LoginServlet extends HttpServlet{
 	UserService us = new UserServiceImpl();
@@ -54,7 +55,15 @@ public class LoginServlet extends HttpServlet{
 			} else {
 				
 				}
-			 req.getRequestDispatcher("/page/index.jsp").forward(req, resp);
+			//跳转判断
+			String jump = (String) session.getAttribute("jump");
+			if (jump.length()>0) {
+				AddShoppingCart.addshoppingcart(req, resp);
+				req.getRequestDispatcher("/page/shopping.jsp").forward(req, resp);
+			}else{
+				req.getRequestDispatcher("/page/index.jsp").forward(req, resp);
+			}
+			 
 	}
 	 else{
 		 PrintWriter writer = resp.getWriter();

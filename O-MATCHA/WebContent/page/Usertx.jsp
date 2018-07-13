@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>USER-SET</title>
+<title>上传头像</title>
 <link href="../wangwei/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <link rel="stylesheet" href="../wangwei/css/Usertx.css" />
 </head>

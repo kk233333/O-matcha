@@ -33,6 +33,7 @@ public class CountServlet extends HttpServlet{
 		String sql = "select cgid,cname,sum(quantity) as quantity,weight,price,image,uid from cartgoods where uid=?";
 		int count = 0;
 		String portrait = null;
+		String portraitPath=null;
 		HttpSession session = req.getSession();		
 		String uid = String.valueOf(session.getAttribute("uid"));
 		List list = (List) session.getAttribute("cartgoodslist");
@@ -44,12 +45,17 @@ public class CountServlet extends HttpServlet{
 			}
 		}else{
 			count = cs.queryCount(sql, Integer.parseInt(uid));
-			Users user = (Users) session.getAttribute("wuser");
-			portrait = user.getPortrait();	
+			portrait = (String) session.getAttribute("portrait");	
+			if(portrait==null){			
+				portraitPath=req.getContextPath()+"/wangwei/images/defaulttx.png";
+			}else{
+				portraitPath="../page/tx/"+portrait;
+			}
 		}
 		Map map = new HashMap();
 		map.put("count", count+"");
-		map.put("portrait", portrait);
+		map.put("uid", uid);
+		map.put("portrait", portraitPath);		
 		ObjectMapper om = new ObjectMapper();		
 		om.writeValue(resp.getWriter(), map);
 		

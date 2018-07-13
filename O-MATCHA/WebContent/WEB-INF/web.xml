@@ -246,4 +246,15 @@
 		<url-pattern>/page/checksend</url-pattern>
   </servlet-mapping>
   
+  
+<!-- 判断短信 -->
+   <servlet>
+		<servlet-name>logout</servlet-name>
+		<servlet-class>com.omatcha.servlet.Logout</servlet-class>
+</servlet>
+	<servlet-mapping>
+		<servlet-name>logout</servlet-name>
+		<url-pattern>/logout.do</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : local
+Source Server         : cart
 Source Server Version : 50515
 Source Host           : localhost:3306
 Source Database       : omatcha
@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50515
 File Encoding         : 65001
 
-Date: 2018-07-11 18:06:01
+Date: 2018-07-12 18:15:21
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -118,20 +118,44 @@ DROP TABLE IF EXISTS `myorder`;
 CREATE TABLE `myorder` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `uid` int(11) DEFAULT NULL,
-  `xiadantime` varchar(255) DEFAULT NULL,
+  `xiadantime` char(255) DEFAULT NULL,
   `dingdannumber` varchar(255) DEFAULT NULL,
-  `address` varchar(255) DEFAULT NULL,
-  `money` varchar(255) DEFAULT NULL,
-  `Paymentmethod` varchar(255) DEFAULT NULL,
-  `Consignee` varchar(255) DEFAULT NULL,
-  `Commodityinformation` varchar(255) DEFAULT NULL,
+  `address` char(255) DEFAULT NULL,
+  `money` char(255) DEFAULT NULL,
+  `Paymentmethod` char(255) DEFAULT NULL,
+  `Consignee` char(255) DEFAULT NULL,
+  `orderid` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `uid` (`uid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  KEY `orderid` (`orderid`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of myorder
 -- ----------------------------
+INSERT INTO `myorder` VALUES ('7', '5', '2018年07月12日     04:07', '1531384366449', '西藏_拉萨市_市辖区_17781158047', '44.00', '现金支付', '17781158047', '289');
+INSERT INTO `myorder` VALUES ('8', '6', '2018年07月12日     05:07', '1531387530147', '青海_西宁市_市辖区_17781158047', '452.00', '现金支付', '17781158047', '505');
+
+-- ----------------------------
+-- Table structure for `ordersp`
+-- ----------------------------
+DROP TABLE IF EXISTS `ordersp`;
+CREATE TABLE `ordersp` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `spname` char(255) DEFAULT NULL,
+  `guige` char(255) DEFAULT NULL,
+  `spnumber` char(255) DEFAULT NULL,
+  `spmoney` char(255) DEFAULT NULL,
+  `ordernumber` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `spid` (`ordernumber`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of ordersp
+-- ----------------------------
+INSERT INTO `ordersp` VALUES ('10', '菠萝汁', '规格：1 磅', '1', '18.0', '289');
+INSERT INTO `ordersp` VALUES ('11', '菠萝汁', '规格：1 磅', '1', '18.0', '289');
+INSERT INTO `ordersp` VALUES ('12', '心语心愿', '规格：1 磅', '3', '444.0', '505');
 
 -- ----------------------------
 -- Table structure for `review`
@@ -171,10 +195,14 @@ CREATE TABLE `user` (
   `portrait` varchar(255) DEFAULT NULL,
   `Nickname` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`uid`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
 INSERT INTO `user` VALUES ('1', 'wangwei', '18180540222', '676124144@qq.com', 'wa19940910', null, null, null, null, null, null, null, null);
 INSERT INTO `user` VALUES ('2', 'wangwei', '14788888888', '123@qq', '123456789', null, null, null, null, null, null, null, null);
+INSERT INTO `user` VALUES ('3', null, null, '941130956@qq.com', '25f9e794323b453885f5181f1b624d0b', null, null, null, null, null, null, null, null);
+INSERT INTO `user` VALUES ('4', null, null, '941130956@qq.com', '25f9e794323b453885f5181f1b624d0b', null, null, null, null, null, null, null, null);
+INSERT INTO `user` VALUES ('5', '12346789', '17781158047', '941130956@qq.com', '25f9e794323b453885f5181f1b624d0b', null, null, null, null, null, null, null, null);
+INSERT INTO `user` VALUES ('6', '987654321', '17781158046', '112@qq.com', '25f9e794323b453885f5181f1b624d0b', null, null, null, null, null, null, null, null);

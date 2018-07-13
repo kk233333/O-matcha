@@ -25,8 +25,8 @@ public class OrderAjaxServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 			HttpSession ss=req.getSession();
-		int uid =5;
-		//Integer.valueOf((String)ss.getAttribute("uid"));
+		int uid =(int) ss.getAttribute("uid");
+	
 		int number=(int) (Math.random()*1000);
 		AddOrderimpl add =new AddOrderimpl();
 		List <Shopping>list=((List)ss.getAttribute("Orderlist"));

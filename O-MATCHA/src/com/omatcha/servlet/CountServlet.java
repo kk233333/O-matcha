@@ -30,13 +30,13 @@ public class CountServlet extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		CartService cs = new CartServiceImpl();
-		String sql = "select sum(quantity) from cartgoods where uid=?";
+		String sql = "select cgid,cname,sum(quantity) as quantity,weight,price,image,uid from cartgoods where uid=?";
 		int count = 0;
 		String portrait = null;
-		HttpSession session = req.getSession();
-		String uid = (String) session.getAttribute("uid");
+		HttpSession session = req.getSession();		
+		String uid = String.valueOf(session.getAttribute("uid"));
 		List list = (List) session.getAttribute("cartgoodslist");
-		if(uid==null){
+		if(uid.equals("null")){
 			if(list!=null){
 				for (Object obj : list) {
 					count+=((CartGoods) obj).getQuantity();
@@ -44,12 +44,12 @@ public class CountServlet extends HttpServlet{
 			}
 		}else{
 			count = cs.queryCount(sql, Integer.parseInt(uid));
-			Users user = (Users) session.getAttribute("wuser");
-			portrait = user.getPortrait();	
+			//Users user = (Users) session.getAttribute("wuser");
+			//portrait = user.getPortrait();	
 		}
 		Map map = new HashMap();
 		map.put("count", count+"");
-		map.put("portrait", portrait);
+		map.put("portrait", null);
 		ObjectMapper om = new ObjectMapper();		
 		om.writeValue(resp.getWriter(), map);
 		

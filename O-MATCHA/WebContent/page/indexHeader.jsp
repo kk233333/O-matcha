@@ -9,18 +9,6 @@
 <link rel="stylesheet" type="text/css" href="<%=path%>/qingxiping/css/index.css"/>
 <script type="text/javascript" src="<%=path%>/qingxiping/js/index.js"></script>
 <script type="text/javascript">
-	$(function(){
-		$('#username').mouseover(function(){
-			$('#client').css({'display':'block'});
-		});
-		$('#client').mouseover(function(){
-			$('#client').css({'display':'block'});
-		});
-		$('#client').mouseout(function(){
-			$('#client').css({'display':'none'});
-		});
-		ajax();
-	});
 	function ajax(){
 		$.ajax({
 			url:"${pageContext.request.contextPath}/count.do",
@@ -36,6 +24,18 @@
 			}
 		});
 	}
+	$(function(){
+		$('#username').mouseover(function(){
+			$('#client').css({'display':'block'});
+		});
+		$('#client').mouseover(function(){
+			$('#client').css({'display':'block'});
+		});
+		$('#client').mouseout(function(){
+			$('#client').css({'display':'none'});
+		});
+		ajax();
+	});
 </script>
 </head>
 <body>

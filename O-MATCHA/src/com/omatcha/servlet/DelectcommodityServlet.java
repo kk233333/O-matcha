@@ -31,6 +31,7 @@ public class DelectcommodityServlet extends HttpServlet{
 			String uid=(String)req.getSession().getAttribute("uid");
 			System.out.println(req.getParameter("cgid"));
 			String name =req.getParameter("spname");
+			System.out.println(uid);
 			if(uid!=null){
 				int a=Integer.valueOf((String)req.getParameter("cgid"));
 				CartDaoImpl cd =new CartDaoImpl();
@@ -39,7 +40,7 @@ public class DelectcommodityServlet extends HttpServlet{
 				System.out.println(name);
 				List <CartGoods>list=Cartgoodlist.getCartgoodlist().getL();
 				for (int i = 0; i < list.size(); i++) {
-					if(list.get(i).getName().equals(name)){
+					if(list.get(i).getCname().equals(name)){
 						list.remove(i);
 					}
 				}

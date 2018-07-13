@@ -39,18 +39,19 @@ public class CountServlet extends HttpServlet{
 		List list = (List) session.getAttribute("cartgoodslist");
 		if(uid.equals("null")){
 			if(list!=null){
+				session.setAttribute("cartgoodslist", list);
 				for (Object obj : list) {
 					count+=Integer.parseInt(((CartGoods) obj).getQuantity().toString());
 				}
 			}
 		}else{
-			count = cs.queryCount(sql, Integer.parseInt(uid));
+			String sql1 = "SELECT cgid,cname,SUM(quantity) as quantity,weight,price,image,uid FROM cartgoods where uid=? GROUP BY cname";
+			List cartgoodslist = cs.queryGoods(sql1,Integer.parseInt(uid));
+			session.setAttribute("cartgoodslist", cartgoodslist);				
 			portrait = (String) session.getAttribute("portrait");	
-			if(portrait==null){			
-				portraitPath=req.getContextPath()+"/wangwei/images/defaulttx.png";
-			}else{
-				portraitPath="../page/tx/"+portrait;
-			}
+			if(portrait!=null){			
+				portraitPath="<%=path%>/page/tx/"+portrait;
+			}					
 		}
 		Map map = new HashMap();
 		map.put("count", count+"");

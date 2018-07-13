@@ -96,7 +96,6 @@ public class CartGoodsServlet extends HttpServlet{
 			String sql = "SELECT cgid,cname,SUM(quantity) as quantity,weight,price,image,uid FROM cartgoods where uid=? GROUP BY cname";
 			List cartgoodslist = cs.queryGoods(sql,Integer.parseInt(uid));
 			session.setAttribute("cartgoodslist", cartgoodslist);
-			System.out.println(cartgoodslist);
 		}else{
 			session.setAttribute("cartgoodslist", TempCart);
 		}

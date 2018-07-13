@@ -83,9 +83,9 @@
 						
 					</a>
 					<a href="<%=path%>/page/login.jsp">
-						<span id="usericon" style="margin-left:5px;display:none" class="glyphicon glyphicon-user"></span>
+						<span id="usericon" style="position:absolute;left:1213px;top:32px;margin-left:5px;display:block" class="glyphicon glyphicon-user"></span>
 					</a>
-					<span id="username" float:right;width:25px;margin-left:5px;display:block"><img id="tx" src="" style="width:20px;height:20px"/></span>
+					<span id="username" style="float:right;width:25px;position:absolute;left:1216px;top:30px;display:none"><img id="tx" src="<%=path%>/wangwei/images/defaulttx.png" style="width:20px;height:20px"/></span>
 					<ul id="client" class="" style="line-height:20px;">
 						<li>
 							 <a href="<%=path%>/page/Usermessage.jsp">个人中心</a>

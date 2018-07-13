@@ -102,10 +102,8 @@
 					traditional :true, 
 					data:{"spname":spname},
 					dataType:"json",
-					success:function(data){
-						
+					success:function(data){	
 					}
-					
 				});	
 				kongcart();
 				ajax();

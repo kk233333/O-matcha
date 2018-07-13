@@ -18,36 +18,10 @@ var prov1= [sc1,hb1,js1];
 var number;
 
 function tranData(){
-	var proObj = document.getElementById("shengfen");
-	var index = proObj.selectedIndex;
-		number=index;
-	var data = prov[index];
-	var cityObj = document.getElementById("chengshi");
-	while(cityObj.childNodes.length>0){
-		cityObj.removeChild(cityObj.firstChild);
-	}
-	for(var i=0;i<data.length;i++){
-		var optionObj = document.createElement("option");
-		optionObj.innerText = data[i];
-		cityObj.appendChild(optionObj);
-	}
-	tranData1();
 	orange();
+	
 }
-function tranData1(){
-	var proObj = document.getElementById("chengshi");
-	var index = proObj.selectedIndex;
-	var data = prov1[number][index];
-	var cityObj = document.getElementById("qu");
-	while(cityObj.childNodes.length>0){
-		cityObj.removeChild(cityObj.firstChild); 
-	}
-	for(var i=0;i<data.length;i++){
-		var optionObj = document.createElement("option");
-		optionObj.innerText = data[i];
-		cityObj.appendChild(optionObj);
-	}
-}
+
 function zhifufangs(obj){
 	var abc =$(obj);
 	var cat =abc.siblings();
@@ -111,25 +85,20 @@ function panduan(obj){
 	var abc=$(obj);
 	if(boolea){
 		abc.attr("onclick","shoppingAjax()");
-		shoppingAjax();
-		//abc.removeAttr("href"); 
-		
+		shoppingAjax();	
 	}
 	
 }
 
 function orange(){
 	var orange1 =$("#zongji1").children().children();
-	
 		var numbercat=0;
 		var orangecat=$(".heji1");
-		
 		for(var i=0;i<orangecat.size();i++){
 			numbercat=numbercat+parseFloat($(orangecat[i]).children().text());
 		}
 	var jiaobj =$("#jia");
 		jiaobj.html(numbercat.toFixed(2));
-	
 		var jia =parseFloat($("#jia").text())
 		var jia1 =parseFloat($("#jia1").text())
 		var jian =parseFloat($("#jian").text())
@@ -137,7 +106,6 @@ function orange(){
 		var jian2 =parseFloat($("#jian2").text())
 		var zong = (jia+jia1-jian-jian1-jian2);
 		orange1.html(zong.toFixed(2));
-		
 }
 function fapiao(obj){
 	var abc =$(obj);
@@ -151,12 +119,5 @@ function fapiao(obj){
 		orange();
 	}
 }
-
-
-
-
-
-
-
 
 

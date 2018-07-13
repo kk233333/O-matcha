@@ -31,8 +31,7 @@
 		<script type="text/javascript" src="ShoppingCart/js/mobile_date.js"></script>
 		<script type="text/javascript" src="ShoppingCart/js/ssxld.js"></script>
 		<script >
-			
-			
+		
 			var fangshi = "支付宝支付";
 			function zhifufangs(obj){
 				var abc =$(obj);
@@ -53,7 +52,6 @@
 			var time =$("#gezi").val();
 			var beizhu=$("#beizhu").val();
 			var money=$("#money").text();
-			
 			var list=[];
 			var shangping= $("tbody tr");
 			var number=shangping.size();
@@ -126,16 +124,17 @@
 					<h4>填写信息/提交订单</h4>
 					<p style="position:absolute; margin-left:-15px;margin-top:20px;font-weight:bold;">选择收货地址</p>
 					
-					<div class="biaotou" style="margin-top:100px;">
+					<div id="logintest" class="biaotou" style="margin-top:100px;">
 					<span>如果您之前有购买，可登录直接获取地址，方便快捷并可获取积分信息 </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<button id="denglu" onclick="shoppingAjax('logong')" >登&nbsp;录</button><br/><br/>
 					</div>
 					<div class="biaotou">
+					
 					<span>配送方式</span> <input  type="radio" name="名称" checked="checked"/><span>配送上门</span ><input  type="radio" name="名称" /><span>门店自提</span >
 					</div>
 					
 					<div class="fangda" >
-					<input id="shouhuo " value="${Consignee}"/><span>收货人</span> 
+					<input id="shouhuo" value="${Consignee}"/><span>收货人</span> 
 					</div>
 					
 					
@@ -154,7 +153,7 @@
 								<select id="qu" >
 								
 								</select>
-								<p><input id="dizhi2" placeholder="请输入详细地址" value="${address}" style="margin-top:15px;width:600px;"></input> <a id="dizhi3"href="<%=path%>/page/map.jsp"">查看店面详细地址</a></p>
+								<p><input id="dizhi2" placeholder="请输入详细地址（为保护隐私地址信息不提供保存！）"  style="margin-top:15px;width:600px;"></input> <a id="dizhi3"href="<%=path%>/page/map.jsp"">查看店面详细地址</a></p>
 					</div>
 					
 					<div class="fangda"style="margin-top:80px;">

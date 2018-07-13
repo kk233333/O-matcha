@@ -161,7 +161,7 @@
 									<img style="width:500px;height:450px;margin-left:40px;" src="ShoppingCart/images/eimazhifuhaibaosheji_7065409.bmp"/>
 								</div>
 								<div class="modal-footer">
-									 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button> <a  href="https://www.baidu.com" type="button" class="btn btn-primary">完成</a>
+									 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button> <a  href="<%=path%>" type="button" class="btn btn-primary">完成</a>
 								</div>
 							</div>
 							

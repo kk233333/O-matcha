@@ -35,7 +35,7 @@ public class CartDaoImpl implements CartDao{
 
 	@Override
 	public List<Object> queryGoods(String sql,Object...objects) {
-		return DButil.query(sql, CartGoods.class, null);
+		return DButil.query(sql, CartGoods.class, objects);
 	}
 	public List<Object> uidqueryGoods(int uid) {
 		String sql = "select * from cartgoods WHERE uid=?";
@@ -48,7 +48,7 @@ public class CartDaoImpl implements CartDao{
 		int count = 0;
 		if(list!=null){
 			if(list.get(0)!=null)
-			count = ((CartGoods) list.get(0)).getQuantity();
+			count = Integer.parseInt(((CartGoods) list.get(0)).getQuantity().toString());
 		}	
 		return count;
 	}

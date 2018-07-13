@@ -39,7 +39,7 @@ public class CountServlet extends HttpServlet{
 		if(uid.equals("null")){
 			if(list!=null){
 				for (Object obj : list) {
-					count+=((CartGoods) obj).getQuantity();
+					count+=Integer.parseInt(((CartGoods) obj).getQuantity().toString());
 				}
 			}
 		}else{

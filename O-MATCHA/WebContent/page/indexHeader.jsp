@@ -84,10 +84,10 @@
 					<span id="username" style="width:40px;margin-left:5px;display:none"><img src="" />xxx</span>
 					<ul id="client" class="" style="line-height:20px;">
 						<li>
-							 <a href="#">个人中心</a>
+							 <a href="<%=path%>/page/usermessage.jsp">个人中心</a>
 						</li>
 						<li>
-							 <a href="#">退出登录</a>
+							 <a href="<%=path%>/logout.do">退出登录</a>
 						</li>
 					</ul>
 				</div>

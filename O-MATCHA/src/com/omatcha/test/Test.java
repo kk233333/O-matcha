@@ -9,6 +9,8 @@ import net.sf.json.JSONArray;
 import net.sf.json.JSONException;
 import net.sf.json.JSONObject;
 
+import com.omatcha.dao.CartDao;
+import com.omatcha.dao.impl.CartDaoImpl;
 import com.omatcha.pojo.ShoppingCart;
 /***
  * omatcha测试类
@@ -34,8 +36,6 @@ public class Test {
 //		   // TODO Auto-generated catch block
 //		   e.printStackTrace();
 //		  }
-		
-		
 	}
 
 }

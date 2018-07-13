@@ -45,7 +45,7 @@ public class CartGoodsServlet extends HttpServlet{
 		String q = req.getParameter("quantity");
 		int weight = Integer.parseInt(w.substring(0,1));
 		int quantity = Integer.parseInt(q);	
-		String uid = (String) req.getAttribute("uid");
+		String uid = String.valueOf(session.getAttribute("uid"));
 		
 		if("add".equals(a)){
 			goods = (Goods) req.getSession().getAttribute("goods");
@@ -55,7 +55,7 @@ public class CartGoodsServlet extends HttpServlet{
 			cartGoods.setPrice(goods.getPrice());
 			cartGoods.setWeight(weight);
 			cartGoods.setImage(goods.getImage1());
-			b:if(uid==null){
+			b:if(uid.equals("null")){
 				for (Object object : TempCart) {
 					if(cartGoods.getCname().equals(((CartGoods)object).getCname())){
 						((CartGoods)object).setQuantity(((CartGoods)object).getQuantity()+cartGoods.getQuantity());
@@ -75,7 +75,7 @@ public class CartGoodsServlet extends HttpServlet{
 			cartGoods.setPrice(goods.getPrice());
 			cartGoods.setWeight(weight);
 			cartGoods.setImage(goods.getImage1());
-			a:if(uid==null){
+			a:if(uid.equals("null")){
 				for (Object object : TempCart) {
 					if(cartGoods.getCname().equals(((CartGoods)object).getCname())){
 						((CartGoods)object).setQuantity(((CartGoods)object).getQuantity()+cartGoods.getQuantity());
@@ -92,8 +92,8 @@ public class CartGoodsServlet extends HttpServlet{
 			om.writeValue(resp.getWriter(), buy);
 		}
 				
-		if(uid!=null){
-			String sql = "SELECT cgid,cname,SUM(quantity),weight,price,image,uid FROM cartgoods where uid=? GROUP BY cname";
+		if(!uid.equals("null")){
+			String sql = "SELECT cgid,cname,SUM(quantity) as quantity,weight,price,image,uid FROM cartgoods where uid=? GROUP BY cname";
 			List cartgoodslist = cs.queryGoods(sql,Integer.parseInt(uid));
 			session.setAttribute("cartgoodslist", cartgoodslist);
 		}else{

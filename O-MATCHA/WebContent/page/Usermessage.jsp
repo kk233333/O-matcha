@@ -41,7 +41,7 @@
 					<a href="<%=path%>/page/Collection.jsp" target="rightpage">收藏夹</a>
 				</li>
 				<li>
-					<a href="<%=path%>/page/Order.jsp" target="rightpage">我的订单</a>
+					<a href="<%=path%>/page/worder.jsp" target="rightpage">我的订单</a>
 				</li>
 				<li>
 					<a href="<%=path%>/page/Expressaddress.jsp" target="rightpage">收货地址</a>

@@ -44,7 +44,12 @@ public class CartDaoImpl implements CartDao{
 
 	@Override
 	public int queryCount(String sql, Object... objects) {
-		List list = DButil.query(sql, CartGoods.class, objects);
+		List list =null;
+		try{
+			list = DButil.query(sql, CartGoods.class, objects);
+		}catch(Exception e){
+			
+		}
 		int count = 0;
 		if(list!=null){
 			if(list.get(0)!=null)

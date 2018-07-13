@@ -135,12 +135,12 @@
 					</div>
 					
 					<div class="fangda" >
-					<input id="shouhuo"/><span>收货人</span> 
+					<input id="shouhuo " value="${Consignee}"/><span>收货人</span> 
 					</div>
 					
 					
 					<div  class="fangda">
-					<input id="shouji1" class="shouji" /><span >收货人手机</span> 
+					<input id="shouji1" class="shouji" value="${Consigneephone}" /><span >收货人手机</span> 
 					</div>
 					
 					<div class="fangda">
@@ -154,20 +154,20 @@
 								<select id="qu" >
 								
 								</select>
-								<p><input id="dizhi2" placeholder="请输入详细地址" style="margin-top:15px;width:600px;"></input> <a id="dizhi3"href="<%=path%>/page/map.jsp"">查看店面详细地址</a></p>
+								<p><input id="dizhi2" placeholder="请输入详细地址" value="${address}" style="margin-top:15px;width:600px;"></input> <a id="dizhi3"href="<%=path%>/page/map.jsp"">查看店面详细地址</a></p>
 					</div>
 					
 					<div class="fangda"style="margin-top:80px;">
-					<input  id="yuyue"/><span>预约人</span> 
+					<input  id="yuyue" value="${Reservations}"/><span>预约人</span> 
 					</div>
 					
 					<div class="fangda" >
-					<input  id="shouji2" class="shouji" /><span>预约人手机</span> 
+					<input  id="shouji2" class="shouji" value="${Reservationsphone}" /><span>预约人手机</span> 
 					</div>
 					
 					<div class="fangda" style="margin-top:120px;">
 						<p style="position:absolute; margin-left:-15px;margin-top:-50px;font-weight:bold;">配送时间</p>
-						<input readonly="readonly" id="gezi" onfocus="jujiao()" onblur="shijiao()"></input><span>配送时间</span>
+						<input readonly="readonly" id="gezi" onfocus="jujiao()" onblur="shijiao()"value="${time}" ></input><span>配送时间</span>
 						
 						<div class="box" style="height:260px;width:250px; border:1px solid gray" onclick="abc()">
 							<section class="date">

@@ -25,6 +25,7 @@ import com.omatcha.dao.impl.AddOrderimpl;
 import com.omatcha.pojo.Shopping;
 import com.omatcha.pojo.ShoppingCart;
 import com.omatcha.test.Yyp;
+import com.omatcha.util.AddShoppingCart;
 
 public class ShoppingServlet extends HttpServlet {
 
@@ -92,10 +93,9 @@ public class ShoppingServlet extends HttpServlet {
 					om.writeValue(resp.getWriter(), "tis");
 				}
 				if(!(uid.equals("null"))&&who.equals("undefined")){
-					System.out.println("gfdgd");
 					om.writeValue(resp.getWriter(), uid);
 				}
-			
+				
 	}
 
 }

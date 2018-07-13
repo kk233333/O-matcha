@@ -44,12 +44,12 @@ public class CountServlet extends HttpServlet{
 			}
 		}else{
 			count = cs.queryCount(sql, Integer.parseInt(uid));
-			//Users user = (Users) session.getAttribute("wuser");
-			//portrait = user.getPortrait();	
+			Users user = (Users) session.getAttribute("wuser");
+			portrait = user.getPortrait();	
 		}
 		Map map = new HashMap();
 		map.put("count", count+"");
-		map.put("portrait", null);
+		map.put("portrait", portrait);
 		ObjectMapper om = new ObjectMapper();		
 		om.writeValue(resp.getWriter(), map);
 		

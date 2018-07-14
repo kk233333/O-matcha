@@ -11,7 +11,6 @@ import com.omatcha.pojo.Shopping;
 
 public class Yyp {
 	public static void main(String[] args) {
-		String str ="规格：12 磅";
 	
 		
 		

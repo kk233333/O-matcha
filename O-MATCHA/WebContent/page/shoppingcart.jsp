@@ -26,7 +26,7 @@
 		<script >
 		
 			function shoppingcartAjax(){
-				ajax();
+				
 			var list=[];
 			var shangping= $("tbody tr");
 			var number=shangping.size();
@@ -102,10 +102,8 @@
 					traditional :true, 
 					data:{"spname":spname},
 					dataType:"json",
-					success:function(data){
-						
+					success:function(data){	
 					}
-					
 				});	
 				kongcart();
 				ajax();

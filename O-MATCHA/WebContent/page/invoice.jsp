@@ -36,9 +36,7 @@
 					cgidlista=$($(".name")[i]).text();
 				}else{
 					cgidlista=$($(".name")[i]).text()+"-"+cgidlista;
-				}
-				alert(cgidlista);
-				
+				}	
 			}
 			
 			$.ajax({
@@ -47,8 +45,7 @@
 				traditional :true, 
 				data:{"cname":cgidlista},
 				dataType:"json",
-				success:function(data){
-					
+				success:function(data){	
 				}
 			});
 			

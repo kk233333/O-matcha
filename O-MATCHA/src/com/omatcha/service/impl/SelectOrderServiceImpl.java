@@ -10,8 +10,8 @@ import com.omatcha.service.SelectOrderService;
 public class SelectOrderServiceImpl implements SelectOrderService{
 	SelectOrderDao so = new SelectOrderDaoImpl();
 	@Override
-	public List<Object> selectOrder(Users user) {
-		return so.selectOrder(user);
+	public List<Object> selectOrder(Integer uid) {
+		return so.selectOrder(uid);
 	}
 
 }

@@ -39,7 +39,7 @@ public class SendsmgServlet extends HttpServlet{
 		  session.setAttribute("sendmscode", send);
 		  System.out.println(send);
 		 
-		  //sdm.getRequest2(phonenum, send);
+		  sdm.getRequest2(phonenum, send);
 		  
 		  
 		  

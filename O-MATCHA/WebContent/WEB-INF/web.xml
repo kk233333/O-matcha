@@ -257,4 +257,15 @@
 		<url-pattern>/logout.do</url-pattern>
   </servlet-mapping>
   
+  
+  <!-- 查询订单 -->
+   <servlet>
+		<servlet-name>wod</servlet-name>
+		<servlet-class>com.omatcha.servlet.SelectOrderServlet</servlet-class>
+</servlet>
+	<servlet-mapping>
+		<servlet-name>wod</servlet-name>
+		<url-pattern>/page/wod</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

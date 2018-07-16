@@ -11,10 +11,10 @@ import com.omatcha.util.DButil;
 public class SelectOrderDaoImpl implements SelectOrderDao{
 
 	@Override
-	public List<Object> selectOrder(Users user) {
+	public List<Object> selectOrder(Integer uid) {
 		String sql = "select * from myorder where uid=?";
-		String [] str ={""+user.getUid()} ;
-		return  DButil.query(sql,Worder.class, str);
+		//int [] str ={user.getUid()} ;
+		return  DButil.query(sql,Worder.class, uid);
 		
 	}
 

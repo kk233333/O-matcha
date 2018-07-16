@@ -3,6 +3,7 @@ package com.omatcha.servlet;
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -26,13 +27,14 @@ public class SelectOrderServlet extends HttpServlet{
 		resp.setContentType("text/html;charset=utf-8");
 		
 		HttpSession session = req.getSession();
-		Users  uersid = (Users) session.getAttribute("wuser");
+		Integer  uersid = (Integer) session.getAttribute("uid");
 		List<Object> orderlist = sos.selectOrder(uersid);
 		
 		if (orderlist.size()>0) {
 			session.setAttribute("orderlist", orderlist);
-			
-		}
+			}
+		RequestDispatcher rd = req.getRequestDispatcher("/page/worder.jsp");
+		rd.forward(req, resp);
 		
 	}
 	

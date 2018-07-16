@@ -141,7 +141,7 @@ function passcheck(){
 				</div>
 				<div class="form-group">
 				<input type="text" placeholder="请输入短信验证码" size="24" id="inputcode" onblur="checksend()"></input> 
-				<button type="button" class="btn btn-default" id="sms" onclick="">获取短信验证</button><br/><br/>
+				<button type="button" class="btn btn-default" id="sms" onclick="send()">获取短信验证</button><br/><br/>
 				<p class="text-warning"  id="forgetcode"></p>
 				</div>
 				<div class="form-group">

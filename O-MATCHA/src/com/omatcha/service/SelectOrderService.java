@@ -5,5 +5,5 @@ import java.util.List;
 import com.omatcha.pojo.Users;
 
 public interface SelectOrderService {
-	public List<Object> selectOrder(Users user);
+	public List<Object> selectOrder(Integer uid);
 }
